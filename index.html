@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chicago Delegation — Ordine dei Cavalieri del Tartufo e dei Vini d'Alba</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ordine-gold: #AD8400;
+    --ordine-gold-light: #C9A538;
+    --ordine-gold-pale: #E8D89A;
+    --navy: #14213D;
+    --navy-deep: #0B1628;
+    --ivory: #FAF6EE;
+    --ivory-warm: #F2EADA;
+    --crimson: #7A1F26;
+    --ink: #1A1A1A;
+    --muted: #6B6357;
+    --line: rgba(173, 132, 0, 0.25);
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:'Inter', sans-serif;
+    background:var(--ivory);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* TOP STRIP */
+  .topstrip{
+    background:var(--navy-deep);
+    color:var(--ivory-warm);
+    font-size:11px;
+    letter-spacing:0.15em;
+    text-transform:uppercase;
+    padding:8px 0;
+    text-align:center;
+    font-weight:300;
+  }
+  .topstrip a{color:var(--ordine-gold-light); text-decoration:none; margin-left:6px}
+
+  /* HEADER */
+  header{
+    background:var(--ivory);
+    border-bottom:1px solid var(--line);
+    position:sticky; top:0; z-index:100;
+    backdrop-filter: blur(8px);
+    background:rgba(250, 246, 238, 0.95);
+  }
+  .header-inner{
+    max-width:1280px; margin:0 auto;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 40px;
+  }
+  .brand{display:flex; align-items:center; gap:18px; text-decoration:none; color:var(--ink)}
+  .brand img{height:56px; width:auto; margin-right:18px}
+  .brand-text{display:flex; flex-direction:column; line-height:1.15}
+  .brand-text .order{
+    font-family:'Cinzel', serif;
+    font-size:11px;
+    letter-spacing:0.22em;
+    color:var(--muted);
+    text-transform:uppercase;
+  }
+  .brand-text .city{
+    font-family:'Cormorant Garamond', serif;
+    font-size:24px;
+    font-weight:600;
+    color:var(--navy);
+    letter-spacing:0.02em;
+  }
+  nav.primary{display:flex}
+  nav.primary a{
+    margin-left:34px;
+    text-decoration:none;
+    color:var(--navy);
+    font-size:13px;
+    font-weight:500;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    padding:6px 0;
+    border-bottom:1.5px solid transparent;
+    transition:all 0.2s ease;
+    cursor:pointer;
+  }
+  nav.primary a:first-child{margin-left:0}
+  nav.primary a:hover,nav.primary a.active{
+    color:var(--ordine-gold);
+    border-bottom-color:var(--ordine-gold);
+  }
+
+  /* PAGE SECTIONS */
+  .page{display:none; animation:fadeIn 0.4s ease}
+  .page.active{display:block}
+  @keyframes fadeIn{
+    from{opacity:0; transform:translateY(8px)}
+    to{opacity:1; transform:translateY(0)}
+  }
+
+  /* HERO */
+  .hero{
+    position:relative;
+    min-height:680px;
+    max-height:880px;
+    height:78vh;
+    background:
+      linear-gradient(180deg, rgba(11,22,40,0.55) 0%, rgba(11,22,40,0.75) 100%),
+      url('images/white-truffles.png') center/cover no-repeat;
+    display:flex; align-items:center; justify-content:center;
+    color:var(--ivory);
+    text-align:center;
+    padding:80px 40px;
+  }
+  .hero-content{max-width:840px}
+  .eyebrow{
+    font-family:'Cinzel', serif;
+    font-size:12px;
+    letter-spacing:0.35em;
+    color:var(--ordine-gold-light);
+    text-transform:uppercase;
+    margin-bottom:24px;
+  }
+  .ornament{
+    display:flex; align-items:center; justify-content:center;
+    gap:18px; margin:18px 0 28px;
+  }
+  .ornament .line{height:1px; width:80px; background:var(--ordine-gold-light)}
+  .ornament .diamond{
+    width:8px; height:8px; transform:rotate(45deg);
+    border:1px solid var(--ordine-gold-light);
+  }
+  h1.hero-title{
+    font-family:'Cormorant Garamond', serif;
+    font-size:clamp(48px, 7vw, 88px);
+    font-weight:500;
+    line-height:1.05;
+    margin:0 0 24px;
+    letter-spacing:-0.01em;
+  }
+  h1.hero-title em{
+    font-style:italic;
+    color:var(--ordine-gold-light);
+    font-weight:400;
+  }
+  .hero-sub{
+    font-size:18px;
+    line-height:1.7;
+    font-weight:300;
+    max-width:640px;
+    margin:0 auto 40px;
+    opacity:0.92;
+  }
+  .cta-row{display:flex; gap:16px; justify-content:center; flex-wrap:wrap}
+  .btn{
+    display:inline-block;
+    padding:14px 32px;
+    font-size:12px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    font-weight:600;
+    text-decoration:none;
+    border:1px solid var(--ordine-gold-light);
+    color:var(--ivory);
+    background:transparent;
+    cursor:pointer;
+    transition:all 0.25s ease;
+    font-family:'Inter', sans-serif;
+  }
+  .btn:hover{background:var(--ordine-gold); border-color:var(--ordine-gold); color:var(--ivory)}
+  .btn.primary{background:var(--ordine-gold); border-color:var(--ordine-gold)}
+  .btn.primary:hover{background:var(--ordine-gold-light); border-color:var(--ordine-gold-light)}
+  .btn.dark{color:var(--navy); border-color:var(--navy)}
+  .btn.dark:hover{background:var(--navy); color:var(--ivory)}
+
+  /* SECTION BASE */
+  section.block{padding:100px 40px; max-width:1280px; margin:0 auto}
+  section.block.tight{padding:60px 40px}
+  .section-head{text-align:center; margin-bottom:60px}
+  .section-head .eyebrow{color:var(--ordine-gold)}
+  .section-head h2{
+    font-family:'Cormorant Garamond', serif;
+    font-size:clamp(36px, 5vw, 56px);
+    font-weight:500;
+    color:var(--navy);
+    margin:8px 0 0;
+    letter-spacing:-0.01em;
+    line-height:1.1;
+  }
+  .section-head .ornament .line{background:var(--ordine-gold)}
+  .section-head .ornament .diamond{border-color:var(--ordine-gold)}
+  .section-head .lede{
+    font-family:'Cormorant Garamond', serif;
+    font-size:22px;
+    font-style:italic;
+    color:var(--muted);
+    max-width:680px;
+    margin:24px auto 0;
+    line-height:1.5;
+  }
+
+  /* MISSION SECTION */
+  .mission{background:var(--ivory-warm); position:relative; overflow:hidden}
+  .mission::before{
+    content:""; position:absolute; top:0; left:0; right:0; height:1px;
+    background:linear-gradient(90deg, transparent, var(--ordine-gold), transparent);
+  }
+  .mission-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+    align-items:center;
+  }
+  .mission-text h2{margin-top:8px}
+  .mission-text p{
+    font-size:17px; line-height:1.8; color:var(--ink); margin-bottom:18px;
+  }
+  .mission-text p.intro{
+    font-family:'Cormorant Garamond', serif;
+    font-size:24px;
+    font-style:italic;
+    color:var(--navy);
+    line-height:1.5;
+    margin-bottom:28px;
+  }
+  .mission-image{position:relative}
+  .mission-image img{
+    width:100%; height:560px; object-fit:cover;
+    box-shadow:0 30px 60px -20px rgba(11,22,40,0.4);
+  }
+  .mission-image .badge{
+    position:absolute; bottom:-30px; right:-30px;
+    background:var(--navy); color:var(--ordine-gold-light);
+    padding:24px 32px;
+    font-family:'Cinzel', serif;
+    font-size:11px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    text-align:center;
+    border:1px solid var(--ordine-gold);
+  }
+  .mission-image .badge strong{
+    display:block;
+    font-family:'Cormorant Garamond', serif;
+    font-size:32px;
+    color:var(--ivory);
+    margin-top:6px;
+    letter-spacing:0.02em;
+  }
+
+  /* PILLARS */
+  .pillars{display:grid; grid-template-columns:repeat(3, 1fr); gap:40px; margin-top:60px}
+  .pillar{
+    text-align:center;
+    padding:48px 32px;
+    background:var(--ivory);
+    border:1px solid var(--line);
+    position:relative;
+    transition:transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .pillar:hover{transform:translateY(-6px); box-shadow:0 20px 40px -15px rgba(11,22,40,0.2)}
+  .pillar .icon{
+    width:64px; height:64px; margin:0 auto 24px;
+    display:flex; align-items:center; justify-content:center;
+    color:var(--ordine-gold);
+  }
+  .pillar h3{
+    font-family:'Cormorant Garamond', serif;
+    font-size:28px; font-weight:500;
+    color:var(--navy);
+    margin:0 0 16px;
+  }
+  .pillar p{font-size:15px; line-height:1.7; color:var(--muted); margin:0}
+
+  /* EVENTS */
+  .events{background:var(--ivory)}
+  .event-list{display:flex; flex-direction:column; gap:0}
+  .event{
+    display:grid;
+    grid-template-columns:140px 1fr auto;
+    gap:48px;
+    align-items:center;
+    padding:36px 0;
+    border-bottom:1px solid var(--line);
+    transition:background 0.2s ease;
+    cursor:pointer;
+  }
+  .event:first-child{border-top:1px solid var(--line)}
+  .event:hover{background:rgba(173,132,0,0.04)}
+  .event-date{text-align:center}
+  .event-date .month{
+    font-family:'Cinzel', serif;
+    font-size:11px;
+    letter-spacing:0.22em;
+    color:var(--ordine-gold);
+    text-transform:uppercase;
+  }
+  .event-date .day{
+    font-family:'Cormorant Garamond', serif;
+    font-size:56px; font-weight:500;
+    color:var(--navy);
+    line-height:1;
+    margin:6px 0;
+  }
+  .event-date .year{
+    font-size:12px; color:var(--muted); letter-spacing:0.1em;
+  }
+  .event-body h4{
+    font-family:'Cormorant Garamond', serif;
+    font-size:26px; font-weight:600;
+    color:var(--navy);
+    margin:0 0 8px;
+  }
+  .event-body .venue{
+    font-size:13px; letter-spacing:0.1em;
+    color:var(--ordine-gold);
+    text-transform:uppercase;
+    margin-bottom:10px;
+  }
+  .event-body p{font-size:15px; color:var(--muted); margin:0; line-height:1.6}
+  .event-cta{
+    font-size:12px; letter-spacing:0.18em; text-transform:uppercase;
+    font-weight:600; color:var(--navy);
+    border:1px solid var(--navy); padding:12px 24px;
+    transition:all 0.2s ease;
+    white-space:nowrap;
+  }
+  .event:hover .event-cta{background:var(--navy); color:var(--ivory)}
+
+  /* PAST CHAPTERS GALLERY */
+  .past-gallery{background:var(--ivory-warm)}
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(12, 1fr);
+    gap:20px;
+  }
+  .gallery-item{
+    position:relative;
+    overflow:hidden;
+    cursor:pointer;
+    background:var(--navy);
+  }
+  .gallery-item img{
+    width:100%; height:100%; object-fit:cover;
+    display:block;
+    transition:transform 0.6s ease, opacity 0.3s ease;
+  }
+  .gallery-item:hover img{transform:scale(1.05); opacity:0.7}
+  .gallery-item .caption{
+    position:absolute; bottom:0; left:0; right:0;
+    padding:20px 24px;
+    background:linear-gradient(180deg, transparent, rgba(11,22,40,0.92));
+    color:var(--ivory);
+    transform:translateY(20%);
+    opacity:0;
+    transition:all 0.3s ease;
+  }
+  .gallery-item:hover .caption{transform:translateY(0); opacity:1}
+  .gallery-item .caption .label{
+    font-family:'Cinzel', serif;
+    font-size:10px;
+    letter-spacing:0.22em;
+    color:var(--ordine-gold-light);
+    text-transform:uppercase;
+    margin-bottom:4px;
+  }
+  .gallery-item .caption h5{
+    font-family:'Cormorant Garamond', serif;
+    font-size:20px; font-weight:500;
+    margin:0; line-height:1.2;
+  }
+  .gal-1{grid-column:span 8; aspect-ratio:16/9}
+  .gal-2{grid-column:span 4; aspect-ratio:4/5}
+  .gal-3{grid-column:span 4; aspect-ratio:4/5}
+  .gal-4{grid-column:span 4; aspect-ratio:4/5}
+  .gal-5{grid-column:span 4; aspect-ratio:4/5}
+  .gal-6{grid-column:span 7; aspect-ratio:16/9}
+  .gal-7{grid-column:span 5; aspect-ratio:4/3}
+
+  /* BECOME A KNIGHT */
+  .knight-cta{
+    background:
+      linear-gradient(135deg, rgba(11,22,40,0.92), rgba(20,33,61,0.88)),
+      url('images/castle-council.png') center/cover no-repeat;
+    color:var(--ivory);
+    padding:120px 40px;
+    text-align:center;
+  }
+  .knight-cta h2{color:var(--ivory)}
+  .knight-cta .lede{color:var(--ordine-gold-pale)}
+  .knight-steps{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:32px;
+    max-width:1100px; margin:60px auto 40px;
+  }
+  .step{
+    text-align:left;
+    padding:32px;
+    border:1px solid rgba(201, 165, 56, 0.3);
+    background:rgba(11,22,40,0.4);
+    backdrop-filter:blur(10px);
+  }
+  .step .num{
+    font-family:'Cinzel', serif;
+    font-size:11px;
+    letter-spacing:0.3em;
+    color:var(--ordine-gold-light);
+    margin-bottom:16px;
+  }
+  .step h4{
+    font-family:'Cormorant Garamond', serif;
+    font-size:24px; font-weight:600;
+    color:var(--ivory); margin:0 0 12px;
+  }
+  .step p{font-size:14px; line-height:1.7; color:rgba(250,246,238,0.85); margin:0}
+
+  /* LEADERSHIP */
+  .leadership{background:var(--ivory)}
+  .leader-card{
+    display:grid;
+    grid-template-columns:1fr 1.4fr;
+    gap:60px;
+    align-items:center;
+    background:var(--ivory-warm);
+    padding:0;
+    border:1px solid var(--line);
+  }
+  .leader-photo{
+    height:100%; min-height:520px;
+    background:
+      linear-gradient(135deg, rgba(20,33,61,0.15), rgba(173,132,0,0.1)),
+      var(--navy);
+    display:flex; align-items:center; justify-content:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .leader-photo .placeholder{
+    color:var(--ordine-gold-pale);
+    text-align:center;
+    padding:40px;
+  }
+  .leader-photo .placeholder .crest{
+    font-family:'Cinzel', serif;
+    font-size:60px;
+    color:var(--ordine-gold);
+    margin-bottom:20px;
+  }
+  .leader-photo .placeholder span{
+    font-family:'Cinzel', serif;
+    font-size:11px;
+    letter-spacing:0.25em;
+    text-transform:uppercase;
+  }
+  .leader-body{padding:60px 60px 60px 0}
+  .leader-body .role{
+    font-family:'Cinzel', serif;
+    font-size:11px;
+    letter-spacing:0.25em;
+    color:var(--ordine-gold);
+    text-transform:uppercase;
+    margin-bottom:12px;
+  }
+  .leader-body h3{
+    font-family:'Cormorant Garamond', serif;
+    font-size:48px; font-weight:500;
+    color:var(--navy);
+    margin:0 0 8px;
+    line-height:1;
+  }
+  .leader-body .since{
+    font-style:italic; color:var(--muted); margin-bottom:24px;
+    font-family:'Cormorant Garamond', serif; font-size:18px;
+  }
+  .leader-body .quote{
+    font-family:'Cormorant Garamond', serif;
+    font-size:22px;
+    font-style:italic;
+    color:var(--navy);
+    line-height:1.5;
+    padding:24px 0 24px 24px;
+    border-left:2px solid var(--ordine-gold);
+    margin:24px 0;
+  }
+  .leader-body p{font-size:16px; line-height:1.7; color:var(--ink)}
+
+  /* ROSTER */
+  .roster{background:var(--ivory)}
+  .roster-stats{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:0;
+    margin:40px 0 60px;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .stat{
+    text-align:center; padding:36px 20px;
+    border-right:1px solid var(--line);
+  }
+  .stat:last-child{border-right:none}
+  .stat .num{
+    font-family:'Cormorant Garamond', serif;
+    font-size:56px; font-weight:500;
+    color:var(--ordine-gold); line-height:1;
+  }
+  .stat .label{
+    font-family:'Cinzel', serif;
+    font-size:11px;
+    letter-spacing:0.22em;
+    color:var(--muted);
+    text-transform:uppercase;
+    margin-top:10px;
+  }
+  .roster-list{
+    columns:3;
+    column-gap:48px;
+    padding:0;
+  }
+  .roster-list .roster-name{
+    display:block;
+    padding:10px 0;
+    border-bottom:1px dotted var(--line);
+    font-size:14px;
+    color:var(--ink);
+    break-inside:avoid;
+  }
+  .roster-list .roster-name .surname{
+    font-weight:600; color:var(--navy);
+  }
+  .roster-list .roster-name .honorary{
+    float:right;
+    font-size:10px;
+    letter-spacing:0.15em;
+    color:var(--ordine-gold);
+    text-transform:uppercase;
+    font-style:italic;
+    margin-top:2px;
+  }
+
+  /* TESTIMONIALS */
+  .testimonials{background:var(--navy); color:var(--ivory); padding:100px 40px}
+  .testimonials .inner{max-width:1280px; margin:0 auto}
+  .testimonials .section-head h2{color:var(--ivory)}
+  .testimonials .section-head .eyebrow{color:var(--ordine-gold-light)}
+  .test-grid{
+    display:grid; grid-template-columns:repeat(2, 1fr); gap:48px;
+    margin-top:48px;
+  }
+  .testimonial{
+    padding:40px;
+    border:1px solid rgba(201, 165, 56, 0.25);
+    background:rgba(255,255,255,0.02);
+  }
+  .testimonial blockquote{
+    font-family:'Cormorant Garamond', serif;
+    font-size:22px; font-style:italic;
+    line-height:1.5;
+    margin:0 0 24px;
+    color:var(--ivory-warm);
+  }
+  .testimonial blockquote::before{
+    content:"\201C";
+    font-size:60px;
+    color:var(--ordine-gold-light);
+    line-height:0.5;
+    display:block;
+    margin-bottom:14px;
+    font-family:'Cormorant Garamond', serif;
+  }
+  .testimonial .attr{
+    font-family:'Cinzel', serif;
+    font-size:11px;
+    letter-spacing:0.22em;
+    color:var(--ordine-gold-light);
+    text-transform:uppercase;
+  }
+  .testimonial .attr .name{color:var(--ivory); display:block; margin-bottom:4px; font-size:13px}
+
+  /* JOURNAL / NEWS */
+  .journal{background:var(--ivory-warm)}
+  .journal-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:32px}
+  .article{
+    background:var(--ivory);
+    border:1px solid var(--line);
+    overflow:hidden;
+    transition:transform 0.3s ease, box-shadow 0.3s ease;
+    cursor:pointer;
+  }
+  .article:hover{transform:translateY(-6px); box-shadow:0 20px 40px -15px rgba(11,22,40,0.2)}
+  .article-image{
+    height:240px; overflow:hidden;
+    background:var(--navy);
+  }
+  .article-image img{width:100%; height:100%; object-fit:cover; transition:transform 0.5s ease}
+  .article:hover .article-image img{transform:scale(1.05)}
+  .article-body{padding:32px}
+  .article-body .category{
+    font-family:'Cinzel', serif;
+    font-size:10px;
+    letter-spacing:0.22em;
+    color:var(--ordine-gold);
+    text-transform:uppercase;
+    margin-bottom:12px;
+  }
+  .article-body h4{
+    font-family:'Cormorant Garamond', serif;
+    font-size:24px; font-weight:600;
+    color:var(--navy); margin:0 0 12px;
+    line-height:1.3;
+  }
+  .article-body p{font-size:14px; color:var(--muted); line-height:1.6; margin:0 0 16px}
+  .article-body .date{
+    font-size:12px; letter-spacing:0.1em;
+    color:var(--muted); text-transform:uppercase;
+  }
+
+  /* CONTACT */
+  .contact-block{
+    display:grid; grid-template-columns:1fr 1fr; gap:80px;
+    align-items:center;
+  }
+  .contact-form{background:var(--ivory-warm); padding:60px; border:1px solid var(--line)}
+  .contact-form h3{
+    font-family:'Cormorant Garamond', serif;
+    font-size:32px; font-weight:500;
+    color:var(--navy); margin:0 0 8px;
+  }
+  .contact-form .sub{color:var(--muted); margin:0 0 28px; font-size:15px}
+  .field{margin-bottom:18px}
+  .field label{
+    display:block;
+    font-family:'Cinzel', serif;
+    font-size:10px; letter-spacing:0.22em;
+    color:var(--navy); text-transform:uppercase;
+    margin-bottom:8px;
+  }
+  .field input, .field textarea, .field select{
+    width:100%; padding:12px 16px;
+    border:1px solid var(--line);
+    background:var(--ivory);
+    font-family:'Inter', sans-serif;
+    font-size:14px;
+    color:var(--ink);
+  }
+  .field input:focus, .field textarea:focus, .field select:focus{
+    outline:none; border-color:var(--ordine-gold);
+  }
+  .contact-info h3{
+    font-family:'Cormorant Garamond', serif;
+    font-size:40px; font-weight:500;
+    color:var(--navy); margin:0 0 24px; line-height:1.1;
+  }
+  .contact-info p{font-size:16px; line-height:1.8; color:var(--ink); margin-bottom:16px}
+  .info-block{margin-bottom:32px}
+  .info-block .label{
+    font-family:'Cinzel', serif;
+    font-size:10px; letter-spacing:0.22em;
+    color:var(--ordine-gold); text-transform:uppercase;
+    margin-bottom:8px;
+  }
+  .info-block a{color:var(--navy); text-decoration:none; border-bottom:1px solid var(--ordine-gold)}
+
+  /* FOOTER */
+  footer{
+    background:var(--navy-deep);
+    color:var(--ivory-warm);
+    padding:80px 40px 40px;
+  }
+  .footer-inner{max-width:1280px; margin:0 auto}
+  .footer-top{
+    display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:60px;
+    margin-bottom:60px;
+  }
+  .footer-brand img{height:64px; margin-bottom:20px}
+  .footer-brand p{font-size:14px; line-height:1.7; opacity:0.7; max-width:340px}
+  .footer-col h5{
+    font-family:'Cinzel', serif;
+    font-size:11px; letter-spacing:0.22em;
+    color:var(--ordine-gold-light); text-transform:uppercase;
+    margin:0 0 20px;
+  }
+  .footer-col a{
+    display:block; color:var(--ivory-warm);
+    text-decoration:none; font-size:14px;
+    padding:6px 0; opacity:0.75;
+    transition:opacity 0.2s ease;
+  }
+  .footer-col a:hover{opacity:1; color:var(--ordine-gold-light)}
+  .footer-bottom{
+    border-top:1px solid rgba(201, 165, 56, 0.15);
+    padding-top:30px;
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:12px; opacity:0.5; letter-spacing:0.05em;
+  }
+
+  /* DEMO BANNER */
+  .demo-banner{
+    position:fixed;
+    bottom:20px; right:20px;
+    background:var(--navy);
+    color:var(--ivory);
+    padding:14px 20px;
+    font-size:11px;
+    letter-spacing:0.15em;
+    text-transform:uppercase;
+    border:1px solid var(--ordine-gold);
+    z-index:1000;
+    max-width:280px;
+    line-height:1.5;
+  }
+  .demo-banner strong{color:var(--ordine-gold-light); display:block; margin-bottom:4px; font-family:'Cinzel', serif}
+
+  /* RESPONSIVE */
+  @media (max-width:980px){
+    nav.primary{display:none}
+    .mission-grid, .contact-block, .leader-card{grid-template-columns:1fr; gap:40px}
+    .leader-body{padding:40px}
+    .pillars, .knight-steps, .journal-grid, .test-grid{grid-template-columns:1fr}
+    .roster-stats{grid-template-columns:1fr}
+    .stat{border-right:none; border-bottom:1px solid var(--line)}
+    .stat:last-child{border-bottom:none}
+    .roster-list{columns:1}
+    .gallery-grid > *{grid-column:span 12 !important; aspect-ratio:16/9 !important}
+    .footer-top{grid-template-columns:1fr 1fr}
+    .event{grid-template-columns:80px 1fr; gap:24px}
+    .event-cta{grid-column:1/-1; text-align:center; margin-top:12px}
+    section.block{padding:60px 24px}
+    .header-inner{padding:14px 20px}
+    .brand-text .city{font-size:18px}
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP STRIP -->
+<div class="topstrip">
+  Ordine dei Cavalieri del Tartufo e dei Vini d'Alba · Founded 1967 · 
+  <a href="https://www.cavalierideltartufo.it/en/" target="_blank">Visit the Order →</a>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a class="brand" data-page="home">
+      <img src="assets/logo-cavalieri-tartufo.png" alt="Ordine dei Cavalieri del Tartufo e dei Vini d'Alba">
+      <div class="brand-text">
+        <span class="order">Ordine dei Cavalieri</span>
+        <span class="city">Chicago Delegation</span>
+      </div>
+    </a>
+    <nav class="primary">
+      <a class="nav-link active" data-page="home">Home</a>
+      <a class="nav-link" data-page="chapters">Events</a>
+      <a class="nav-link" data-page="past">Gallery</a>
+      <a class="nav-link" data-page="knight">Become a Knight</a>
+      <a class="nav-link" data-page="roster">The Knights</a>
+      <a class="nav-link" data-page="contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- =================== HOME PAGE =================== -->
+<div class="page active" id="home">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">Chicago Delegation · Established May 9, 2023</div>
+      <div class="ornament"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+      <h1 class="hero-title">A fellowship of <em>fine wine</em> &amp; <em>fine dining</em> in the heart of Chicago.</h1>
+      <p class="hero-sub">An invitation to celebrate the white truffle of Alba, the great wines of the Langhe, and the enduring culture of the Italian table — convened in the city we call home.</p>
+      <div class="cta-row">
+        <a class="btn primary" data-page="knight">Become a Knight</a>
+        <a class="btn" data-page="chapters">Upcoming Events</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section class="block mission">
+    <div class="mission-grid">
+      <div class="mission-image">
+        <img src="images/chicago-induction.png" alt="The Chicago Delegation gathered with Maestro Georgia Marsh">
+        <div class="badge">Inducted Chicago Class<strong>2024</strong></div>
+      </div>
+      <div class="mission-text">
+        <div class="eyebrow" style="color:var(--ordine-gold)">Our Purpose</div>
+        <h2>To honor a tradition. To enrich a city.</h2>
+        <p class="intro">The Order of Knights of the Truffle and Wines of Alba was born in 1967 in a small trattoria in Grinzane Cavour. Today, it spans five continents.</p>
+        <p>Chicago joined this fellowship in 2023 under the guidance of Maestro Georgia Marsh — and in doing so, accepted a quiet responsibility: to steward, in our city, a culture of wine, food, and conviviality that has been honed in Piedmont for centuries.</p>
+        <p>Our Knights are sommeliers and surgeons, restaurateurs and architects, vintners and venture capitalists. What unites us is sincere passion for the table, and a belief that the best things in life are shared.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- THREE PILLARS -->
+  <section class="block tight">
+    <div class="section-head">
+      <div class="eyebrow">Tradition · Culture · Excellence</div>
+      <div class="ornament"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+      <h2>Three pillars of the Order</h2>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="icon">
+          <svg width="56" height="56" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M32 4 L52 18 L52 46 L32 60 L12 46 L12 18 Z"/>
+            <path d="M32 4 L32 60 M12 18 L52 18 M12 46 L52 46"/>
+            <circle cx="32" cy="32" r="6"/>
+          </svg>
+        </div>
+        <h3>The Alba White Truffle</h3>
+        <p>Tuber magnatum pico — the most prized truffle in the world, harvested in the woods around Alba. The Order safeguards its name, its season, and its rituals at the table.</p>
+      </div>
+      <div class="pillar">
+        <div class="icon">
+          <svg width="56" height="56" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M22 8 L42 8 L42 20 Q42 32 32 36 Q22 32 22 20 Z"/>
+            <path d="M32 36 L32 52"/>
+            <path d="M22 56 L42 56"/>
+          </svg>
+        </div>
+        <h3>The Wines of the Langhe</h3>
+        <p>Barolo. Barbaresco. Roero. Barbera d'Alba. Dolcetto. Nebbiolo. The Order curates an annual Selection of the finest wines from the great designations of Piedmont.</p>
+      </div>
+      <div class="pillar">
+        <div class="icon">
+          <svg width="56" height="56" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M8 18 L56 18 M8 28 L56 28"/>
+            <path d="M14 28 L14 52 Q14 56 18 56 L46 56 Q50 56 50 52 L50 28"/>
+            <path d="M22 36 L42 36 M22 44 L42 44"/>
+          </svg>
+        </div>
+        <h3>The Italian Table</h3>
+        <p>Beyond food and wine: the unhurried ritual of breaking bread, the toast that means something, the long lunch as a form of friendship. We hold the line, here in Chicago.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- UPCOMING EVENTS PREVIEW -->
+  <section class="block events">
+    <div class="section-head">
+      <div class="eyebrow">Calendar of Events</div>
+      <div class="ornament"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+      <h2>Upcoming gatherings</h2>
+      <p class="lede">Knights-only events span <em>formal black-tie induction ceremonies</em> to <em>backyard burgers and Barolo</em> — and everything in between.</p>
+    </div>
+    <div class="event-list">
+      <div class="event">
+        <div class="event-date">
+          <div class="month">Nov</div>
+          <div class="day">14</div>
+          <div class="year">2025</div>
+        </div>
+        <div class="event-body">
+          <h4>White Truffle Gala &amp; Investiture Ceremony</h4>
+          <div class="venue">Members &amp; Guests · Black Tie · Chicago</div>
+          <p>Our marquee evening of the year, coinciding with the height of the Alba white truffle season. New Knights are inducted; the table is set for the occasion.</p>
+        </div>
+        <div class="event-cta">Reserve</div>
+      </div>
+      <div class="event">
+        <div class="event-date">
+          <div class="month">Jan</div>
+          <div class="day">22</div>
+          <div class="year">2026</div>
+        </div>
+        <div class="event-body">
+          <h4>Vertical Tasting: A Decade of Barolo</h4>
+          <div class="venue">Knights Only · Private Cellar Tasting</div>
+          <p>An intimate vertical drawn from a single estate, guided by a guest sommelier from Piedmont. Limited to twenty seats.</p>
+        </div>
+        <div class="event-cta">RSVP</div>
+      </div>
+      <div class="event">
+        <div class="event-date">
+          <div class="month">Jul</div>
+          <div class="day">25</div>
+          <div class="year">2026</div>
+        </div>
+        <div class="event-body">
+          <h4>Backyard Burgers &amp; Barolo</h4>
+          <div class="venue">Knights &amp; Guests · Casual</div>
+          <p>A reminder that this fellowship isn't only about black tie. Great Nebbiolo deserves a charcoal grill once a year, too.</p>
+        </div>
+        <div class="event-cta">RSVP</div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:40px">
+      <a class="btn dark" data-page="chapters">View All Events →</a>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="inner">
+      <div class="section-head">
+        <div class="eyebrow">Voices of the Delegation</div>
+        <div class="ornament"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+        <h2>What it means to be a Knight</h2>
+      </div>
+      <div class="test-grid">
+        <div class="testimonial">
+          <blockquote>To be a Knight is to belong to a tradition older and larger than oneself — and yet to find, in our Chicago gatherings, something entirely new: friendships forged over a shared reverence for the Italian table.</blockquote>
+          <div class="attr"><span class="name">A Chicago Knight</span>Industry Professional · Inducted 2024</div>
+        </div>
+        <div class="testimonial">
+          <blockquote>The Order asks one thing of its members: sincere passion. Everything that follows — the wines, the meals, the company — is a reward for that passion.</blockquote>
+          <div class="attr"><span class="name">A Chicago Knight</span>Passionate Consumer · Inducted 2025</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOURNAL PREVIEW -->
+  <section class="block journal">
+    <div class="section-head">
+      <div class="eyebrow">Dispatches</div>
+      <div class="ornament"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+      <h2>From the Chicago Journal</h2>
+    </div>
+    <div class="journal-grid">
+      <div class="article">
+        <div class="article-image"><img src="images/barolo-tasting.png" alt="Barolo Riserva"></div>
+        <div class="article-body">
+          <div class="category">World of Wine</div>
+          <h4>Why 2019 may be a generational Barolo vintage</h4>
+          <p>Notes from a Knights-only vertical tasting hosted in River North last spring, with reflections from the Maestro and a guest enologist.</p>
+          <div class="date">October 2025</div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="article-image"><img src="images/white-truffles.png" alt="White truffles"></div>
+        <div class="article-body">
+          <div class="category">Good Food Culture</div>
+          <h4>His Majesty arrives in Chicago: a primer on the Alba white truffle</h4>
+          <p>What it is, what it isn't, and how to taste one properly — written for our newest Knights and curious guests alike.</p>
+          <div class="date">September 2025</div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="article-image"><img src="images/investiture-ceremony.png" alt="Investiture ceremony"></div>
+        <div class="article-body">
+          <div class="category">Event Recap</div>
+          <h4>The 2024 Investiture: eleven new Knights for Chicago</h4>
+          <p>A photo essay from our most recent ceremony — the robes, the medallions, the moment of induction. With remarks from Maestro Georgia Marsh.</p>
+          <div class="date">December 2024</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- =================== EVENTS PAGE =================== -->
+<div class="page" id="chapters">
+  <section class="block" style="padding-top:80px">
+    <div class="section-head">
+      <div class="eyebrow">Calendar of Events · 2025–2026</div>
+      <div class="ornament"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+      <h2>Where the Delegation gathers</h2>
+      <p class="lede">Knights-only events span <em>formal black-tie induction ceremonies</em> to <em>backyard burgers and Barolo</em> — and everything in between.</p>
+    </div>
+
+    <div class="event-list">
+      <div class="event">
+        <div class="event-date"><div class="month">Nov</div><div class="day">14</div><div class="year">2025</div></div>
+        <div class="event-body">
+          <h4>White Truffle Gala &amp; Investiture Ceremony</h4>
+          <div class="venue">Black Tie · Members &amp; Guests</div>
+          <p>The signature evening of our year. Investiture of new Knights, an Alba truffle menu, and a wine flight curated by the Tasting Committee.</p>
+        </div>
+        <div class="event-cta">Reserve</div>
+      </div>
+      <div class="event">
+        <div class="event-date"><div class="month">Jan</div><div class="day">22</div><div class="year">2026</div></div>
+        <div class="event-body">
+          <h4>Vertical Tasting: A Decade of Barolo</h4>
+          <div class="venue">Knights Only · Twenty Seats</div>
+          <p>2014–2023, one estate, one room. Led by a visiting sommelier from the Langhe.</p>
+        </div>
+        <div class="event-cta">RSVP</div>
+      </div>
+      <div class="event">
+        <div class="event-date"><div class="month">Feb</div><div class="day">18</div><div class="year">2026</div></div>
+        <div class="event-body">
+          <h4>Knights &amp; Chefs: A Collaborative Dinner</h4>
+          <div class="venue">Members &amp; One Guest Each</div>
+          <p>A Chicago chef in conversation with a Piedmontese counterpart, by long-distance and at the stove. Four courses, four wines.</p>
+        </div>
+        <div class="event-cta">RSVP</div>
+      </div>
+      <div class="event">
+        <div class="event-date"><div class="month">Mar</div><div class="day">7</div><div class="year">2026</div></div>
+        <div class="event-body">
+          <h4>Spring Aspirants' Dinner</h4>
+          <div class="venue">Open to Aspirants · Five Courses</div>
+          <p>An open evening for prospective Knights to dine alongside the Delegation. The Maestro presents the work of the Order.</p>
+        </div>
+        <div class="event-cta">Inquire</div>
+      </div>
+      <div class="event">
+        <div class="event-date"><div class="month">Apr</div><div class="day">24</div><div class="year">2026</div></div>
+        <div class="event-body">
+          <h4>Nebbiolo Beyond Barolo</h4>
+          <div class="venue">Knights Only · Walk-around Tasting</div>
+          <p>A focused exploration of Roero, Carema, Gattinara, and Valtellina — Nebbiolo's quieter expressions.</p>
+        </div>
+        <div class="event-cta">RSVP</div>
+      </div>
+      <div class="event">
+        <div class="event-date"><div class="month">Jun</div><div class="day">12</div><div class="year">2026</div></div>
+        <div class="event-body">
+          <h4>Summer Evening al Fresco</h4>
+          <div class="venue">Members &amp; Guests · Rooftop Setting</div>
+          <p>A Piedmontese summer menu — vitello tonnato, fritto misto, peaches in Moscato — with Arneis and Favorita.</p>
+        </div>
+        <div class="event-cta">Reserve</div>
+      </div>
+      <div class="event">
+        <div class="event-date"><div class="month">Jul</div><div class="day">25</div><div class="year">2026</div></div>
+        <div class="event-body">
+          <h4>Backyard Burgers &amp; Barolo</h4>
+          <div class="venue">Knights &amp; Guests · Casual</div>
+          <p>A reminder that this fellowship isn't only about black tie. Great Nebbiolo deserves a charcoal grill once a year, too.</p>
+        </div>
+        <div class="event-cta">RSVP</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- =================== PAST CHAPTERS PAGE =================== -->
+<div class="page" id="past">
+  <section class="block past-gallery">
+    <div class="section-head">
+      <div class="eyebrow">Relive the Events</div>
+      <div class="ornament"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+      <h2>The Delegation in pictures</h2>
+      <p class="lede">A visual record of recent Chicago events — the dinners, the investitures, the bottles, the bonds.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item gal-1">
+        <img src="images/chicago-induction.png" alt="Chicago Delegation with Maestro Georgia Marsh">
+        <div class="caption">
+          <div class="label">Investiture · Chicago · 2024</div>
+          <h5>New Knights of the Chicago Delegation, with Maestro Georgia Marsh</h5>
+        </div>
+      </div>
+      <div class="gallery-item gal-2">
+        <img src="images/white-truffles.png" alt="White truffles">
+        <div class="caption">
+          <div class="label">Alba · 2024</div>
+          <h5>His Majesty, the Alba White Truffle</h5>
+        </div>
+      </div>
+      <div class="gallery-item gal-3">
+        <img src="images/investiture-ceremony.png" alt="Investiture ceremony">
+        <div class="caption">
+          <div class="label">The Rite of Investiture</div>
+          <h5>A new Knight receives the medallion</h5>
+        </div>
+      </div>
+      <div class="gallery-item gal-4">
+        <img src="images/barolo-tasting.png" alt="Barolo Riserva">
+        <div class="caption">
+          <div class="label">Tasting · River North · 2025</div>
+          <h5>A vertical of Sordo Barolo Riserva</h5>
+        </div>
+      </div>
+      <div class="gallery-item gal-5">
+        <img src="images/international-robes.png" alt="International delegations in full robes">
+        <div class="caption">
+          <div class="label">Grinzane Cavour · 2025</div>
+          <h5>The Order's international Maestri convene at the Castle</h5>
+        </div>
+      </div>
+      <div class="gallery-item gal-6">
+        <img src="images/castle-council.png" alt="Council at Castello di Grinzane Cavour">
+        <div class="caption">
+          <div class="label">Headquarters · Piedmont</div>
+          <h5>The Ruling Council at the Castle of Grinzane Cavour</h5>
+        </div>
+      </div>
+      <div class="gallery-item gal-7">
+        <img src="assets/castle.jpg" alt="Castello di Grinzane Cavour amid the vineyards">
+        <div class="caption">
+          <div class="label">The Langhe · UNESCO World Heritage</div>
+          <h5>Home of the Order, since 1967</h5>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- =================== BECOME A KNIGHT PAGE =================== -->
+<div class="page" id="knight">
+  <section class="knight-cta">
+    <div class="eyebrow">The Title of Knight</div>
+    <div class="ornament"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+    <h2 style="font-family:'Cormorant Garamond', serif; font-size:clamp(40px, 6vw, 72px); font-weight:500; margin:0 0 24px; max-width:900px; margin-left:auto; margin-right:auto">A sincere passion for the food and wine of Piedmont.</h2>
+    <p class="lede" style="max-width:760px; margin:0 auto 0; font-family:'Cormorant Garamond', serif; font-size:22px; font-style:italic; line-height:1.5;">Since 1967, the Order has knighted people from around the world who share a genuine interest in — and passion for — the cuisine, wines, and landscape of the Langhe. Anyone who shares that passion may apply.</p>
+
+    <div class="knight-steps">
+      <div class="step">
+        <div class="num">Step One</div>
+        <h4>Submit Your Application</h4>
+        <p>Complete the official application form and curriculum vitae. Send both by email to the Order's secretariat at <a href="mailto:segreteria@cavalierideltartufo.it" style="color:var(--ordine-gold-light); border-bottom:1px solid var(--ordine-gold-light); text-decoration:none">segreteria@cavalierideltartufo.it</a>, indicating Chicago as your Delegation of choice.</p>
+        <p style="margin-top:14px"><a href="https://www.cavalierideltartufo.it/wp-content/uploads/2026/02/APPLICATION-FORM-AND-CV.doc" target="_blank" style="display:inline-block; padding:10px 20px; border:1px solid var(--ordine-gold-light); color:var(--ordine-gold-light); text-decoration:none; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; font-weight:600">Download Application →</a></p>
+      </div>
+      <div class="step">
+        <div class="num">Step Two</div>
+        <h4>Admission &amp; Annual Fees</h4>
+        <p>Upon acceptance, an entrance fee (set by the Chicago Delegation Council) and the first-year membership fee are due. Both can be paid by credit card, PayPal, or bank transfer through the Order.</p>
+        <p style="margin-top:14px">Included: the Collar with personalized Medallion, the Certificate of Proclamation, photographs of your Investiture, and the annual membership card — which carries a 10% discount on purchases at the Castle of Grinzane.</p>
+      </div>
+      <div class="step">
+        <div class="num">Step Three</div>
+        <h4>Investiture in Robes</h4>
+        <p>New Knights are formally invested at a Chicago ceremony, receiving the Collar of the Order and the ribbon of the Cavalieri. From that evening forward, you have the right to attend any event of the Order worldwide — and to present new Knights of your own.</p>
+      </div>
+    </div>
+
+    <div class="cta-row" style="margin-top:20px">
+      <a class="btn primary" data-page="contact">Speak with the Maestro First</a>
+      <a href="https://www.cavalierideltartufo.it/en/diventa-cavaliere/" target="_blank" class="btn">Read the Full Order Page →</a>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP -->
+  <section class="block leadership">
+    <div class="section-head">
+      <div class="eyebrow">Leadership</div>
+      <div class="ornament"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+      <h2>The Maestro of the Chicago Delegation</h2>
+    </div>
+    <div class="leader-card">
+      <div class="leader-photo">
+        <div class="placeholder">
+          <div class="crest">⚜</div>
+          <span>Maestro's Portrait</span>
+        </div>
+      </div>
+      <div class="leader-body">
+        <div class="role">Maestro · Chicago Delegation</div>
+        <h3>Georgia Marsh</h3>
+        <div class="since">Knight since 2019 · Maestro since 2023</div>
+        <div class="quote">"To establish a delegation of the Order in Chicago is to bring a piece of Piedmont — its patience, its generosity, its reverence for the table — into a great American city."</div>
+        <p>Georgia Marsh leads the Chicago Delegation with a clear vision: that the Order's traditions, shaped in the Langhe since 1967, can find an authentic and lasting home in Chicago. She convenes our events, curates our calendar, and presents new Knights to the Order.</p>
+        <p style="margin-top:18px"><a href="mailto:chicagomaster@cavalierdeltartufo.it" style="color:var(--ordine-gold); text-decoration:none; border-bottom:1px solid var(--ordine-gold); font-weight:500;">chicagomaster@cavalierdeltartufo.it</a></p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- =================== ROSTER PAGE =================== -->
+<div class="page" id="roster">
+  <section class="block roster">
+    <div class="section-head">
+      <div class="eyebrow">The Roll of Knights · Chicago</div>
+      <div class="ornament"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+      <h2>The Knights of the Chicago Delegation</h2>
+      <p class="lede">A growing fellowship of industry professionals and passionate consumers, sponsored into the Order and invested in robes at a formal ceremony.</p>
+    </div>
+
+    <div class="roster-stats">
+      <div class="stat"><div class="num">57</div><div class="label">Knights</div></div>
+      <div class="stat"><div class="num">2</div><div class="label">Honorary</div></div>
+      <div class="stat"><div class="num">2023</div><div class="label">Established</div></div>
+    </div>
+
+    <div class="roster-list">
+      <span class="roster-name"><span class="surname">Allegrini</span>, Robert</span>
+      <span class="roster-name"><span class="surname">Arkebauer</span>, J. Todd</span>
+      <span class="roster-name"><span class="surname">Bassani</span>, Cristiano</span>
+      <span class="roster-name"><span class="surname">Botzios</span>, Thomas <span class="honorary">Hon.</span></span>
+      <span class="roster-name"><span class="surname">Catenacci</span>, Debi</span>
+      <span class="roster-name"><span class="surname">Cerruti</span>, Paolo</span>
+      <span class="roster-name"><span class="surname">Chester</span>, Malcolm</span>
+      <span class="roster-name"><span class="surname">Chow</span>, Kevin</span>
+      <span class="roster-name"><span class="surname">Cozzini</span>, Ivo</span>
+      <span class="roster-name"><span class="surname">De Re</span>, Diane</span>
+      <span class="roster-name"><span class="surname">Di Vito</span>, Luca <span class="honorary">Hon.</span></span>
+      <span class="roster-name"><span class="surname">Durpetti</span>, Michelle</span>
+      <span class="roster-name"><span class="surname">Eng</span>, Karen</span>
+      <span class="roster-name"><span class="surname">Fitting</span>, Michael</span>
+      <span class="roster-name"><span class="surname">Gammella</span>, Ashley Erminia</span>
+      <span class="roster-name"><span class="surname">Hall</span>, Lili</span>
+      <span class="roster-name"><span class="surname">Hawkins</span>, Kathleen</span>
+      <span class="roster-name"><span class="surname">Hennig</span>, John Daniel</span>
+      <span class="roster-name"><span class="surname">Hodes</span>, Scott</span>
+      <span class="roster-name"><span class="surname">Kitick</span>, Andrew</span>
+      <span class="roster-name"><span class="surname">Kodali</span>, Sanjay</span>
+      <span class="roster-name"><span class="surname">Kwatra</span>, Aditya</span>
+      <span class="roster-name"><span class="surname">Leja</span>, Blake</span>
+      <span class="roster-name"><span class="surname">Lenza</span>, Marina</span>
+      <span class="roster-name"><span class="surname">Leong</span>, Michael</span>
+      <span class="roster-name"><span class="surname">Li</span>, Maggie</span>
+      <span class="roster-name"><span class="surname">Litton</span>, Peter Taft</span>
+      <span class="roster-name"><span class="surname">Liu</span>, Norris</span>
+      <span class="roster-name"><span class="surname">Louisignau</span>, Ian</span>
+      <span class="roster-name"><span class="surname">Maggi</span>, Carlo</span>
+      <span class="roster-name"><span class="surname">Malloy</span>, Daniel Victor</span>
+      <span class="roster-name"><span class="surname">Marsh</span>, Georgia · <em style="color:var(--ordine-gold)">Maestro</em></span>
+      <span class="roster-name"><span class="surname">Marx</span>, David</span>
+      <span class="roster-name"><span class="surname">Marx</span>, Patricia</span>
+      <span class="roster-name"><span class="surname">Marx</span>, Quintin</span>
+      <span class="roster-name"><span class="surname">Mattox</span>, Alison</span>
+      <span class="roster-name"><span class="surname">McDaniel</span>, Jonathan</span>
+      <span class="roster-name"><span class="surname">Melton</span>, Deonna</span>
+      <span class="roster-name"><span class="surname">Morgan</span>, Steve</span>
+      <span class="roster-name"><span class="surname">Morris</span>, SallyJo</span>
+      <span class="roster-name"><span class="surname">Napolitano Leja</span>, Desiree</span>
+      <span class="roster-name"><span class="surname">Newton</span>, Thomas</span>
+      <span class="roster-name"><span class="surname">Nimmons</span>, Rachel</span>
+      <span class="roster-name"><span class="surname">Northrup</span>, Marcia</span>
+      <span class="roster-name"><span class="surname">O'Haire</span>, Torrence Richard</span>
+      <span class="roster-name"><span class="surname">Pagoria</span>, Nicholas</span>
+      <span class="roster-name"><span class="surname">Patel</span>, Susan</span>
+      <span class="roster-name"><span class="surname">Pilkey</span>, Daniel</span>
+      <span class="roster-name"><span class="surname">Prenger</span>, Jeanette</span>
+      <span class="roster-name"><span class="surname">Qiao</span>, Yulie</span>
+      <span class="roster-name"><span class="surname">Rice</span>, Kim</span>
+      <span class="roster-name"><span class="surname">Robison</span>, Patti</span>
+      <span class="roster-name"><span class="surname">Rosado</span>, Amaury</span>
+      <span class="roster-name"><span class="surname">Rosado</span>, Trisha</span>
+      <span class="roster-name"><span class="surname">Tinaglia</span>, Samuel</span>
+      <span class="roster-name"><span class="surname">Van Gorp</span>, Wilfred</span>
+      <span class="roster-name"><span class="surname">Vila</span>, Mark</span>
+      <span class="roster-name"><span class="surname">Yee</span>, Douglas</span>
+    </div>
+  </section>
+</div>
+
+<!-- =================== CONTACT PAGE =================== -->
+<div class="page" id="contact">
+  <section class="block">
+    <div class="section-head">
+      <div class="eyebrow">Begin the Conversation</div>
+      <div class="ornament"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+      <h2>Contact the Chicago Delegation</h2>
+    </div>
+
+    <div class="contact-block">
+      <div class="contact-info">
+        <h3>Begin with a conversation.</h3>
+        <p>Whether you are a Knight of another delegation, an applicant interested in joining, a hospitality partner, or a curious friend of the Italian table — we'd be glad to hear from you.</p>
+
+        <div class="info-block">
+          <div class="label">The Maestro</div>
+          <p style="margin:0">Georgia Marsh · Maestro<br><a href="mailto:chicagomaster@cavalierdeltartufo.it">chicagomaster@cavalierdeltartufo.it</a></p>
+        </div>
+
+        <div class="info-block">
+          <div class="label">Follow the Delegation</div>
+          <p style="margin:0"><a href="https://www.instagram.com/knightsofalba_chicago/" target="_blank">@knightsofalba_chicago</a> on Instagram</p>
+        </div>
+
+        <div class="info-block">
+          <div class="label">The Order — Headquarters</div>
+          <p style="margin:0">Castello di Grinzane Cavour · Via Castello 5 · 12060 Grinzane Cavour (CN) · Italy<br><a href="https://www.cavalierideltartufo.it/en/" target="_blank">cavalierideltartufo.it</a></p>
+        </div>
+      </div>
+
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you. The Maestro will be in touch.');">
+        <h3>Express your interest</h3>
+        <p class="sub">A few details to begin. We treat your message in confidence.</p>
+        <div class="field"><label>Name</label><input type="text" placeholder="Your full name" required></div>
+        <div class="field"><label>Email</label><input type="email" placeholder="you@example.com" required></div>
+        <div class="field"><label>I am writing as</label>
+          <select>
+            <option>Someone interested in becoming a Knight</option>
+            <option>A Knight of another delegation</option>
+            <option>A hospitality / wine industry partner</option>
+            <option>A guest interested in attending an event</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field"><label>A few words</label><textarea rows="4" placeholder="Tell us a little about your interest in the Order."></textarea></div>
+        <button type="submit" class="btn primary" style="width:100%; margin-top:8px">Send to the Maestro</button>
+      </form>
+    </div>
+  </section>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="assets/logo-cavalieri-tartufo.png" alt="Ordine dei Cavalieri del Tartufo e dei Vini d'Alba">
+        <p>The Chicago Delegation of the Ordine dei Cavalieri del Tartufo e dei Vini d'Alba — a food and wine fellowship established in Piedmont in 1967, brought to Chicago in 2023.</p>
+      </div>
+      <div class="footer-col">
+        <h5>The Order</h5>
+        <a href="https://www.cavalierideltartufo.it/en/la-storia/" target="_blank">History</a>
+        <a href="https://www.cavalierideltartufo.it/en/statuto/" target="_blank">Articles</a>
+        <a href="https://www.cavalierideltartufo.it/en/consiglio-reggitore/" target="_blank">Ruling Council</a>
+        <a href="https://www.cavalierideltartufo.it/en/delegazioni-estere/" target="_blank">Delegations Worldwide</a>
+      </div>
+      <div class="footer-col">
+        <h5>Chicago</h5>
+        <a data-page="chapters">Events</a>
+        <a data-page="past">Gallery</a>
+        <a data-page="knight">Become a Knight</a>
+        <a data-page="roster">The Knights</a>
+      </div>
+      <div class="footer-col">
+        <h5>Connect</h5>
+        <a href="mailto:chicagomaster@cavalierdeltartufo.it">Email the Maestro</a>
+        <a href="https://www.instagram.com/knightsofalba_chicago/" target="_blank">Instagram</a>
+        <a data-page="contact">Contact Form</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© Ordine dei Cavalieri del Tartufo e dei Vini d'Alba · Chicago Delegation</span>
+      <span>Tradition · Culture · Excellence</span>
+    </div>
+  </div>
+</footer>
+
+<!-- DEMO BANNER -->
+<div class="demo-banner">
+  <strong>Concept Prototype</strong>
+  A demonstrative mockup of an enhanced web presence for the Chicago Delegation. Photography and events shown are illustrative.
+</div>
+
+<script>
+  // Page navigation
+  function showPage(id){
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    const target = document.getElementById(id);
+    if(target){
+      target.classList.add('active');
+      window.scrollTo({top:0, behavior:'smooth'});
+    }
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+    const navLink = document.querySelector('.nav-link[data-page="' + id + '"]');
+    if(navLink) navLink.classList.add('active');
+  }
+
+  document.querySelectorAll('[data-page]').forEach(el => {
+    el.addEventListener('click', e => {
+      e.preventDefault();
+      showPage(el.dataset.page);
+    });
+    el.style.cursor = 'pointer';
+  });
+</script>
+
+</body>
+</html>
