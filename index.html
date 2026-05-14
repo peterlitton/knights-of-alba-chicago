@@ -40,10 +40,56 @@
     letter-spacing:0.15em;
     text-transform:uppercase;
     padding:8px 0;
-    text-align:center;
     font-weight:300;
   }
+  .topstrip-inner{
+    max-width:1280px;
+    margin:0 auto;
+    padding:0 40px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:24px;
+  }
+  .topstrip-text{
+    flex:1;
+    text-align:center;
+  }
+  .topstrip-spacer{
+    width:64px; /* mirrors lang switcher width for visual balance */
+    flex-shrink:0;
+  }
   .topstrip a{color:var(--ordine-gold-light); text-decoration:none; margin-left:6px}
+
+  /* LANGUAGE SWITCHER */
+  .lang-switch{
+    display:flex;
+    align-items:center;
+    gap:4px;
+    flex-shrink:0;
+  }
+  .lang-btn{
+    background:transparent;
+    border:1px solid transparent;
+    padding:3px 6px;
+    cursor:pointer;
+    border-radius:2px;
+    transition:all 0.2s ease;
+    line-height:0;
+    opacity:0.55;
+    font-family:inherit;
+  }
+  .lang-btn:hover{opacity:0.9}
+  .lang-btn.active{
+    opacity:1;
+    border-color:var(--ordine-gold);
+  }
+  .lang-btn svg{
+    display:block;
+    width:22px;
+    height:14px;
+    border-radius:1px;
+  }
 
   /* HEADER */
   header{
@@ -729,6 +775,9 @@
     section.block{padding:60px 24px}
     .header-inner{padding:14px 20px}
     .brand-text .city{font-size:18px}
+    .topstrip-inner{padding:0 16px; gap:12px}
+    .topstrip-text{font-size:10px; letter-spacing:0.1em}
+    .topstrip-spacer{display:none}
   }
 </style>
 </head>
@@ -736,8 +785,40 @@
 
 <!-- TOP STRIP -->
 <div class="topstrip">
-  Ordine dei Cavalieri del Tartufo e dei Vini d'Alba · Founded 1967 · 
-  <a href="https://www.cavalierideltartufo.it/en/" target="_blank">Visit the Order →</a>
+  <div class="topstrip-inner">
+    <div class="topstrip-spacer"></div>
+    <div class="topstrip-text">
+      <span data-i18n="topstrip.line">Ordine dei Cavalieri del Tartufo e dei Vini d'Alba · Founded 1967</span> · 
+      <a href="https://www.cavalierideltartufo.it/en/" target="_blank" data-i18n="topstrip.link">Visit the Order →</a>
+    </div>
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button class="lang-btn active" data-lang="en" aria-label="English" title="English">
+        <svg viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg">
+          <clipPath id="us-c"><rect width="60" height="30"/></clipPath>
+          <g clip-path="url(#us-c)">
+            <rect width="60" height="30" fill="#B22234"/>
+            <path d="M0,3.46h60M0,10.38h60M0,17.31h60M0,24.23h60" stroke="#FFF" stroke-width="2.31"/>
+            <rect width="24" height="16.15" fill="#3C3B6E"/>
+            <g fill="#FFF" font-size="2.4">
+              <text x="2" y="3" font-family="sans-serif">★ ★ ★ ★ ★ ★</text>
+              <text x="3.5" y="5.5" font-family="sans-serif">★ ★ ★ ★ ★</text>
+              <text x="2" y="8" font-family="sans-serif">★ ★ ★ ★ ★ ★</text>
+              <text x="3.5" y="10.5" font-family="sans-serif">★ ★ ★ ★ ★</text>
+              <text x="2" y="13" font-family="sans-serif">★ ★ ★ ★ ★ ★</text>
+              <text x="3.5" y="15.5" font-family="sans-serif">★ ★ ★ ★ ★</text>
+            </g>
+          </g>
+        </svg>
+      </button>
+      <button class="lang-btn" data-lang="it" aria-label="Italiano" title="Italiano">
+        <svg viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg">
+          <rect width="20" height="30" fill="#009246"/>
+          <rect x="20" width="20" height="30" fill="#FFF"/>
+          <rect x="40" width="20" height="30" fill="#CE2B37"/>
+        </svg>
+      </button>
+    </div>
+  </div>
 </div>
 
 <!-- HEADER -->
@@ -746,17 +827,17 @@
     <a class="brand" data-page="home">
       <img src="assets/logo-cavalieri-tartufo.png" alt="Ordine dei Cavalieri del Tartufo e dei Vini d'Alba">
       <div class="brand-text">
-        <span class="order">Ordine dei Cavalieri</span>
-        <span class="city">Chicago Delegation</span>
+        <span class="order" data-i18n="brand.order">Ordine dei Cavalieri</span>
+        <span class="city" data-i18n="brand.city">Chicago Delegation</span>
       </div>
     </a>
     <nav class="primary">
-      <a class="nav-link active" data-page="home">Home</a>
-      <a class="nav-link" data-page="chapters">Events</a>
-      <a class="nav-link" data-page="past">Gallery</a>
-      <a class="nav-link" data-page="knight">Become a Knight</a>
-      <a class="nav-link" data-page="roster">The Knights</a>
-      <a class="nav-link" data-page="contact">Contact</a>
+      <a class="nav-link active" data-page="home" data-i18n="nav.home">Home</a>
+      <a class="nav-link" data-page="chapters" data-i18n="nav.events">Events</a>
+      <a class="nav-link" data-page="past" data-i18n="nav.gallery">Gallery</a>
+      <a class="nav-link" data-page="knight" data-i18n="nav.knight">Become a Knight</a>
+      <a class="nav-link" data-page="roster" data-i18n="nav.knights">The Knights</a>
+      <a class="nav-link" data-page="contact" data-i18n="nav.contact">Contact</a>
     </nav>
   </div>
 </header>
@@ -767,13 +848,13 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
-      <div class="eyebrow">Chicago Delegation · Established May 9, 2023</div>
+      <div class="eyebrow" data-i18n="hero.eyebrow">Chicago Delegation · Established May 9, 2023</div>
       <div class="ornament"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
-      <h1 class="hero-title">A fellowship of <em>fine wine</em> &amp; <em>fine dining</em> in the heart of Chicago.</h1>
-      <p class="hero-sub">An invitation to celebrate the white truffle of Alba, the great wines of the Langhe, and the enduring culture of the Italian table — convened in the city we call home.</p>
+      <h1 class="hero-title" data-i18n-html="hero.title">A fellowship of <em>fine wine</em> &amp; <em>fine dining</em> in the heart of Chicago.</h1>
+      <p class="hero-sub" data-i18n="hero.sub">An invitation to celebrate the white truffle of Alba, the great wines of the Langhe, and the enduring culture of the Italian table — convened in the city we call home.</p>
       <div class="cta-row">
-        <a class="btn primary" data-page="knight">Become a Knight</a>
-        <a class="btn" data-page="chapters">Upcoming Events</a>
+        <a class="btn primary" data-page="knight" data-i18n="cta.become">Become a Knight</a>
+        <a class="btn" data-page="chapters" data-i18n="cta.upcoming">Upcoming Events</a>
       </div>
     </div>
   </section>
@@ -783,14 +864,14 @@
     <div class="mission-grid">
       <div class="mission-image">
         <img src="images/chicago-induction.png" alt="The Chicago Delegation gathered with Maestro Georgia Marsh">
-        <div class="badge">Inducted Chicago Class<strong>2024</strong></div>
+        <div class="badge" data-i18n-html="mission.badge">Inducted Chicago Class<strong>2024</strong></div>
       </div>
       <div class="mission-text">
-        <div class="eyebrow" style="color:var(--ordine-gold)">Our Purpose</div>
-        <h2>To honor a tradition. To enrich a city.</h2>
-        <p class="intro">The Order of Knights of the Truffle and Wines of Alba was born in 1967 in a small trattoria in Grinzane Cavour. Today, it spans five continents.</p>
-        <p>Chicago joined this fellowship in 2023 under the guidance of Maestro Georgia Marsh — and in doing so, accepted a quiet responsibility: to steward, in our city, a culture of wine, food, and conviviality that has been honed in Piedmont for centuries.</p>
-        <p>Our Knights are sommeliers and surgeons, restaurateurs and architects, vintners and venture capitalists. What unites us is sincere passion for the table, and a belief that the best things in life are shared.</p>
+        <div class="eyebrow" style="color:var(--ordine-gold)" data-i18n="mission.eyebrow">Our Purpose</div>
+        <h2 data-i18n="mission.title">To honor a tradition. To enrich a city.</h2>
+        <p class="intro" data-i18n="mission.intro">The Order of Knights of the Truffle and Wines of Alba was born in 1967 in a small trattoria in Grinzane Cavour. Today, it spans five continents.</p>
+        <p data-i18n="mission.p1">Chicago joined this fellowship in 2023 under the guidance of Maestro Georgia Marsh — and in doing so, accepted a quiet responsibility: to steward, in our city, a culture of wine, food, and conviviality that has been honed in Piedmont for centuries.</p>
+        <p data-i18n="mission.p2">Our Knights are sommeliers and surgeons, restaurateurs and architects, vintners and venture capitalists. What unites us is sincere passion for the table, and a belief that the best things in life are shared.</p>
       </div>
     </div>
   </section>
@@ -798,9 +879,9 @@
   <!-- THREE PILLARS -->
   <section class="block tight">
     <div class="section-head">
-      <div class="eyebrow">Tradition · Culture · Excellence</div>
+      <div class="eyebrow" data-i18n="pillars.eyebrow">Tradition · Culture · Excellence</div>
       <div class="ornament"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
-      <h2>Three pillars of the Order</h2>
+      <h2 data-i18n="pillars.title">Three pillars of the Order</h2>
     </div>
     <div class="pillars">
       <div class="pillar">
@@ -811,8 +892,8 @@
             <circle cx="32" cy="32" r="6"/>
           </svg>
         </div>
-        <h3>The Alba White Truffle</h3>
-        <p>Tuber magnatum pico — the most prized truffle in the world, harvested in the woods around Alba. The Order safeguards its name, its season, and its rituals at the table.</p>
+        <h3 data-i18n="pillars.truffle.title">The Alba White Truffle</h3>
+        <p data-i18n="pillars.truffle.body">Tuber magnatum pico — the most prized truffle in the world, harvested in the woods around Alba. The Order safeguards its name, its season, and its rituals at the table.</p>
       </div>
       <div class="pillar">
         <div class="icon">
@@ -822,8 +903,8 @@
             <path d="M22 56 L42 56"/>
           </svg>
         </div>
-        <h3>The Wines of the Langhe</h3>
-        <p>Barolo. Barbaresco. Roero. Barbera d'Alba. Dolcetto. Nebbiolo. The Order curates an annual Selection of the finest wines from the great designations of Piedmont.</p>
+        <h3 data-i18n="pillars.wines.title">The Wines of the Langhe</h3>
+        <p data-i18n="pillars.wines.body">Barolo. Barbaresco. Roero. Barbera d'Alba. Dolcetto. Nebbiolo. The Order curates an annual Selection of the finest wines from the great designations of Piedmont.</p>
       </div>
       <div class="pillar">
         <div class="icon">
@@ -833,8 +914,8 @@
             <path d="M22 36 L42 36 M22 44 L42 44"/>
           </svg>
         </div>
-        <h3>The Italian Table</h3>
-        <p>Beyond food and wine: the unhurried ritual of breaking bread, the toast that means something, the long lunch as a form of friendship. We hold the line, here in Chicago.</p>
+        <h3 data-i18n="pillars.table.title">The Italian Table</h3>
+        <p data-i18n="pillars.table.body">Beyond food and wine: the unhurried ritual of breaking bread, the toast that means something, the long lunch as a form of friendship. We hold the line, here in Chicago.</p>
       </div>
     </div>
   </section>
@@ -842,54 +923,54 @@
   <!-- UPCOMING EVENTS PREVIEW -->
   <section class="block events">
     <div class="section-head">
-      <div class="eyebrow">Calendar of Events</div>
+      <div class="eyebrow" data-i18n="events.eyebrow">Calendar of Events</div>
       <div class="ornament"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
-      <h2>Upcoming gatherings</h2>
-      <p class="lede">Knights-only events span <em>formal black-tie induction ceremonies</em> to <em>backyard burgers and Barolo</em> — and everything in between.</p>
+      <h2 data-i18n="events.title">Upcoming gatherings</h2>
+      <p class="lede" data-i18n-html="events.lede">Knights-only events span <em>formal black-tie induction ceremonies</em> to <em>backyard burgers and Barolo</em> — and everything in between.</p>
     </div>
     <div class="event-list">
       <div class="event">
         <div class="event-date">
-          <div class="month">Nov</div>
+          <div class="month" data-i18n="month.nov">Nov</div>
           <div class="day">14</div>
           <div class="year">2025</div>
         </div>
         <div class="event-body">
-          <h4>White Truffle Gala &amp; Investiture Ceremony</h4>
-          <div class="venue">Members &amp; Guests · Black Tie · Chicago</div>
-          <p>Our marquee evening of the year, coinciding with the height of the Alba white truffle season. New Knights are inducted; the table is set for the occasion.</p>
+          <h4 data-i18n="ev.gala.title">White Truffle Gala &amp; Investiture Ceremony</h4>
+          <div class="venue" data-i18n="ev.gala.venue">Members &amp; Guests · Black Tie · Chicago</div>
+          <p data-i18n="ev.gala.body">Our marquee evening of the year, coinciding with the height of the Alba white truffle season. New Knights are inducted; the table is set for the occasion.</p>
         </div>
-        <div class="event-cta">Reserve</div>
+        <div class="event-cta" data-i18n="cta.reserve">Reserve</div>
       </div>
       <div class="event">
         <div class="event-date">
-          <div class="month">Jan</div>
+          <div class="month" data-i18n="month.jan">Jan</div>
           <div class="day">22</div>
           <div class="year">2026</div>
         </div>
         <div class="event-body">
-          <h4>Vertical Tasting: A Decade of Barolo</h4>
-          <div class="venue">Knights Only · Private Cellar Tasting</div>
-          <p>An intimate vertical drawn from a single estate, guided by a guest sommelier from Piedmont. Limited to twenty seats.</p>
+          <h4 data-i18n="ev.vertical.title">Vertical Tasting: A Decade of Barolo</h4>
+          <div class="venue" data-i18n="ev.vertical.venue">Knights Only · Private Cellar Tasting</div>
+          <p data-i18n="ev.vertical.body">An intimate vertical drawn from a single estate, guided by a guest sommelier from Piedmont. Limited to twenty seats.</p>
         </div>
-        <div class="event-cta">RSVP</div>
+        <div class="event-cta" data-i18n="cta.rsvp">RSVP</div>
       </div>
       <div class="event">
         <div class="event-date">
-          <div class="month">Jul</div>
+          <div class="month" data-i18n="month.jul">Jul</div>
           <div class="day">25</div>
           <div class="year">2026</div>
         </div>
         <div class="event-body">
-          <h4>Backyard Burgers &amp; Barolo</h4>
-          <div class="venue">Knights &amp; Guests · Casual</div>
-          <p>A reminder that this fellowship isn't only about black tie. Great Nebbiolo deserves a charcoal grill once a year, too.</p>
+          <h4 data-i18n="ev.burgers.title">Backyard Burgers &amp; Barolo</h4>
+          <div class="venue" data-i18n="ev.burgers.venue">Knights &amp; Guests · Casual</div>
+          <p data-i18n="ev.burgers.body">A reminder that this fellowship isn't only about black tie. Great Nebbiolo deserves a charcoal grill once a year, too.</p>
         </div>
-        <div class="event-cta">RSVP</div>
+        <div class="event-cta" data-i18n="cta.rsvp">RSVP</div>
       </div>
     </div>
     <div style="text-align:center; margin-top:40px">
-      <a class="btn dark" data-page="chapters">View All Events →</a>
+      <a class="btn dark" data-page="chapters" data-i18n="cta.viewAll">View All Events →</a>
     </div>
   </section>
 
@@ -897,18 +978,18 @@
   <section class="testimonials">
     <div class="inner">
       <div class="section-head">
-        <div class="eyebrow">Voices of the Delegation</div>
+        <div class="eyebrow" data-i18n="test.eyebrow">Voices of the Delegation</div>
         <div class="ornament"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
-        <h2>What it means to be a Knight</h2>
+        <h2 data-i18n="test.title">What it means to be a Knight</h2>
       </div>
       <div class="test-grid">
         <div class="testimonial">
-          <blockquote>To be a Knight is to belong to a tradition older and larger than oneself — and yet to find, in our Chicago gatherings, something entirely new: friendships forged over a shared reverence for the Italian table.</blockquote>
-          <div class="attr"><span class="name">A Chicago Knight</span>Industry Professional · Inducted 2024</div>
+          <blockquote data-i18n="test.q1">To be a Knight is to belong to a tradition older and larger than oneself — and yet to find, in our Chicago gatherings, something entirely new: friendships forged over a shared reverence for the Italian table.</blockquote>
+          <div class="attr"><span class="name" data-i18n="test.attr">A Chicago Knight</span><span data-i18n="test.q1.attr">Industry Professional · Inducted 2024</span></div>
         </div>
         <div class="testimonial">
-          <blockquote>The Order asks one thing of its members: sincere passion. Everything that follows — the wines, the meals, the company — is a reward for that passion.</blockquote>
-          <div class="attr"><span class="name">A Chicago Knight</span>Passionate Consumer · Inducted 2025</div>
+          <blockquote data-i18n="test.q2">The Order asks one thing of its members: sincere passion. Everything that follows — the wines, the meals, the company — is a reward for that passion.</blockquote>
+          <div class="attr"><span class="name" data-i18n="test.attr">A Chicago Knight</span><span data-i18n="test.q2.attr">Passionate Consumer · Inducted 2025</span></div>
         </div>
       </div>
     </div>
@@ -917,36 +998,36 @@
   <!-- JOURNAL PREVIEW -->
   <section class="block journal">
     <div class="section-head">
-      <div class="eyebrow">Dispatches</div>
+      <div class="eyebrow" data-i18n="journal.eyebrow">Dispatches</div>
       <div class="ornament"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
-      <h2>From the Chicago Journal</h2>
+      <h2 data-i18n="journal.title">From the Chicago Journal</h2>
     </div>
     <div class="journal-grid">
       <div class="article">
         <div class="article-image"><img src="images/barolo-tasting.png" alt="Barolo Riserva"></div>
         <div class="article-body">
-          <div class="category">World of Wine</div>
-          <h4>Why 2019 may be a generational Barolo vintage</h4>
-          <p>Notes from a Knights-only vertical tasting hosted in River North last spring, with reflections from the Maestro and a guest enologist.</p>
-          <div class="date">October 2025</div>
+          <div class="category" data-i18n="journal.cat.wine">World of Wine</div>
+          <h4 data-i18n="journal.a1.title">Why 2019 may be a generational Barolo vintage</h4>
+          <p data-i18n="journal.a1.body">Notes from a Knights-only vertical tasting hosted in River North last spring, with reflections from the Maestro and a guest enologist.</p>
+          <div class="date" data-i18n="journal.a1.date">October 2025</div>
         </div>
       </div>
       <div class="article">
         <div class="article-image"><img src="images/white-truffles.png" alt="White truffles"></div>
         <div class="article-body">
-          <div class="category">Good Food Culture</div>
-          <h4>His Majesty arrives in Chicago: a primer on the Alba white truffle</h4>
-          <p>What it is, what it isn't, and how to taste one properly — written for our newest Knights and curious guests alike.</p>
-          <div class="date">September 2025</div>
+          <div class="category" data-i18n="journal.cat.food">Good Food Culture</div>
+          <h4 data-i18n="journal.a2.title">His Majesty arrives in Chicago: a primer on the Alba white truffle</h4>
+          <p data-i18n="journal.a2.body">What it is, what it isn't, and how to taste one properly — written for our newest Knights and curious guests alike.</p>
+          <div class="date" data-i18n="journal.a2.date">September 2025</div>
         </div>
       </div>
       <div class="article">
         <div class="article-image"><img src="images/investiture-ceremony.png" alt="Investiture ceremony"></div>
         <div class="article-body">
-          <div class="category">Event Recap</div>
-          <h4>The 2024 Investiture: eleven new Knights for Chicago</h4>
-          <p>A photo essay from our most recent ceremony — the robes, the medallions, the moment of induction. With remarks from Maestro Georgia Marsh.</p>
-          <div class="date">December 2024</div>
+          <div class="category" data-i18n="journal.cat.recap">Event Recap</div>
+          <h4 data-i18n="journal.a3.title">The 2024 Investiture: eleven new Knights for Chicago</h4>
+          <p data-i18n="journal.a3.body">A photo essay from our most recent ceremony — the robes, the medallions, the moment of induction. With remarks from Maestro Georgia Marsh.</p>
+          <div class="date" data-i18n="journal.a3.date">December 2024</div>
         </div>
       </div>
     </div>
@@ -958,75 +1039,75 @@
 <div class="page" id="chapters">
   <section class="block" style="padding-top:80px">
     <div class="section-head">
-      <div class="eyebrow">Calendar of Events · 2025–2026</div>
+      <div class="eyebrow" data-i18n="evpage.eyebrow">Calendar of Events · 2025–2026</div>
       <div class="ornament"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
-      <h2>Where the Delegation gathers</h2>
-      <p class="lede">Knights-only events span <em>formal black-tie induction ceremonies</em> to <em>backyard burgers and Barolo</em> — and everything in between.</p>
+      <h2 data-i18n="evpage.title">Where the Delegation gathers</h2>
+      <p class="lede" data-i18n-html="evpage.lede">Knights-only events span <em>formal black-tie induction ceremonies</em> to <em>backyard burgers and Barolo</em> — and everything in between.</p>
     </div>
 
     <div class="event-list">
       <div class="event">
-        <div class="event-date"><div class="month">Nov</div><div class="day">14</div><div class="year">2025</div></div>
+        <div class="event-date"><div class="month" data-i18n="month.nov">Nov</div><div class="day">14</div><div class="year">2025</div></div>
         <div class="event-body">
-          <h4>White Truffle Gala &amp; Investiture Ceremony</h4>
-          <div class="venue">Black Tie · Members &amp; Guests</div>
-          <p>The signature evening of our year. Investiture of new Knights, an Alba truffle menu, and a wine flight curated by the Tasting Committee.</p>
+          <h4 data-i18n="ev.gala.title">White Truffle Gala &amp; Investiture Ceremony</h4>
+          <div class="venue" data-i18n="ev.gala2.venue">Black Tie · Members &amp; Guests</div>
+          <p data-i18n="ev.gala2.body">The signature evening of our year. Investiture of new Knights, an Alba truffle menu, and a wine flight curated by the Tasting Committee.</p>
         </div>
-        <div class="event-cta">Reserve</div>
+        <div class="event-cta" data-i18n="cta.reserve">Reserve</div>
       </div>
       <div class="event">
-        <div class="event-date"><div class="month">Jan</div><div class="day">22</div><div class="year">2026</div></div>
+        <div class="event-date"><div class="month" data-i18n="month.jan">Jan</div><div class="day">22</div><div class="year">2026</div></div>
         <div class="event-body">
-          <h4>Vertical Tasting: A Decade of Barolo</h4>
-          <div class="venue">Knights Only · Twenty Seats</div>
-          <p>2014–2023, one estate, one room. Led by a visiting sommelier from the Langhe.</p>
+          <h4 data-i18n="ev.vertical.title">Vertical Tasting: A Decade of Barolo</h4>
+          <div class="venue" data-i18n="ev.vertical2.venue">Knights Only · Twenty Seats</div>
+          <p data-i18n="ev.vertical2.body">2014–2023, one estate, one room. Led by a visiting sommelier from the Langhe.</p>
         </div>
-        <div class="event-cta">RSVP</div>
+        <div class="event-cta" data-i18n="cta.rsvp">RSVP</div>
       </div>
       <div class="event">
-        <div class="event-date"><div class="month">Feb</div><div class="day">18</div><div class="year">2026</div></div>
+        <div class="event-date"><div class="month" data-i18n="month.feb">Feb</div><div class="day">18</div><div class="year">2026</div></div>
         <div class="event-body">
-          <h4>Knights &amp; Chefs: A Collaborative Dinner</h4>
-          <div class="venue">Members &amp; One Guest Each</div>
-          <p>A Chicago chef in conversation with a Piedmontese counterpart, by long-distance and at the stove. Four courses, four wines.</p>
+          <h4 data-i18n="ev.chefs.title">Knights &amp; Chefs: A Collaborative Dinner</h4>
+          <div class="venue" data-i18n="ev.chefs.venue">Members &amp; One Guest Each</div>
+          <p data-i18n="ev.chefs.body">A Chicago chef in conversation with a Piedmontese counterpart, by long-distance and at the stove. Four courses, four wines.</p>
         </div>
-        <div class="event-cta">RSVP</div>
+        <div class="event-cta" data-i18n="cta.rsvp">RSVP</div>
       </div>
       <div class="event">
-        <div class="event-date"><div class="month">Mar</div><div class="day">7</div><div class="year">2026</div></div>
+        <div class="event-date"><div class="month" data-i18n="month.mar">Mar</div><div class="day">7</div><div class="year">2026</div></div>
         <div class="event-body">
-          <h4>Spring Aspirants' Dinner</h4>
-          <div class="venue">Open to Aspirants · Five Courses</div>
-          <p>An open evening for prospective Knights to dine alongside the Delegation. The Maestro presents the work of the Order.</p>
+          <h4 data-i18n="ev.spring.title">Spring Aspirants' Dinner</h4>
+          <div class="venue" data-i18n="ev.spring.venue">Open to Aspirants · Five Courses</div>
+          <p data-i18n="ev.spring.body">An open evening for prospective Knights to dine alongside the Delegation. The Maestro presents the work of the Order.</p>
         </div>
-        <div class="event-cta">Inquire</div>
+        <div class="event-cta" data-i18n="cta.inquire">Inquire</div>
       </div>
       <div class="event">
-        <div class="event-date"><div class="month">Apr</div><div class="day">24</div><div class="year">2026</div></div>
+        <div class="event-date"><div class="month" data-i18n="month.apr">Apr</div><div class="day">24</div><div class="year">2026</div></div>
         <div class="event-body">
-          <h4>Nebbiolo Beyond Barolo</h4>
-          <div class="venue">Knights Only · Walk-around Tasting</div>
-          <p>A focused exploration of Roero, Carema, Gattinara, and Valtellina — Nebbiolo's quieter expressions.</p>
+          <h4 data-i18n="ev.nebbiolo.title">Nebbiolo Beyond Barolo</h4>
+          <div class="venue" data-i18n="ev.nebbiolo.venue">Knights Only · Walk-around Tasting</div>
+          <p data-i18n="ev.nebbiolo.body">A focused exploration of Roero, Carema, Gattinara, and Valtellina — Nebbiolo's quieter expressions.</p>
         </div>
-        <div class="event-cta">RSVP</div>
+        <div class="event-cta" data-i18n="cta.rsvp">RSVP</div>
       </div>
       <div class="event">
-        <div class="event-date"><div class="month">Jun</div><div class="day">12</div><div class="year">2026</div></div>
+        <div class="event-date"><div class="month" data-i18n="month.jun">Jun</div><div class="day">12</div><div class="year">2026</div></div>
         <div class="event-body">
-          <h4>Summer Evening al Fresco</h4>
-          <div class="venue">Members &amp; Guests · Rooftop Setting</div>
-          <p>A Piedmontese summer menu — vitello tonnato, fritto misto, peaches in Moscato — with Arneis and Favorita.</p>
+          <h4 data-i18n="ev.summer.title">Summer Evening al Fresco</h4>
+          <div class="venue" data-i18n="ev.summer.venue">Members &amp; Guests · Rooftop Setting</div>
+          <p data-i18n="ev.summer.body">A Piedmontese summer menu — vitello tonnato, fritto misto, peaches in Moscato — with Arneis and Favorita.</p>
         </div>
-        <div class="event-cta">Reserve</div>
+        <div class="event-cta" data-i18n="cta.reserve">Reserve</div>
       </div>
       <div class="event">
-        <div class="event-date"><div class="month">Jul</div><div class="day">25</div><div class="year">2026</div></div>
+        <div class="event-date"><div class="month" data-i18n="month.jul">Jul</div><div class="day">25</div><div class="year">2026</div></div>
         <div class="event-body">
-          <h4>Backyard Burgers &amp; Barolo</h4>
-          <div class="venue">Knights &amp; Guests · Casual</div>
-          <p>A reminder that this fellowship isn't only about black tie. Great Nebbiolo deserves a charcoal grill once a year, too.</p>
+          <h4 data-i18n="ev.burgers.title">Backyard Burgers &amp; Barolo</h4>
+          <div class="venue" data-i18n="ev.burgers.venue">Knights &amp; Guests · Casual</div>
+          <p data-i18n="ev.burgers.body">A reminder that this fellowship isn't only about black tie. Great Nebbiolo deserves a charcoal grill once a year, too.</p>
         </div>
-        <div class="event-cta">RSVP</div>
+        <div class="event-cta" data-i18n="cta.rsvp">RSVP</div>
       </div>
     </div>
   </section>
@@ -1036,60 +1117,60 @@
 <div class="page" id="past">
   <section class="block past-gallery">
     <div class="section-head">
-      <div class="eyebrow">Relive the Events</div>
+      <div class="eyebrow" data-i18n="gal.eyebrow">Relive the Events</div>
       <div class="ornament"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
-      <h2>The Delegation in pictures</h2>
-      <p class="lede">A visual record of recent Chicago events — the dinners, the investitures, the bottles, the bonds.</p>
+      <h2 data-i18n="gal.title">The Delegation in pictures</h2>
+      <p class="lede" data-i18n="gal.lede">A visual record of recent Chicago events — the dinners, the investitures, the bottles, the bonds.</p>
     </div>
 
     <div class="gallery-grid">
       <div class="gallery-item gal-1">
         <img src="images/chicago-induction.png" alt="Chicago Delegation with Maestro Georgia Marsh">
         <div class="caption">
-          <div class="label">Investiture · Chicago · 2024</div>
-          <h5>New Knights of the Chicago Delegation, with Maestro Georgia Marsh</h5>
+          <div class="label" data-i18n="gal.1.label">Investiture · Chicago · 2024</div>
+          <h5 data-i18n="gal.1.title">New Knights of the Chicago Delegation, with Maestro Georgia Marsh</h5>
         </div>
       </div>
       <div class="gallery-item gal-2">
         <img src="images/white-truffles.png" alt="White truffles">
         <div class="caption">
-          <div class="label">Alba · 2024</div>
-          <h5>His Majesty, the Alba White Truffle</h5>
+          <div class="label" data-i18n="gal.2.label">Alba · 2024</div>
+          <h5 data-i18n="gal.2.title">His Majesty, the Alba White Truffle</h5>
         </div>
       </div>
       <div class="gallery-item gal-3">
         <img src="images/investiture-ceremony.png" alt="Investiture ceremony">
         <div class="caption">
-          <div class="label">The Rite of Investiture</div>
-          <h5>A new Knight receives the medallion</h5>
+          <div class="label" data-i18n="gal.3.label">The Rite of Investiture</div>
+          <h5 data-i18n="gal.3.title">A new Knight receives the medallion</h5>
         </div>
       </div>
       <div class="gallery-item gal-4">
         <img src="images/barolo-tasting.png" alt="Barolo Riserva">
         <div class="caption">
-          <div class="label">Tasting · River North · 2025</div>
-          <h5>A vertical of Sordo Barolo Riserva</h5>
+          <div class="label" data-i18n="gal.4.label">Tasting · River North · 2025</div>
+          <h5 data-i18n="gal.4.title">A vertical of Sordo Barolo Riserva</h5>
         </div>
       </div>
       <div class="gallery-item gal-5">
         <img src="images/international-robes.png" alt="International delegations in full robes">
         <div class="caption">
-          <div class="label">Grinzane Cavour · 2025</div>
-          <h5>The Order's international Maestri convene at the Castle</h5>
+          <div class="label" data-i18n="gal.5.label">Grinzane Cavour · 2025</div>
+          <h5 data-i18n="gal.5.title">The Order's international Maestri convene at the Castle</h5>
         </div>
       </div>
       <div class="gallery-item gal-6">
         <img src="images/castle-council.png" alt="Council at Castello di Grinzane Cavour">
         <div class="caption">
-          <div class="label">Headquarters · Piedmont</div>
-          <h5>The Ruling Council at the Castle of Grinzane Cavour</h5>
+          <div class="label" data-i18n="gal.6.label">Headquarters · Piedmont</div>
+          <h5 data-i18n="gal.6.title">The Ruling Council at the Castle of Grinzane Cavour</h5>
         </div>
       </div>
       <div class="gallery-item gal-7">
         <img src="assets/castle.jpg" alt="Castello di Grinzane Cavour amid the vineyards">
         <div class="caption">
-          <div class="label">The Langhe · UNESCO World Heritage</div>
-          <h5>Home of the Order, since 1967</h5>
+          <div class="label" data-i18n="gal.7.label">The Langhe · UNESCO World Heritage</div>
+          <h5 data-i18n="gal.7.title">Home of the Order, since 1967</h5>
         </div>
       </div>
     </div>
@@ -1099,57 +1180,57 @@
 <!-- =================== BECOME A KNIGHT PAGE =================== -->
 <div class="page" id="knight">
   <section class="knight-cta">
-    <div class="eyebrow">The Title of Knight</div>
+    <div class="eyebrow" data-i18n="knight.eyebrow">The Title of Knight</div>
     <div class="ornament"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
-    <h2 style="font-family:'Cormorant Garamond', serif; font-size:clamp(40px, 6vw, 72px); font-weight:500; margin:0 0 24px; max-width:900px; margin-left:auto; margin-right:auto">A sincere passion for the food and wine of Piedmont.</h2>
-    <p class="lede" style="max-width:760px; margin:0 auto 0; font-family:'Cormorant Garamond', serif; font-size:22px; font-style:italic; line-height:1.5;">Since 1967, the Order has knighted people from around the world who share a genuine interest in — and passion for — the cuisine, wines, and landscape of the Langhe. Anyone who shares that passion may apply.</p>
+    <h2 style="font-family:'Cormorant Garamond', serif; font-size:clamp(40px, 6vw, 72px); font-weight:500; margin:0 0 24px; max-width:900px; margin-left:auto; margin-right:auto" data-i18n="knight.title">A sincere passion for the food and wine of Piedmont.</h2>
+    <p class="lede" style="max-width:760px; margin:0 auto 0; font-family:'Cormorant Garamond', serif; font-size:22px; font-style:italic; line-height:1.5;" data-i18n="knight.lede">Since 1967, the Order has knighted people from around the world who share a genuine interest in — and passion for — the cuisine, wines, and landscape of the Langhe. Anyone who shares that passion may apply.</p>
 
     <div class="knight-steps">
       <div class="step">
-        <div class="num">Step One</div>
-        <h4>Submit Your Application</h4>
-        <p>Complete the official application form and curriculum vitae. Send both by email to the Order's secretariat at <a href="mailto:segreteria@cavalierideltartufo.it" style="color:var(--ordine-gold-light); border-bottom:1px solid var(--ordine-gold-light); text-decoration:none">segreteria@cavalierideltartufo.it</a>, indicating Chicago as your Delegation of choice.</p>
-        <p style="margin-top:14px"><a href="https://www.cavalierideltartufo.it/wp-content/uploads/2026/02/APPLICATION-FORM-AND-CV.doc" target="_blank" style="display:inline-block; padding:10px 20px; border:1px solid var(--ordine-gold-light); color:var(--ordine-gold-light); text-decoration:none; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; font-weight:600">Download Application →</a></p>
+        <div class="num" data-i18n="knight.s1.num">Step One</div>
+        <h4 data-i18n="knight.s1.title">Submit Your Application</h4>
+        <p data-i18n-html="knight.s1.body">Complete the official application form and curriculum vitae. Send both by email to the Order's secretariat at <a href="mailto:segreteria@cavalierideltartufo.it" style="color:var(--ordine-gold-light); border-bottom:1px solid var(--ordine-gold-light); text-decoration:none">segreteria@cavalierideltartufo.it</a>, indicating Chicago as your Delegation of choice.</p>
+        <p style="margin-top:14px"><a href="https://www.cavalierideltartufo.it/wp-content/uploads/2026/02/APPLICATION-FORM-AND-CV.doc" target="_blank" style="display:inline-block; padding:10px 20px; border:1px solid var(--ordine-gold-light); color:var(--ordine-gold-light); text-decoration:none; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; font-weight:600" data-i18n="knight.s1.cta">Download Application →</a></p>
       </div>
       <div class="step">
-        <div class="num">Step Two</div>
-        <h4>Admission &amp; Annual Fees</h4>
-        <p>Upon acceptance, an entrance fee (set by the Chicago Delegation Council) and the first-year membership fee are due. Both can be paid by credit card, PayPal, or bank transfer through the Order.</p>
-        <p style="margin-top:14px">Included: the Collar with personalized Medallion, the Certificate of Proclamation, photographs of your Investiture, and the annual membership card — which carries a 10% discount on purchases at the Castle of Grinzane.</p>
+        <div class="num" data-i18n="knight.s2.num">Step Two</div>
+        <h4 data-i18n="knight.s2.title">Admission &amp; Annual Fees</h4>
+        <p data-i18n="knight.s2.body1">Upon acceptance, an entrance fee (set by the Chicago Delegation Council) and the first-year membership fee are due. Both can be paid by credit card, PayPal, or bank transfer through the Order.</p>
+        <p style="margin-top:14px" data-i18n="knight.s2.body2">Included: the Collar with personalized Medallion, the Certificate of Proclamation, photographs of your Investiture, and the annual membership card — which carries a 10% discount on purchases at the Castle of Grinzane.</p>
       </div>
       <div class="step">
-        <div class="num">Step Three</div>
-        <h4>Investiture in Robes</h4>
-        <p>New Knights are formally invested at a Chicago ceremony, receiving the Collar of the Order and the ribbon of the Cavalieri. From that evening forward, you have the right to attend any event of the Order worldwide — and to present new Knights of your own.</p>
+        <div class="num" data-i18n="knight.s3.num">Step Three</div>
+        <h4 data-i18n="knight.s3.title">Investiture in Robes</h4>
+        <p data-i18n="knight.s3.body">New Knights are formally invested at a Chicago ceremony, receiving the Collar of the Order and the ribbon of the Cavalieri. From that evening forward, you have the right to attend any event of the Order worldwide — and to present new Knights of your own.</p>
       </div>
     </div>
 
     <div class="cta-row" style="margin-top:20px">
-      <a class="btn primary" data-page="contact">Speak with the Maestro First</a>
-      <a href="https://www.cavalierideltartufo.it/en/diventa-cavaliere/" target="_blank" class="btn">Read the Full Order Page →</a>
+      <a class="btn primary" data-page="contact" data-i18n="knight.cta1">Speak with the Maestro First</a>
+      <a href="https://www.cavalierideltartufo.it/en/diventa-cavaliere/" target="_blank" class="btn" data-i18n="knight.cta2">Read the Full Order Page →</a>
     </div>
   </section>
 
   <!-- LEADERSHIP -->
   <section class="block leadership">
     <div class="section-head">
-      <div class="eyebrow">Leadership</div>
+      <div class="eyebrow" data-i18n="leader.eyebrow">Leadership</div>
       <div class="ornament"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
-      <h2>The Maestro of the Chicago Delegation</h2>
+      <h2 data-i18n="leader.title">The Maestro of the Chicago Delegation</h2>
     </div>
     <div class="leader-card">
       <div class="leader-photo">
         <div class="placeholder">
           <div class="crest">⚜</div>
-          <span>Maestro's Portrait</span>
+          <span data-i18n="leader.portrait">Maestro's Portrait</span>
         </div>
       </div>
       <div class="leader-body">
-        <div class="role">Maestro · Chicago Delegation</div>
+        <div class="role" data-i18n="leader.role">Maestro · Chicago Delegation</div>
         <h3>Georgia Marsh</h3>
-        <div class="since">Knight since 2019 · Maestro since 2023</div>
-        <div class="quote">"To establish a delegation of the Order in Chicago is to bring a piece of Piedmont — its patience, its generosity, its reverence for the table — into a great American city."</div>
-        <p>Georgia Marsh leads the Chicago Delegation with a clear vision: that the Order's traditions, shaped in the Langhe since 1967, can find an authentic and lasting home in Chicago. She convenes our events, curates our calendar, and presents new Knights to the Order.</p>
+        <div class="since" data-i18n="leader.since">Knight since 2019 · Maestro since 2023</div>
+        <div class="quote" data-i18n="leader.quote">"To establish a delegation of the Order in Chicago is to bring a piece of Piedmont — its patience, its generosity, its reverence for the table — into a great American city."</div>
+        <p data-i18n="leader.bio">Georgia Marsh leads the Chicago Delegation with a clear vision: that the Order's traditions, shaped in the Langhe since 1967, can find an authentic and lasting home in Chicago. She convenes our events, curates our calendar, and presents new Knights to the Order.</p>
         <p style="margin-top:18px"><a href="mailto:chicagomaster@cavalierdeltartufo.it" style="color:var(--ordine-gold); text-decoration:none; border-bottom:1px solid var(--ordine-gold); font-weight:500;">chicagomaster@cavalierdeltartufo.it</a></p>
       </div>
     </div>
@@ -1160,16 +1241,16 @@
 <div class="page" id="roster">
   <section class="block roster">
     <div class="section-head">
-      <div class="eyebrow">The Roll of Knights · Chicago</div>
+      <div class="eyebrow" data-i18n="roster.eyebrow">The Roll of Knights · Chicago</div>
       <div class="ornament"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
-      <h2>The Knights of the Chicago Delegation</h2>
-      <p class="lede">A growing fellowship of industry professionals and passionate consumers, sponsored into the Order and invested in robes at a formal ceremony.</p>
+      <h2 data-i18n="roster.title">The Knights of the Chicago Delegation</h2>
+      <p class="lede" data-i18n="roster.lede">A growing fellowship of industry professionals and passionate consumers, sponsored into the Order and invested in robes at a formal ceremony.</p>
     </div>
 
     <div class="roster-stats">
-      <div class="stat"><div class="num">57</div><div class="label">Knights</div></div>
-      <div class="stat"><div class="num">2</div><div class="label">Honorary</div></div>
-      <div class="stat"><div class="num">2023</div><div class="label">Established</div></div>
+      <div class="stat"><div class="num">57</div><div class="label" data-i18n="roster.stat.knights">Knights</div></div>
+      <div class="stat"><div class="num">2</div><div class="label" data-i18n="roster.stat.honorary">Honorary</div></div>
+      <div class="stat"><div class="num">2023</div><div class="label" data-i18n="roster.stat.est">Established</div></div>
     </div>
 
     <div class="roster-list">
@@ -1239,48 +1320,48 @@
 <div class="page" id="contact">
   <section class="block">
     <div class="section-head">
-      <div class="eyebrow">Begin the Conversation</div>
+      <div class="eyebrow" data-i18n="contact.eyebrow">Begin the Conversation</div>
       <div class="ornament"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
-      <h2>Contact the Chicago Delegation</h2>
+      <h2 data-i18n="contact.title">Contact the Chicago Delegation</h2>
     </div>
 
     <div class="contact-block">
       <div class="contact-info">
-        <h3>Begin with a conversation.</h3>
-        <p>Whether you are a Knight of another delegation, an applicant interested in joining, a hospitality partner, or a curious friend of the Italian table — we'd be glad to hear from you.</p>
+        <h3 data-i18n="contact.h3">Begin with a conversation.</h3>
+        <p data-i18n="contact.body">Whether you are a Knight of another delegation, an applicant interested in joining, a hospitality partner, or a curious friend of the Italian table — we'd be glad to hear from you.</p>
 
         <div class="info-block">
-          <div class="label">The Maestro</div>
-          <p style="margin:0">Georgia Marsh · Maestro<br><a href="mailto:chicagomaster@cavalierdeltartufo.it">chicagomaster@cavalierdeltartufo.it</a></p>
+          <div class="label" data-i18n="contact.maestro.label">The Maestro</div>
+          <p style="margin:0" data-i18n-html="contact.maestro.body">Georgia Marsh · Maestro<br><a href="mailto:chicagomaster@cavalierdeltartufo.it">chicagomaster@cavalierdeltartufo.it</a></p>
         </div>
 
         <div class="info-block">
-          <div class="label">Follow the Delegation</div>
-          <p style="margin:0"><a href="https://www.instagram.com/knightsofalba_chicago/" target="_blank">@knightsofalba_chicago</a> on Instagram</p>
+          <div class="label" data-i18n="contact.follow.label">Follow the Delegation</div>
+          <p style="margin:0" data-i18n-html="contact.follow.body"><a href="https://www.instagram.com/knightsofalba_chicago/" target="_blank">@knightsofalba_chicago</a> on Instagram</p>
         </div>
 
         <div class="info-block">
-          <div class="label">The Order — Headquarters</div>
-          <p style="margin:0">Castello di Grinzane Cavour · Via Castello 5 · 12060 Grinzane Cavour (CN) · Italy<br><a href="https://www.cavalierideltartufo.it/en/" target="_blank">cavalierideltartufo.it</a></p>
+          <div class="label" data-i18n="contact.hq.label">The Order — Headquarters</div>
+          <p style="margin:0" data-i18n-html="contact.hq.body">Castello di Grinzane Cavour · Via Castello 5 · 12060 Grinzane Cavour (CN) · Italy<br><a href="https://www.cavalierideltartufo.it/en/" target="_blank">cavalierideltartufo.it</a></p>
         </div>
       </div>
 
-      <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you. The Maestro will be in touch.');">
-        <h3>Express your interest</h3>
-        <p class="sub">A few details to begin. We treat your message in confidence.</p>
-        <div class="field"><label>Name</label><input type="text" placeholder="Your full name" required></div>
-        <div class="field"><label>Email</label><input type="email" placeholder="you@example.com" required></div>
-        <div class="field"><label>I am writing as</label>
+      <form class="contact-form" onsubmit="event.preventDefault(); alert(window.__t('contact.thanks', 'Thank you. The Maestro will be in touch.'));">
+        <h3 data-i18n="contact.form.title">Express your interest</h3>
+        <p class="sub" data-i18n="contact.form.sub">A few details to begin. We treat your message in confidence.</p>
+        <div class="field"><label data-i18n="contact.form.name">Name</label><input type="text" data-i18n-placeholder="contact.form.namePh" placeholder="Your full name" required></div>
+        <div class="field"><label data-i18n="contact.form.email">Email</label><input type="email" placeholder="you@example.com" required></div>
+        <div class="field"><label data-i18n="contact.form.role">I am writing as</label>
           <select>
-            <option>Someone interested in becoming a Knight</option>
-            <option>A Knight of another delegation</option>
-            <option>A hospitality / wine industry partner</option>
-            <option>A guest interested in attending an event</option>
-            <option>Other</option>
+            <option data-i18n="contact.form.opt1">Someone interested in becoming a Knight</option>
+            <option data-i18n="contact.form.opt2">A Knight of another delegation</option>
+            <option data-i18n="contact.form.opt3">A hospitality / wine industry partner</option>
+            <option data-i18n="contact.form.opt4">A guest interested in attending an event</option>
+            <option data-i18n="contact.form.opt5">Other</option>
           </select>
         </div>
-        <div class="field"><label>A few words</label><textarea rows="4" placeholder="Tell us a little about your interest in the Order."></textarea></div>
-        <button type="submit" class="btn primary" style="width:100%; margin-top:8px">Send to the Maestro</button>
+        <div class="field"><label data-i18n="contact.form.msg">A few words</label><textarea rows="4" data-i18n-placeholder="contact.form.msgPh" placeholder="Tell us a little about your interest in the Order."></textarea></div>
+        <button type="submit" class="btn primary" style="width:100%; margin-top:8px" data-i18n="contact.form.submit">Send to the Maestro</button>
       </form>
     </div>
   </section>
@@ -1292,44 +1373,347 @@
     <div class="footer-top">
       <div class="footer-brand">
         <img src="assets/logo-cavalieri-tartufo.png" alt="Ordine dei Cavalieri del Tartufo e dei Vini d'Alba">
-        <p>The Chicago Delegation of the Ordine dei Cavalieri del Tartufo e dei Vini d'Alba — a food and wine fellowship established in Piedmont in 1967, brought to Chicago in 2023.</p>
+        <p data-i18n="footer.brand">The Chicago Delegation of the Ordine dei Cavalieri del Tartufo e dei Vini d'Alba — a food and wine fellowship established in Piedmont in 1967, brought to Chicago in 2023.</p>
       </div>
       <div class="footer-col">
-        <h5>The Order</h5>
-        <a href="https://www.cavalierideltartufo.it/en/la-storia/" target="_blank">History</a>
-        <a href="https://www.cavalierideltartufo.it/en/statuto/" target="_blank">Articles</a>
-        <a href="https://www.cavalierideltartufo.it/en/consiglio-reggitore/" target="_blank">Ruling Council</a>
-        <a href="https://www.cavalierideltartufo.it/en/delegazioni-estere/" target="_blank">Delegations Worldwide</a>
+        <h5 data-i18n="footer.order">The Order</h5>
+        <a href="https://www.cavalierideltartufo.it/en/la-storia/" target="_blank" data-i18n="footer.history">History</a>
+        <a href="https://www.cavalierideltartufo.it/en/statuto/" target="_blank" data-i18n="footer.articles">Articles</a>
+        <a href="https://www.cavalierideltartufo.it/en/consiglio-reggitore/" target="_blank" data-i18n="footer.council">Ruling Council</a>
+        <a href="https://www.cavalierideltartufo.it/en/delegazioni-estere/" target="_blank" data-i18n="footer.delegations">Delegations Worldwide</a>
       </div>
       <div class="footer-col">
-        <h5>Chicago</h5>
-        <a data-page="chapters">Events</a>
-        <a data-page="past">Gallery</a>
-        <a data-page="knight">Become a Knight</a>
-        <a data-page="roster">The Knights</a>
+        <h5 data-i18n="footer.chicago">Chicago</h5>
+        <a data-page="chapters" data-i18n="nav.events">Events</a>
+        <a data-page="past" data-i18n="nav.gallery">Gallery</a>
+        <a data-page="knight" data-i18n="nav.knight">Become a Knight</a>
+        <a data-page="roster" data-i18n="nav.knights">The Knights</a>
       </div>
       <div class="footer-col">
-        <h5>Connect</h5>
-        <a href="mailto:chicagomaster@cavalierdeltartufo.it">Email the Maestro</a>
-        <a href="https://www.instagram.com/knightsofalba_chicago/" target="_blank">Instagram</a>
-        <a data-page="contact">Contact Form</a>
+        <h5 data-i18n="footer.connect">Connect</h5>
+        <a href="mailto:chicagomaster@cavalierdeltartufo.it" data-i18n="footer.email">Email the Maestro</a>
+        <a href="https://www.instagram.com/knightsofalba_chicago/" target="_blank" data-i18n="footer.ig">Instagram</a>
+        <a data-page="contact" data-i18n="footer.form">Contact Form</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© Ordine dei Cavalieri del Tartufo e dei Vini d'Alba · Chicago Delegation</span>
-      <span>Tradition · Culture · Excellence</span>
+      <span data-i18n="footer.copy">© Ordine dei Cavalieri del Tartufo e dei Vini d'Alba · Chicago Delegation</span>
+      <span data-i18n="footer.motto">Tradition · Culture · Excellence</span>
     </div>
   </div>
 </footer>
 
 <!-- DEMO BANNER -->
 <div class="demo-banner">
-  <strong>Concept Prototype</strong>
-  A demonstrative mockup of an enhanced web presence for the Chicago Delegation. Photography and events shown are illustrative.
+  <strong data-i18n="demo.title">Concept Prototype</strong>
+  <span data-i18n="demo.body">A demonstrative mockup of an enhanced web presence for the Chicago Delegation. Photography and events shown are illustrative.</span>
 </div>
 
 <script>
-  // Page navigation
+  // ============ I18N DICTIONARY ============
+  // Italian translations. Key naming matches data-i18n attributes.
+  // For brand voice, drew from the parent Order site's Italian register.
+  const I18N = {
+    en: {}, // English is the default in HTML, so this is empty (no override needed)
+    it: {
+      // Top strip
+      "topstrip.line": "Ordine dei Cavalieri del Tartufo e dei Vini d'Alba · Fondato nel 1967",
+      "topstrip.link": "Visita l'Ordine →",
+
+      // Brand + nav
+      "brand.order": "Ordine dei Cavalieri",
+      "brand.city": "Delegazione di Chicago",
+      "nav.home": "Home",
+      "nav.events": "Eventi",
+      "nav.gallery": "Galleria",
+      "nav.knight": "Diventa Cavaliere",
+      "nav.knights": "I Cavalieri",
+      "nav.contact": "Contatti",
+
+      // Hero
+      "hero.eyebrow": "Delegazione di Chicago · Istituita il 9 maggio 2023",
+      "hero.title": "Un sodalizio dedito al <em>buon vino</em> e alla <em>buona tavola</em>, nel cuore di Chicago.",
+      "hero.sub": "Un invito a celebrare il tartufo bianco d'Alba, i grandi vini delle Langhe e la cultura senza tempo della tavola italiana — riuniti nella città che chiamiamo casa.",
+      "cta.become": "Diventa Cavaliere",
+      "cta.upcoming": "Prossimi Eventi",
+
+      // Mission
+      "mission.badge": "Investitura Chicago<strong>2024</strong>",
+      "mission.eyebrow": "La Nostra Missione",
+      "mission.title": "Onorare una tradizione. Arricchire una città.",
+      "mission.intro": "L'Ordine dei Cavalieri del Tartufo e dei Vini d'Alba è nato nel 1967 in una piccola trattoria di Grinzane Cavour. Oggi è presente nei cinque continenti.",
+      "mission.p1": "Chicago è entrata a far parte di questo sodalizio nel 2023 sotto la guida del Maestro Georgia Marsh — assumendosi così una quieta responsabilità: custodire, nella nostra città, una cultura del vino, del cibo e della convivialità affinata in Piemonte da secoli.",
+      "mission.p2": "I nostri Cavalieri sono sommelier e chirurghi, ristoratori e architetti, vignaioli e finanzieri. Ciò che ci unisce è una passione sincera per la tavola e la convinzione che le cose migliori della vita siano quelle condivise.",
+
+      // Three pillars
+      "pillars.eyebrow": "Tradizione · Cultura · Eccellenza",
+      "pillars.title": "I tre pilastri dell'Ordine",
+      "pillars.truffle.title": "Il Tartufo Bianco d'Alba",
+      "pillars.truffle.body": "Tuber magnatum pico — il tartufo più pregiato al mondo, raccolto nei boschi attorno ad Alba. L'Ordine ne tutela il nome, la stagione e i riti a tavola.",
+      "pillars.wines.title": "I Vini delle Langhe",
+      "pillars.wines.body": "Barolo. Barbaresco. Roero. Barbera d'Alba. Dolcetto. Nebbiolo. L'Ordine cura ogni anno una Selezione dei migliori vini delle grandi denominazioni piemontesi.",
+      "pillars.table.title": "La Tavola Italiana",
+      "pillars.table.body": "Oltre il cibo e il vino: il rito senza fretta di spezzare il pane, il brindisi che significa qualcosa, il pranzo lungo come forma d'amicizia. Lo teniamo vivo, qui a Chicago.",
+
+      // Events preview (home) + page header
+      "events.eyebrow": "Calendario degli Eventi",
+      "events.title": "Prossimi appuntamenti",
+      "events.lede": "Gli eventi riservati ai Cavalieri spaziano dalle <em>cerimonie d'investitura in abito da sera</em> a <em>hamburger e Barolo in giardino</em> — e tutto ciò che sta nel mezzo.",
+      "evpage.eyebrow": "Calendario degli Eventi · 2025–2026",
+      "evpage.title": "Dove si raduna la Delegazione",
+      "evpage.lede": "Gli eventi riservati ai Cavalieri spaziano dalle <em>cerimonie d'investitura in abito da sera</em> a <em>hamburger e Barolo in giardino</em> — e tutto ciò che sta nel mezzo.",
+
+      // Months
+      "month.jan": "Gen",
+      "month.feb": "Feb",
+      "month.mar": "Mar",
+      "month.apr": "Apr",
+      "month.may": "Mag",
+      "month.jun": "Giu",
+      "month.jul": "Lug",
+      "month.aug": "Ago",
+      "month.sep": "Set",
+      "month.oct": "Ott",
+      "month.nov": "Nov",
+      "month.dec": "Dic",
+
+      // Events (shared)
+      "ev.gala.title": "Gala del Tartufo Bianco e Cerimonia d'Investitura",
+      "ev.gala.venue": "Soci e Ospiti · Abito da Sera · Chicago",
+      "ev.gala.body": "La serata di gala dell'anno, in coincidenza con il culmine della stagione del tartufo bianco d'Alba. Vengono investiti nuovi Cavalieri; la tavola è imbandita per l'occasione.",
+      "ev.gala2.venue": "Abito da Sera · Soci e Ospiti",
+      "ev.gala2.body": "La serata simbolo del nostro anno. Investitura dei nuovi Cavalieri, menù al tartufo bianco d'Alba e una selezione di vini curata dal Comitato di Degustazione.",
+      "ev.vertical.title": "Degustazione Verticale: Un Decennio di Barolo",
+      "ev.vertical.venue": "Solo Cavalieri · Degustazione Privata in Cantina",
+      "ev.vertical.body": "Una verticale raccolta da un'unica tenuta, condotta da un sommelier ospite dal Piemonte. Posti limitati a venti.",
+      "ev.vertical2.venue": "Solo Cavalieri · Venti Posti",
+      "ev.vertical2.body": "2014–2023, una sola tenuta, una sola sala. Condotta da un sommelier ospite dalle Langhe.",
+      "ev.chefs.title": "Cavalieri e Cuochi: Una Cena Collaborativa",
+      "ev.chefs.venue": "Soci e Un Ospite a Testa",
+      "ev.chefs.body": "Un cuoco di Chicago in dialogo con un collega piemontese, a distanza e ai fornelli. Quattro portate, quattro vini.",
+      "ev.spring.title": "Cena di Primavera per gli Aspiranti",
+      "ev.spring.venue": "Aperto agli Aspiranti · Cinque Portate",
+      "ev.spring.body": "Una serata aperta a chi aspira a diventare Cavaliere, per cenare insieme alla Delegazione. Il Maestro presenta l'opera dell'Ordine.",
+      "ev.nebbiolo.title": "Nebbiolo oltre il Barolo",
+      "ev.nebbiolo.venue": "Solo Cavalieri · Degustazione in Piedi",
+      "ev.nebbiolo.body": "Un'esplorazione approfondita di Roero, Carema, Gattinara e Valtellina — le espressioni più discrete del Nebbiolo.",
+      "ev.summer.title": "Serata Estiva all'Aperto",
+      "ev.summer.venue": "Soci e Ospiti · Cena in Terrazza",
+      "ev.summer.body": "Un menù estivo piemontese — vitello tonnato, fritto misto, pesche al Moscato — accompagnato da Arneis e Favorita.",
+      "ev.burgers.title": "Hamburger e Barolo in Giardino",
+      "ev.burgers.venue": "Cavalieri e Ospiti · Informale",
+      "ev.burgers.body": "Un promemoria che questo sodalizio non è soltanto abito da sera. Anche un grande Nebbiolo merita una griglia di carbone, una volta l'anno.",
+
+      // Event CTAs
+      "cta.reserve": "Prenota",
+      "cta.rsvp": "Conferma",
+      "cta.inquire": "Informazioni",
+      "cta.viewAll": "Vedi Tutti gli Eventi →",
+
+      // Testimonials
+      "test.eyebrow": "Voci della Delegazione",
+      "test.title": "Cosa significa essere Cavaliere",
+      "test.q1": "Essere Cavaliere significa appartenere a una tradizione più antica e più grande di sé — e, al tempo stesso, scoprire nei nostri incontri di Chicago qualcosa di interamente nuovo: amicizie nate da una comune reverenza per la tavola italiana.",
+      "test.q2": "L'Ordine chiede una sola cosa ai suoi membri: passione sincera. Tutto ciò che ne segue — i vini, i pasti, la compagnia — è ricompensa di quella passione.",
+      "test.attr": "Un Cavaliere di Chicago",
+      "test.q1.attr": "Professionista del Settore · Investito nel 2024",
+      "test.q2.attr": "Appassionato · Investito nel 2025",
+
+      // Journal
+      "journal.eyebrow": "Dispacci",
+      "journal.title": "Dal Diario di Chicago",
+      "journal.cat.wine": "Mondo del Vino",
+      "journal.cat.food": "Cultura del Buon Cibo",
+      "journal.cat.recap": "Cronaca dell'Evento",
+      "journal.a1.title": "Perché il 2019 potrebbe essere un'annata storica per il Barolo",
+      "journal.a1.body": "Appunti da una degustazione verticale riservata ai Cavalieri, tenutasi a River North la scorsa primavera, con riflessioni del Maestro e di un enologo ospite.",
+      "journal.a1.date": "Ottobre 2025",
+      "journal.a2.title": "Sua Maestà arriva a Chicago: introduzione al tartufo bianco d'Alba",
+      "journal.a2.body": "Cos'è, cosa non è, e come si degusta come si deve — scritto per i nostri nuovi Cavalieri e per gli ospiti curiosi.",
+      "journal.a2.date": "Settembre 2025",
+      "journal.a3.title": "L'Investitura del 2024: undici nuovi Cavalieri per Chicago",
+      "journal.a3.body": "Un reportage fotografico dalla nostra cerimonia più recente — gli abiti, i medaglioni, il momento dell'investitura. Con le parole del Maestro Georgia Marsh.",
+      "journal.a3.date": "Dicembre 2024",
+
+      // Gallery
+      "gal.eyebrow": "Rivivi gli Eventi",
+      "gal.title": "La Delegazione in immagini",
+      "gal.lede": "Un racconto visivo degli eventi recenti di Chicago — le cene, le investiture, le bottiglie, i legami.",
+      "gal.1.label": "Investitura · Chicago · 2024",
+      "gal.1.title": "I nuovi Cavalieri della Delegazione di Chicago, con il Maestro Georgia Marsh",
+      "gal.2.label": "Alba · 2024",
+      "gal.2.title": "Sua Maestà, il Tartufo Bianco d'Alba",
+      "gal.3.label": "Il Rito dell'Investitura",
+      "gal.3.title": "Un nuovo Cavaliere riceve il medaglione",
+      "gal.4.label": "Degustazione · River North · 2025",
+      "gal.4.title": "Una verticale di Sordo Barolo Riserva",
+      "gal.5.label": "Grinzane Cavour · 2025",
+      "gal.5.title": "I Maestri internazionali dell'Ordine riuniti al Castello",
+      "gal.6.label": "Sede Centrale · Piemonte",
+      "gal.6.title": "Il Consiglio Reggitore al Castello di Grinzane Cavour",
+      "gal.7.label": "Le Langhe · Patrimonio dell'Umanità UNESCO",
+      "gal.7.title": "Sede dell'Ordine, dal 1967",
+
+      // Become a Knight
+      "knight.eyebrow": "Il Titolo di Cavaliere",
+      "knight.title": "Una passione sincera per la cucina e i vini del Piemonte.",
+      "knight.lede": "Dal 1967, l'Ordine ha investito Cavalieri provenienti da tutto il mondo che condividono un genuino interesse — e una vera passione — per la cucina, i vini e il paesaggio delle Langhe. Chiunque condivida questa passione può presentare domanda.",
+      "knight.s1.num": "Passo Uno",
+      "knight.s1.title": "Presenta la Domanda",
+      "knight.s1.body": "Compila il modulo ufficiale di domanda e il curriculum vitae. Invia entrambi per email alla segreteria dell'Ordine all'indirizzo <a href=\"mailto:segreteria@cavalierideltartufo.it\" style=\"color:var(--ordine-gold-light); border-bottom:1px solid var(--ordine-gold-light); text-decoration:none\">segreteria@cavalierideltartufo.it</a>, indicando Chicago come Delegazione di tua scelta.",
+      "knight.s1.cta": "Scarica il Modulo →",
+      "knight.s2.num": "Passo Due",
+      "knight.s2.title": "Quota d'Ammissione e Annuale",
+      "knight.s2.body1": "All'ammissione sono dovuti una quota d'ingresso (stabilita dal Consiglio della Delegazione di Chicago) e la quota associativa del primo anno. Entrambe possono essere versate con carta di credito, PayPal o bonifico tramite l'Ordine.",
+      "knight.s2.body2": "Inclusi: il Collare con Medaglione personalizzato, il Certificato di Proclamazione, le fotografie dell'Investitura e la tessera annuale di socio — con sconto del 10% sugli acquisti al Castello di Grinzane.",
+      "knight.s3.num": "Passo Tre",
+      "knight.s3.title": "Investitura in Abito",
+      "knight.s3.body": "I nuovi Cavalieri vengono ufficialmente investiti in una cerimonia a Chicago, ricevendo il Collare dell'Ordine e il nastro dei Cavalieri. Da quella sera in avanti, hanno il diritto di partecipare a qualsiasi evento dell'Ordine nel mondo — e di presentare nuovi Cavalieri.",
+      "knight.cta1": "Parla Prima con il Maestro",
+      "knight.cta2": "Leggi la Pagina Completa dell'Ordine →",
+
+      // Leadership
+      "leader.eyebrow": "Guida",
+      "leader.title": "Il Maestro della Delegazione di Chicago",
+      "leader.portrait": "Ritratto del Maestro",
+      "leader.role": "Maestro · Delegazione di Chicago",
+      "leader.since": "Cavaliere dal 2019 · Maestro dal 2023",
+      "leader.quote": "\"Istituire una delegazione dell'Ordine a Chicago significa portare un pezzo di Piemonte — la sua pazienza, la sua generosità, la sua reverenza per la tavola — in una grande città americana.\"",
+      "leader.bio": "Georgia Marsh guida la Delegazione di Chicago con una visione chiara: che le tradizioni dell'Ordine, affinate nelle Langhe dal 1967, possano trovare a Chicago una casa autentica e duratura. Convoca i nostri eventi, cura il calendario e presenta i nuovi Cavalieri all'Ordine.",
+
+      // Roster
+      "roster.eyebrow": "Albo dei Cavalieri · Chicago",
+      "roster.title": "I Cavalieri della Delegazione di Chicago",
+      "roster.lede": "Un sodalizio in crescita di professionisti del settore e appassionati, presentati all'Ordine e investiti in abito in una cerimonia ufficiale.",
+      "roster.stat.knights": "Cavalieri",
+      "roster.stat.honorary": "Onorari",
+      "roster.stat.est": "Istituita",
+
+      // Contact
+      "contact.eyebrow": "Iniziamo a Conoscerci",
+      "contact.title": "Contatta la Delegazione di Chicago",
+      "contact.h3": "Cominciamo da una conversazione.",
+      "contact.body": "Che siate Cavalieri di un'altra delegazione, aspiranti interessati a iscriversi, partner dell'ospitalità o semplici amici curiosi della tavola italiana — saremo lieti di sentirvi.",
+      "contact.maestro.label": "Il Maestro",
+      "contact.maestro.body": "Georgia Marsh · Maestro<br><a href=\"mailto:chicagomaster@cavalierdeltartufo.it\">chicagomaster@cavalierdeltartufo.it</a>",
+      "contact.follow.label": "Segui la Delegazione",
+      "contact.follow.body": "<a href=\"https://www.instagram.com/knightsofalba_chicago/\" target=\"_blank\">@knightsofalba_chicago</a> su Instagram",
+      "contact.hq.label": "L'Ordine — Sede Centrale",
+      "contact.hq.body": "Castello di Grinzane Cavour · Via Castello 5 · 12060 Grinzane Cavour (CN) · Italia<br><a href=\"https://www.cavalierideltartufo.it/\" target=\"_blank\">cavalierideltartufo.it</a>",
+      "contact.thanks": "Grazie. Il Maestro vi risponderà a breve.",
+      "contact.form.title": "Manifesta il tuo interesse",
+      "contact.form.sub": "Qualche dato per cominciare. Trattiamo il vostro messaggio in via riservata.",
+      "contact.form.name": "Nome",
+      "contact.form.namePh": "Nome e cognome",
+      "contact.form.email": "Email",
+      "contact.form.role": "Scrivo in qualità di",
+      "contact.form.opt1": "Persona interessata a diventare Cavaliere",
+      "contact.form.opt2": "Cavaliere di un'altra delegazione",
+      "contact.form.opt3": "Partner del settore vino e ospitalità",
+      "contact.form.opt4": "Ospite interessato a partecipare a un evento",
+      "contact.form.opt5": "Altro",
+      "contact.form.msg": "Qualche parola",
+      "contact.form.msgPh": "Racconta brevemente il tuo interesse per l'Ordine.",
+      "contact.form.submit": "Invia al Maestro",
+
+      // Footer
+      "footer.brand": "La Delegazione di Chicago dell'Ordine dei Cavalieri del Tartufo e dei Vini d'Alba — sodalizio enogastronomico fondato in Piemonte nel 1967, portato a Chicago nel 2023.",
+      "footer.order": "L'Ordine",
+      "footer.history": "Storia",
+      "footer.articles": "Statuto",
+      "footer.council": "Consiglio Reggitore",
+      "footer.delegations": "Delegazioni nel Mondo",
+      "footer.chicago": "Chicago",
+      "footer.connect": "Contatti",
+      "footer.email": "Scrivi al Maestro",
+      "footer.ig": "Instagram",
+      "footer.form": "Modulo di Contatto",
+      "footer.copy": "© Ordine dei Cavalieri del Tartufo e dei Vini d'Alba · Delegazione di Chicago",
+      "footer.motto": "Tradizione · Cultura · Eccellenza",
+
+      // Demo banner
+      "demo.title": "Prototipo Concettuale",
+      "demo.body": "Una bozza dimostrativa di un'eventuale presenza web ampliata per la Delegazione di Chicago. Fotografie ed eventi mostrati sono illustrativi.",
+    }
+  };
+
+  // ============ I18N ENGINE ============
+  // Stash original English content on first load (so toggling back is lossless)
+  const ORIGINAL_EN = {};
+  function captureOriginals() {
+    document.querySelectorAll('[data-i18n], [data-i18n-html], [data-i18n-placeholder]').forEach(el => {
+      const id = el.getAttribute('data-i18n') || el.getAttribute('data-i18n-html');
+      const phId = el.getAttribute('data-i18n-placeholder');
+      if (id && !(id in ORIGINAL_EN)) {
+        ORIGINAL_EN[id] = el.hasAttribute('data-i18n-html') ? el.innerHTML : el.textContent;
+      }
+      if (phId && !(phId in ORIGINAL_EN)) {
+        ORIGINAL_EN[phId] = el.getAttribute('placeholder') || '';
+      }
+    });
+  }
+
+  function applyLang(lang) {
+    const dict = I18N[lang] || {};
+    document.documentElement.lang = lang;
+
+    // Text content
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      const translated = dict[key];
+      if (translated !== undefined) {
+        el.textContent = translated;
+      } else if (ORIGINAL_EN[key] !== undefined) {
+        el.textContent = ORIGINAL_EN[key];
+      }
+    });
+
+    // HTML content (for translations containing markup)
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      const key = el.getAttribute('data-i18n-html');
+      const translated = dict[key];
+      if (translated !== undefined) {
+        el.innerHTML = translated;
+      } else if (ORIGINAL_EN[key] !== undefined) {
+        el.innerHTML = ORIGINAL_EN[key];
+      }
+    });
+
+    // Placeholders
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      const translated = dict[key];
+      if (translated !== undefined) {
+        el.setAttribute('placeholder', translated);
+      } else if (ORIGINAL_EN[key] !== undefined) {
+        el.setAttribute('placeholder', ORIGINAL_EN[key]);
+      }
+    });
+
+    // Switcher button state
+    document.querySelectorAll('.lang-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
+  }
+
+  // Helper used by the contact form alert
+  window.__t = function(key, fallback) {
+    const lang = (document.documentElement.lang === 'it') ? 'it' : 'en';
+    return (I18N[lang] && I18N[lang][key]) || fallback;
+  };
+
+  // Resolve initial language: localStorage → browser preference → English
+  function initialLang() {
+    try {
+      const saved = localStorage.getItem('lang');
+      if (saved === 'en' || saved === 'it') return saved;
+    } catch (e) { /* private mode etc. */ }
+    const nav = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+    if (nav.startsWith('it')) return 'it';
+    return 'en';
+  }
+
+  // Page navigation (existing behavior)
   function showPage(id){
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     const target = document.getElementById(id);
@@ -1349,6 +1733,19 @@
     });
     el.style.cursor = 'pointer';
   });
+
+  // Wire up language switcher
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.lang;
+      applyLang(lang);
+      try { localStorage.setItem('lang', lang); } catch (e) { /* ignore */ }
+    });
+  });
+
+  // Bootstrap
+  captureOriginals();
+  applyLang(initialLang());
 </script>
 
 </body>
