@@ -157,7 +157,7 @@
     height:78vh;
     background:
       linear-gradient(180deg, rgba(11,22,40,0.55) 0%, rgba(11,22,40,0.75) 100%),
-      url('images/white-truffles.png') center/cover no-repeat;
+      url('assets/heritage/white-truffles.png') center/cover no-repeat;
     display:flex; align-items:center; justify-content:center;
     color:var(--ivory);
     text-align:center;
@@ -378,6 +378,151 @@
   }
   .event:hover .event-cta{background:var(--navy); color:var(--ivory)}
 
+  /* EVENTS PAGE — SECTION SEPARATION */
+  .events-section{padding:80px 0 60px}
+  .events-section + .events-section{border-top:1px solid var(--line); margin-top:40px}
+  .events-section-head{
+    text-align:center; margin-bottom:48px;
+  }
+  .events-section-head h3{
+    font-family:'Cormorant Garamond', serif;
+    font-size:clamp(28px, 4vw, 40px);
+    font-weight:500;
+    color:var(--navy);
+    margin:0 0 12px;
+    letter-spacing:-0.01em;
+  }
+  .events-section-head .sub{
+    font-family:'Cormorant Garamond', serif;
+    font-size:18px;
+    font-style:italic;
+    color:var(--muted);
+    margin:0;
+  }
+
+  /* UPCOMING EMPTY STATE */
+  .upcoming-empty{
+    text-align:center;
+    padding:60px 24px;
+    background:var(--ivory-warm);
+    border:1px solid var(--line);
+    max-width:760px;
+    margin:0 auto;
+  }
+  .upcoming-empty .crest{
+    width:48px; height:auto;
+    margin:0 auto 20px;
+    opacity:0.6;
+  }
+  .upcoming-empty p{
+    font-family:'Cormorant Garamond', serif;
+    font-size:22px;
+    font-style:italic;
+    color:var(--navy);
+    line-height:1.5;
+    margin:0 0 18px;
+    max-width:560px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .upcoming-empty .sub{
+    font-size:14px;
+    color:var(--muted);
+    margin:0;
+  }
+  .upcoming-empty .sub a{
+    color:var(--ordine-gold);
+    text-decoration:none;
+    border-bottom:1px solid var(--ordine-gold);
+  }
+
+  /* PAST EVENT CARD (with photo) */
+  .past-event{
+    display:grid;
+    grid-template-columns:1.1fr 1.4fr;
+    gap:0;
+    margin-bottom:48px;
+    background:var(--ivory);
+    border:1px solid var(--line);
+    overflow:hidden;
+    transition:transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration:none;
+    color:inherit;
+    cursor:pointer;
+  }
+  .past-event:hover{
+    transform:translateY(-4px);
+    box-shadow:0 24px 48px -20px rgba(11,22,40,0.25);
+  }
+  .past-event-image{
+    position:relative;
+    min-height:380px;
+    overflow:hidden;
+    background:var(--navy);
+  }
+  .past-event-image img{
+    width:100%; height:100%; object-fit:cover;
+    display:block;
+    transition:transform 0.6s ease;
+  }
+  .past-event:hover .past-event-image img{transform:scale(1.04)}
+  .past-event-body{
+    padding:48px 44px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  .past-event-body .date-pill{
+    font-family:'Cinzel', serif;
+    font-size:11px;
+    letter-spacing:0.22em;
+    color:var(--ordine-gold);
+    text-transform:uppercase;
+    margin-bottom:18px;
+  }
+  .past-event-body h4{
+    font-family:'Cormorant Garamond', serif;
+    font-size:34px;
+    font-weight:500;
+    color:var(--navy);
+    margin:0 0 6px;
+    line-height:1.15;
+    letter-spacing:-0.01em;
+  }
+  .past-event-body .subtitle{
+    font-family:'Cormorant Garamond', serif;
+    font-size:20px;
+    font-style:italic;
+    color:var(--muted);
+    margin:0 0 22px;
+  }
+  .past-event-body .venue{
+    font-size:13px; letter-spacing:0.1em;
+    color:var(--ordine-gold);
+    text-transform:uppercase;
+    margin-bottom:18px;
+  }
+  .past-event-body p{
+    font-size:16px;
+    line-height:1.7;
+    color:var(--ink);
+    margin:0 0 24px;
+  }
+  .past-event-body .read-more{
+    font-family:'Cinzel', serif;
+    font-size:12px;
+    letter-spacing:0.2em;
+    color:var(--navy);
+    text-transform:uppercase;
+    font-weight:600;
+    border-bottom:1.5px solid var(--ordine-gold);
+    padding-bottom:6px;
+    display:inline-block;
+    align-self:flex-start;
+    transition:color 0.2s ease;
+  }
+  .past-event:hover .read-more{color:var(--ordine-gold)}
+
   /* PAST CHAPTERS GALLERY */
   .past-gallery{background:var(--ivory-warm)}
   .gallery-grid{
@@ -432,7 +577,7 @@
   .knight-cta{
     background:
       linear-gradient(135deg, rgba(11,22,40,0.92), rgba(20,33,61,0.88)),
-      url('images/castle-council.png') center/cover no-repeat;
+      url('assets/heritage/castle-council.png') center/cover no-repeat;
     color:var(--ivory);
     padding:120px 40px;
     text-align:center;
@@ -772,6 +917,10 @@
     .footer-top{grid-template-columns:1fr 1fr}
     .event{grid-template-columns:80px 1fr; gap:24px}
     .event-cta{grid-column:1/-1; text-align:center; margin-top:12px}
+    .past-event{grid-template-columns:1fr}
+    .past-event-image{min-height:280px}
+    .past-event-body{padding:32px 24px}
+    .past-event-body h4{font-size:28px}
     section.block{padding:60px 24px}
     .header-inner{padding:14px 20px}
     .brand-text .city{font-size:18px}
@@ -825,7 +974,7 @@
 <header>
   <div class="header-inner">
     <a class="brand" data-page="home">
-      <img src="assets/logo-cavalieri-tartufo.png" alt="Ordine dei Cavalieri del Tartufo e dei Vini d'Alba">
+      <img src="assets/brand/logo-cavalieri-tartufo.png" alt="Ordine dei Cavalieri del Tartufo e dei Vini d'Alba">
       <div class="brand-text">
         <span class="order" data-i18n="brand.order">Ordine dei Cavalieri</span>
         <span class="city" data-i18n="brand.city">Chicago Delegation</span>
@@ -863,7 +1012,7 @@
   <section class="block mission">
     <div class="mission-grid">
       <div class="mission-image">
-        <img src="images/chicago-induction.png" alt="The Chicago Delegation gathered with Maestro Georgia Marsh">
+        <img src="assets/heritage/chicago-induction.png" alt="The Chicago Delegation gathered with Maestro Georgia Marsh">
         <div class="badge" data-i18n-html="mission.badge">Inducted Chicago Class<strong>2024</strong></div>
       </div>
       <div class="mission-text">
@@ -920,55 +1069,28 @@
     </div>
   </section>
 
-  <!-- UPCOMING EVENTS PREVIEW -->
+  <!-- RECENT EVENT FEATURE -->
   <section class="block events">
     <div class="section-head">
-      <div class="eyebrow" data-i18n="events.eyebrow">Calendar of Events</div>
       <div class="ornament"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
-      <h2 data-i18n="events.title">Upcoming gatherings</h2>
+      <h2 data-i18n="events.title">Recent gatherings</h2>
       <p class="lede" data-i18n-html="events.lede">Knights-only events span <em>formal black-tie induction ceremonies</em> to <em>backyard burgers and Barolo</em> — and everything in between.</p>
     </div>
-    <div class="event-list">
-      <div class="event">
-        <div class="event-date">
-          <div class="month" data-i18n="month.nov">Nov</div>
-          <div class="day">14</div>
-          <div class="year">2025</div>
-        </div>
-        <div class="event-body">
-          <h4 data-i18n="ev.gala.title">White Truffle Gala &amp; Investiture Ceremony</h4>
-          <div class="venue" data-i18n="ev.gala.venue">Members &amp; Guests · Black Tie · Chicago</div>
-          <p data-i18n="ev.gala.body">Our marquee evening of the year, coinciding with the height of the Alba white truffle season. New Knights are inducted; the table is set for the occasion.</p>
-        </div>
-        <div class="event-cta" data-i18n="cta.reserve">Reserve</div>
+
+    <a href="events/2026-06-21-notte-del-solstizio/" class="past-event">
+      <div class="past-event-image">
+        <img src="events/2026-06-21-notte-del-solstizio/photos/04-maestro-with-knight-porchetta.jpeg" alt="Maestro Georgia Marsh and a Knight with the porchetta">
       </div>
-      <div class="event">
-        <div class="event-date">
-          <div class="month" data-i18n="month.jan">Jan</div>
-          <div class="day">22</div>
-          <div class="year">2026</div>
-        </div>
-        <div class="event-body">
-          <h4 data-i18n="ev.vertical.title">Vertical Tasting: A Decade of Barolo</h4>
-          <div class="venue" data-i18n="ev.vertical.venue">Knights Only · Private Cellar Tasting</div>
-          <p data-i18n="ev.vertical.body">An intimate vertical drawn from a single estate, guided by a guest sommelier from Piedmont. Limited to twenty seats.</p>
-        </div>
-        <div class="event-cta" data-i18n="cta.rsvp">RSVP</div>
+      <div class="past-event-body">
+        <div class="date-pill" data-i18n="evpage.solstizio.date">Sunday, 21 June 2026</div>
+        <h4>Notte del Solstizio d'Estate</h4>
+        <div class="subtitle" data-i18n="evpage.solstizio.subtitle">Night of the Summer Solstice</div>
+        <div class="venue" data-i18n="evpage.solstizio.venue">Featuring the wines of Chiara Boschis · E. Pira &amp; Figli</div>
+        <p data-i18n="home.solstizio.body">A warm and festive celebration of the summer solstice at the home of Maestro Georgia Marsh, honored by the presence of Chiara Boschis — one of the great female producers of Barolo — and a progression of her wines through the evening.</p>
+        <span class="read-more" data-i18n="evpage.read">Read the recap →</span>
       </div>
-      <div class="event">
-        <div class="event-date">
-          <div class="month" data-i18n="month.jul">Jul</div>
-          <div class="day">25</div>
-          <div class="year">2026</div>
-        </div>
-        <div class="event-body">
-          <h4 data-i18n="ev.burgers.title">Backyard Burgers &amp; Barolo</h4>
-          <div class="venue" data-i18n="ev.burgers.venue">Knights &amp; Guests · Casual</div>
-          <p data-i18n="ev.burgers.body">A reminder that this fellowship isn't only about black tie. Great Nebbiolo deserves a charcoal grill once a year, too.</p>
-        </div>
-        <div class="event-cta" data-i18n="cta.rsvp">RSVP</div>
-      </div>
-    </div>
+    </a>
+
     <div style="text-align:center; margin-top:40px">
       <a class="btn dark" data-page="chapters" data-i18n="cta.viewAll">View All Events →</a>
     </div>
@@ -1004,7 +1126,7 @@
     </div>
     <div class="journal-grid">
       <div class="article">
-        <div class="article-image"><img src="images/barolo-tasting.png" alt="Barolo Riserva"></div>
+        <div class="article-image"><img src="assets/heritage/barolo-tasting.png" alt="Barolo Riserva"></div>
         <div class="article-body">
           <div class="category" data-i18n="journal.cat.wine">World of Wine</div>
           <h4 data-i18n="journal.a1.title">Why 2019 may be a generational Barolo vintage</h4>
@@ -1013,7 +1135,7 @@
         </div>
       </div>
       <div class="article">
-        <div class="article-image"><img src="images/white-truffles.png" alt="White truffles"></div>
+        <div class="article-image"><img src="assets/heritage/white-truffles.png" alt="White truffles"></div>
         <div class="article-body">
           <div class="category" data-i18n="journal.cat.food">Good Food Culture</div>
           <h4 data-i18n="journal.a2.title">His Majesty arrives in Chicago: a primer on the Alba white truffle</h4>
@@ -1022,7 +1144,7 @@
         </div>
       </div>
       <div class="article">
-        <div class="article-image"><img src="images/investiture-ceremony.png" alt="Investiture ceremony"></div>
+        <div class="article-image"><img src="assets/heritage/investiture-ceremony.png" alt="Investiture ceremony"></div>
         <div class="article-body">
           <div class="category" data-i18n="journal.cat.recap">Event Recap</div>
           <h4 data-i18n="journal.a3.title">The 2024 Investiture: eleven new Knights for Chicago</h4>
@@ -1037,78 +1159,47 @@
 
 <!-- =================== EVENTS PAGE =================== -->
 <div class="page" id="chapters">
-  <section class="block" style="padding-top:80px">
+  <section class="block" style="padding-top:80px; padding-bottom:20px">
     <div class="section-head">
-      <div class="eyebrow" data-i18n="evpage.eyebrow">Calendar of Events · 2025–2026</div>
       <div class="ornament"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
       <h2 data-i18n="evpage.title">Where the Delegation gathers</h2>
       <p class="lede" data-i18n-html="evpage.lede">Knights-only events span <em>formal black-tie induction ceremonies</em> to <em>backyard burgers and Barolo</em> — and everything in between.</p>
     </div>
 
-    <div class="event-list">
-      <div class="event">
-        <div class="event-date"><div class="month" data-i18n="month.nov">Nov</div><div class="day">14</div><div class="year">2025</div></div>
-        <div class="event-body">
-          <h4 data-i18n="ev.gala.title">White Truffle Gala &amp; Investiture Ceremony</h4>
-          <div class="venue" data-i18n="ev.gala2.venue">Black Tie · Members &amp; Guests</div>
-          <p data-i18n="ev.gala2.body">The signature evening of our year. Investiture of new Knights, an Alba truffle menu, and a wine flight curated by the Tasting Committee.</p>
-        </div>
-        <div class="event-cta" data-i18n="cta.reserve">Reserve</div>
+    <!-- UPCOMING EVENTS -->
+    <div class="events-section">
+      <div class="events-section-head">
+        <h3 data-i18n="evpage.upcoming.title">Upcoming</h3>
+        <p class="sub" data-i18n="evpage.upcoming.sub">The next gatherings of the Delegation.</p>
       </div>
-      <div class="event">
-        <div class="event-date"><div class="month" data-i18n="month.jan">Jan</div><div class="day">22</div><div class="year">2026</div></div>
-        <div class="event-body">
-          <h4 data-i18n="ev.vertical.title">Vertical Tasting: A Decade of Barolo</h4>
-          <div class="venue" data-i18n="ev.vertical2.venue">Knights Only · Twenty Seats</div>
-          <p data-i18n="ev.vertical2.body">2014–2023, one estate, one room. Led by a visiting sommelier from the Langhe.</p>
-        </div>
-        <div class="event-cta" data-i18n="cta.rsvp">RSVP</div>
+
+      <div class="upcoming-empty">
+        <img class="crest" src="assets/brand/logo-cavalieri-tartufo.png" alt="">
+        <p data-i18n="evpage.upcoming.empty">The next event is being planned. Knights will be notified by the Maestro; aspirants and friends of the Delegation are welcome to inquire.</p>
+        <p class="sub" data-i18n-html="evpage.upcoming.contact">For event announcements and inquiries, contact <a href="mailto:chicagomaster@cavalierdeltartufo.it">the Maestro</a>.</p>
       </div>
-      <div class="event">
-        <div class="event-date"><div class="month" data-i18n="month.feb">Feb</div><div class="day">18</div><div class="year">2026</div></div>
-        <div class="event-body">
-          <h4 data-i18n="ev.chefs.title">Knights &amp; Chefs: A Collaborative Dinner</h4>
-          <div class="venue" data-i18n="ev.chefs.venue">Members &amp; One Guest Each</div>
-          <p data-i18n="ev.chefs.body">A Chicago chef in conversation with a Piedmontese counterpart, by long-distance and at the stove. Four courses, four wines.</p>
-        </div>
-        <div class="event-cta" data-i18n="cta.rsvp">RSVP</div>
+    </div>
+
+    <!-- PAST EVENTS -->
+    <div class="events-section">
+      <div class="events-section-head">
+        <h3 data-i18n="evpage.past.title">Past Events</h3>
+        <p class="sub" data-i18n="evpage.past.sub">A record of recent gatherings of the Chicago Delegation.</p>
       </div>
-      <div class="event">
-        <div class="event-date"><div class="month" data-i18n="month.mar">Mar</div><div class="day">7</div><div class="year">2026</div></div>
-        <div class="event-body">
-          <h4 data-i18n="ev.spring.title">Spring Aspirants' Dinner</h4>
-          <div class="venue" data-i18n="ev.spring.venue">Open to Aspirants · Five Courses</div>
-          <p data-i18n="ev.spring.body">An open evening for prospective Knights to dine alongside the Delegation. The Maestro presents the work of the Order.</p>
+
+      <a href="events/2026-06-21-notte-del-solstizio/" class="past-event">
+        <div class="past-event-image">
+          <img src="events/2026-06-21-notte-del-solstizio/photos/06-chiara-and-maestro.jpeg" alt="Chiara Boschis and Maestro Georgia Marsh at the Summer Solstice Chapter">
         </div>
-        <div class="event-cta" data-i18n="cta.inquire">Inquire</div>
-      </div>
-      <div class="event">
-        <div class="event-date"><div class="month" data-i18n="month.apr">Apr</div><div class="day">24</div><div class="year">2026</div></div>
-        <div class="event-body">
-          <h4 data-i18n="ev.nebbiolo.title">Nebbiolo Beyond Barolo</h4>
-          <div class="venue" data-i18n="ev.nebbiolo.venue">Knights Only · Walk-around Tasting</div>
-          <p data-i18n="ev.nebbiolo.body">A focused exploration of Roero, Carema, Gattinara, and Valtellina — Nebbiolo's quieter expressions.</p>
+        <div class="past-event-body">
+          <div class="date-pill" data-i18n="evpage.solstizio.date">Sunday, 21 June 2026</div>
+          <h4>Notte del Solstizio d'Estate</h4>
+          <div class="subtitle" data-i18n="evpage.solstizio.subtitle">Night of the Summer Solstice</div>
+          <div class="venue" data-i18n="evpage.solstizio.venue">Featuring the wines of Chiara Boschis · E. Pira &amp; Figli</div>
+          <p data-i18n="evpage.solstizio.body">The Knights of Alba-Chicago gathered at the home of Maestro Georgia Marsh for a warm and festive celebration of the summer solstice, honored by the presence of Chiara Boschis — one of the great female producers of Barolo — and a progression of her wines from Dolcetto to Mosconi Barolo.</p>
+          <span class="read-more" data-i18n="evpage.read">Read the recap →</span>
         </div>
-        <div class="event-cta" data-i18n="cta.rsvp">RSVP</div>
-      </div>
-      <div class="event">
-        <div class="event-date"><div class="month" data-i18n="month.jun">Jun</div><div class="day">12</div><div class="year">2026</div></div>
-        <div class="event-body">
-          <h4 data-i18n="ev.summer.title">Summer Evening al Fresco</h4>
-          <div class="venue" data-i18n="ev.summer.venue">Members &amp; Guests · Rooftop Setting</div>
-          <p data-i18n="ev.summer.body">A Piedmontese summer menu — vitello tonnato, fritto misto, peaches in Moscato — with Arneis and Favorita.</p>
-        </div>
-        <div class="event-cta" data-i18n="cta.reserve">Reserve</div>
-      </div>
-      <div class="event">
-        <div class="event-date"><div class="month" data-i18n="month.jul">Jul</div><div class="day">25</div><div class="year">2026</div></div>
-        <div class="event-body">
-          <h4 data-i18n="ev.burgers.title">Backyard Burgers &amp; Barolo</h4>
-          <div class="venue" data-i18n="ev.burgers.venue">Knights &amp; Guests · Casual</div>
-          <p data-i18n="ev.burgers.body">A reminder that this fellowship isn't only about black tie. Great Nebbiolo deserves a charcoal grill once a year, too.</p>
-        </div>
-        <div class="event-cta" data-i18n="cta.rsvp">RSVP</div>
-      </div>
+      </a>
     </div>
   </section>
 </div>
@@ -1125,49 +1216,49 @@
 
     <div class="gallery-grid">
       <div class="gallery-item gal-1">
-        <img src="images/chicago-induction.png" alt="Chicago Delegation with Maestro Georgia Marsh">
+        <img src="assets/heritage/chicago-induction.png" alt="Chicago Delegation with Maestro Georgia Marsh">
         <div class="caption">
           <div class="label" data-i18n="gal.1.label">Investiture · Chicago · 2024</div>
           <h5 data-i18n="gal.1.title">New Knights of the Chicago Delegation, with Maestro Georgia Marsh</h5>
         </div>
       </div>
       <div class="gallery-item gal-2">
-        <img src="images/white-truffles.png" alt="White truffles">
+        <img src="assets/heritage/white-truffles.png" alt="White truffles">
         <div class="caption">
           <div class="label" data-i18n="gal.2.label">Alba · 2024</div>
           <h5 data-i18n="gal.2.title">His Majesty, the Alba White Truffle</h5>
         </div>
       </div>
       <div class="gallery-item gal-3">
-        <img src="images/investiture-ceremony.png" alt="Investiture ceremony">
+        <img src="assets/heritage/investiture-ceremony.png" alt="Investiture ceremony">
         <div class="caption">
           <div class="label" data-i18n="gal.3.label">The Rite of Investiture</div>
           <h5 data-i18n="gal.3.title">A new Knight receives the medallion</h5>
         </div>
       </div>
       <div class="gallery-item gal-4">
-        <img src="images/barolo-tasting.png" alt="Barolo Riserva">
+        <img src="assets/heritage/barolo-tasting.png" alt="Barolo Riserva">
         <div class="caption">
           <div class="label" data-i18n="gal.4.label">Tasting · River North · 2025</div>
           <h5 data-i18n="gal.4.title">A vertical of Sordo Barolo Riserva</h5>
         </div>
       </div>
       <div class="gallery-item gal-5">
-        <img src="images/international-robes.png" alt="International delegations in full robes">
+        <img src="assets/heritage/international-robes.png" alt="International delegations in full robes">
         <div class="caption">
           <div class="label" data-i18n="gal.5.label">Grinzane Cavour · 2025</div>
           <h5 data-i18n="gal.5.title">The Order's international Maestri convene at the Castle</h5>
         </div>
       </div>
       <div class="gallery-item gal-6">
-        <img src="images/castle-council.png" alt="Council at Castello di Grinzane Cavour">
+        <img src="assets/heritage/castle-council.png" alt="Council at Castello di Grinzane Cavour">
         <div class="caption">
           <div class="label" data-i18n="gal.6.label">Headquarters · Piedmont</div>
           <h5 data-i18n="gal.6.title">The Ruling Council at the Castle of Grinzane Cavour</h5>
         </div>
       </div>
       <div class="gallery-item gal-7">
-        <img src="assets/castle.jpg" alt="Castello di Grinzane Cavour amid the vineyards">
+        <img src="assets/heritage/castle.jpg" alt="Castello di Grinzane Cavour amid the vineyards">
         <div class="caption">
           <div class="label" data-i18n="gal.7.label">The Langhe · UNESCO World Heritage</div>
           <h5 data-i18n="gal.7.title">Home of the Order, since 1967</h5>
@@ -1372,7 +1463,7 @@
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <img src="assets/logo-cavalieri-tartufo.png" alt="Ordine dei Cavalieri del Tartufo e dei Vini d'Alba">
+        <img src="assets/brand/logo-cavalieri-tartufo.png" alt="Ordine dei Cavalieri del Tartufo e dei Vini d'Alba">
         <p data-i18n="footer.brand">The Chicago Delegation of the Ordine dei Cavalieri del Tartufo e dei Vini d'Alba — a food and wine fellowship established in Piedmont in 1967, brought to Chicago in 2023.</p>
       </div>
       <div class="footer-col">
@@ -1456,10 +1547,8 @@
       "pillars.table.body": "Oltre il cibo e il vino: il rito senza fretta di spezzare il pane, il brindisi che significa qualcosa, il pranzo lungo come forma d'amicizia. Lo teniamo vivo, qui a Chicago.",
 
       // Events preview (home) + page header
-      "events.eyebrow": "Calendario degli Eventi",
-      "events.title": "Prossimi appuntamenti",
+      "events.title": "Riunioni recenti",
       "events.lede": "Gli eventi riservati ai Cavalieri spaziano dalle <em>cerimonie d'investitura in abito da sera</em> a <em>hamburger e Barolo in giardino</em> — e tutto ciò che sta nel mezzo.",
-      "evpage.eyebrow": "Calendario degli Eventi · 2025–2026",
       "evpage.title": "Dove si raduna la Delegazione",
       "evpage.lede": "Gli eventi riservati ai Cavalieri spaziano dalle <em>cerimonie d'investitura in abito da sera</em> a <em>hamburger e Barolo in giardino</em> — e tutto ciò che sta nel mezzo.",
 
@@ -1477,32 +1566,21 @@
       "month.nov": "Nov",
       "month.dec": "Dic",
 
-      // Events (shared)
-      "ev.gala.title": "Gala del Tartufo Bianco e Cerimonia d'Investitura",
-      "ev.gala.venue": "Soci e Ospiti · Abito da Sera · Chicago",
-      "ev.gala.body": "La serata di gala dell'anno, in coincidenza con il culmine della stagione del tartufo bianco d'Alba. Vengono investiti nuovi Cavalieri; la tavola è imbandita per l'occasione.",
-      "ev.gala2.venue": "Abito da Sera · Soci e Ospiti",
-      "ev.gala2.body": "La serata simbolo del nostro anno. Investitura dei nuovi Cavalieri, menù al tartufo bianco d'Alba e una selezione di vini curata dal Comitato di Degustazione.",
-      "ev.vertical.title": "Degustazione Verticale: Un Decennio di Barolo",
-      "ev.vertical.venue": "Solo Cavalieri · Degustazione Privata in Cantina",
-      "ev.vertical.body": "Una verticale raccolta da un'unica tenuta, condotta da un sommelier ospite dal Piemonte. Posti limitati a venti.",
-      "ev.vertical2.venue": "Solo Cavalieri · Venti Posti",
-      "ev.vertical2.body": "2014–2023, una sola tenuta, una sola sala. Condotta da un sommelier ospite dalle Langhe.",
-      "ev.chefs.title": "Cavalieri e Cuochi: Una Cena Collaborativa",
-      "ev.chefs.venue": "Soci e Un Ospite a Testa",
-      "ev.chefs.body": "Un cuoco di Chicago in dialogo con un collega piemontese, a distanza e ai fornelli. Quattro portate, quattro vini.",
-      "ev.spring.title": "Cena di Primavera per gli Aspiranti",
-      "ev.spring.venue": "Aperto agli Aspiranti · Cinque Portate",
-      "ev.spring.body": "Una serata aperta a chi aspira a diventare Cavaliere, per cenare insieme alla Delegazione. Il Maestro presenta l'opera dell'Ordine.",
-      "ev.nebbiolo.title": "Nebbiolo oltre il Barolo",
-      "ev.nebbiolo.venue": "Solo Cavalieri · Degustazione in Piedi",
-      "ev.nebbiolo.body": "Un'esplorazione approfondita di Roero, Carema, Gattinara e Valtellina — le espressioni più discrete del Nebbiolo.",
-      "ev.summer.title": "Serata Estiva all'Aperto",
-      "ev.summer.venue": "Soci e Ospiti · Cena in Terrazza",
-      "ev.summer.body": "Un menù estivo piemontese — vitello tonnato, fritto misto, pesche al Moscato — accompagnato da Arneis e Favorita.",
-      "ev.burgers.title": "Hamburger e Barolo in Giardino",
-      "ev.burgers.venue": "Cavalieri e Ospiti · Informale",
-      "ev.burgers.body": "Un promemoria che questo sodalizio non è soltanto abito da sera. Anche un grande Nebbiolo merita una griglia di carbone, una volta l'anno.",
+      // Events page - section headers
+      "evpage.upcoming.title": "Prossimi Eventi",
+      "evpage.upcoming.sub": "I prossimi appuntamenti della Delegazione.",
+      "evpage.upcoming.empty": "Il prossimo evento è in fase di pianificazione. I Cavalieri saranno avvisati dal Maestro; aspiranti e amici della Delegazione possono inviare una richiesta.",
+      "evpage.upcoming.contact": "Per annunci e richieste, contattare <a href=\"mailto:chicagomaster@cavalierdeltartufo.it\">il Maestro</a>.",
+      "evpage.past.title": "Eventi Passati",
+      "evpage.past.sub": "Un archivio delle recenti riunioni della Delegazione di Chicago.",
+      "evpage.read": "Leggi la cronaca →",
+
+      // Notte del Solstizio event
+      "evpage.solstizio.date": "Domenica, 21 giugno 2026",
+      "evpage.solstizio.subtitle": "Notte del Solstizio d'Estate",
+      "evpage.solstizio.venue": "Con i vini di Chiara Boschis · E. Pira & Figli",
+      "evpage.solstizio.body": "I Cavalieri di Alba-Chicago si sono riuniti a casa del Maestro Georgia Marsh per una calorosa e festosa celebrazione del solstizio d'estate, onorata dalla presenza di Chiara Boschis — una delle grandi produttrici di Barolo — e da una progressione dei suoi vini dal Dolcetto al Barolo Mosconi.",
+      "home.solstizio.body": "Una calorosa e festosa celebrazione del solstizio d'estate a casa del Maestro Georgia Marsh, onorata dalla presenza di Chiara Boschis — una delle grandi produttrici di Barolo — e da una progressione dei suoi vini nel corso della serata.",
 
       // Event CTAs
       "cta.reserve": "Prenota",

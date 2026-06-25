@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notte del Solstizio d'Estate · 21 June 2026 — Chicago Delegation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ordine-gold: #AD8400;
+    --ordine-gold-light: #C9A538;
+    --ordine-gold-pale: #E8D89A;
+    --navy: #14213D;
+    --navy-deep: #0B1628;
+    --ivory: #FAF6EE;
+    --ivory-warm: #F2EADA;
+    --crimson: #7A1F26;
+    --ink: #1A1A1A;
+    --muted: #6B6357;
+    --line: rgba(173, 132, 0, 0.25);
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:'Inter', sans-serif;
+    background:var(--ivory);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* TOP STRIP */
+  .topstrip{
+    background:var(--navy-deep);
+    color:var(--ivory-warm);
+    font-size:11px;
+    letter-spacing:0.15em;
+    text-transform:uppercase;
+    padding:8px 0;
+    font-weight:300;
+  }
+  .topstrip-inner{
+    max-width:1280px; margin:0 auto;
+    padding:0 40px;
+    display:flex; align-items:center; justify-content:space-between; gap:24px;
+  }
+  .topstrip-text{flex:1; text-align:center}
+  .topstrip-spacer{width:64px; flex-shrink:0}
+  .topstrip a{color:var(--ordine-gold-light); text-decoration:none; margin-left:6px}
+
+  /* LANGUAGE SWITCHER */
+  .lang-switch{display:flex; align-items:center; gap:4px; flex-shrink:0}
+  .lang-btn{
+    background:transparent; border:1px solid transparent;
+    padding:3px 6px; cursor:pointer; border-radius:2px;
+    transition:all 0.2s ease; line-height:0; opacity:0.55;
+    font-family:inherit;
+  }
+  .lang-btn:hover{opacity:0.9}
+  .lang-btn.active{opacity:1; border-color:var(--ordine-gold)}
+  .lang-btn svg{display:block; width:22px; height:14px; border-radius:1px}
+
+  /* HEADER */
+  header{
+    background:var(--ivory);
+    border-bottom:1px solid var(--line);
+    position:sticky; top:0; z-index:100;
+    background:rgba(250, 246, 238, 0.95);
+    backdrop-filter: blur(8px);
+  }
+  .header-inner{
+    max-width:1280px; margin:0 auto;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 40px;
+  }
+  .brand{display:flex; align-items:center; text-decoration:none; color:var(--ink)}
+  .brand img{height:56px; width:auto; margin-right:18px}
+  .brand-text{display:flex; flex-direction:column; line-height:1.15}
+  .brand-text .order{
+    font-family:'Cinzel', serif;
+    font-size:11px; letter-spacing:0.22em;
+    color:var(--muted); text-transform:uppercase;
+  }
+  .brand-text .city{
+    font-family:'Cormorant Garamond', serif;
+    font-size:24px; font-weight:600;
+    color:var(--navy); letter-spacing:0.02em;
+  }
+  nav.primary{display:flex}
+  nav.primary a{
+    margin-left:34px;
+    text-decoration:none; color:var(--navy);
+    font-size:13px; font-weight:500;
+    letter-spacing:0.08em; text-transform:uppercase;
+    padding:6px 0;
+    border-bottom:1.5px solid transparent;
+    transition:all 0.2s ease;
+    cursor:pointer;
+  }
+  nav.primary a:first-child{margin-left:0}
+  nav.primary a:hover,nav.primary a.active{
+    color:var(--ordine-gold);
+    border-bottom-color:var(--ordine-gold);
+  }
+
+  /* BREADCRUMB */
+  .breadcrumb{
+    max-width:1280px; margin:0 auto;
+    padding:24px 40px 0;
+    font-family:'Cinzel', serif;
+    font-size:11px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+  .breadcrumb a{
+    color:var(--muted);
+    text-decoration:none;
+    border-bottom:1px solid transparent;
+    transition:all 0.2s ease;
+  }
+  .breadcrumb a:hover{color:var(--ordine-gold); border-bottom-color:var(--ordine-gold)}
+  .breadcrumb .sep{margin:0 12px; color:var(--ordine-gold)}
+
+  /* EVENT HERO */
+  .event-hero{
+    max-width:1280px; margin:0 auto;
+    padding:40px 40px 60px;
+    text-align:center;
+  }
+  .event-hero .date{
+    font-family:'Cinzel', serif;
+    font-size:12px;
+    letter-spacing:0.3em;
+    color:var(--ordine-gold);
+    text-transform:uppercase;
+    margin-bottom:24px;
+  }
+  .ornament{
+    display:flex; align-items:center; justify-content:center;
+    gap:18px; margin:0 0 28px;
+  }
+  .ornament .line{height:1px; width:80px; background:var(--ordine-gold)}
+  .ornament .diamond{
+    width:8px; height:8px; transform:rotate(45deg);
+    border:1px solid var(--ordine-gold);
+  }
+  .event-hero h1{
+    font-family:'Cormorant Garamond', serif;
+    font-size:clamp(48px, 7vw, 88px);
+    font-weight:500;
+    line-height:1.05;
+    margin:0 0 16px;
+    color:var(--navy);
+    letter-spacing:-0.01em;
+  }
+  .event-hero .subtitle{
+    font-family:'Cormorant Garamond', serif;
+    font-size:clamp(22px, 3vw, 28px);
+    font-style:italic;
+    color:var(--ordine-gold);
+    margin:0 0 28px;
+    font-weight:400;
+  }
+  .event-hero .venue{
+    font-family:'Cinzel', serif;
+    font-size:13px;
+    letter-spacing:0.22em;
+    color:var(--navy);
+    text-transform:uppercase;
+    margin-bottom:8px;
+  }
+  .event-hero .address{
+    font-family:'Cormorant Garamond', serif;
+    font-size:18px;
+    font-style:italic;
+    color:var(--muted);
+  }
+
+  /* HERO IMAGE BAND */
+  .hero-image{
+    width:100%;
+    height:clamp(360px, 60vh, 640px);
+    background:var(--navy);
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-image img{
+    width:100%; height:100%; object-fit:cover;
+    display:block;
+  }
+  .hero-image .caption{
+    position:absolute;
+    bottom:24px;
+    left:50%;
+    transform:translateX(-50%);
+    background:rgba(11,22,40,0.7);
+    backdrop-filter:blur(8px);
+    color:var(--ivory);
+    padding:10px 24px;
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:15px;
+    letter-spacing:0.02em;
+    text-align:center;
+    max-width:90%;
+  }
+
+  /* CONTENT */
+  .content{
+    max-width:840px;
+    margin:0 auto;
+    padding:80px 40px;
+  }
+  .content .lede{
+    font-family:'Cormorant Garamond', serif;
+    font-size:26px;
+    font-style:italic;
+    color:var(--navy);
+    line-height:1.5;
+    margin:0 0 40px;
+    text-align:center;
+  }
+  .content p{
+    font-size:18px;
+    line-height:1.75;
+    color:var(--ink);
+    margin:0 0 24px;
+  }
+  .content p strong{color:var(--navy); font-weight:600}
+
+  .featured-guest{
+    background:var(--ivory-warm);
+    border-left:3px solid var(--ordine-gold);
+    padding:32px 36px;
+    margin:48px 0;
+  }
+  .featured-guest .label{
+    font-family:'Cinzel', serif;
+    font-size:11px;
+    letter-spacing:0.22em;
+    color:var(--ordine-gold);
+    text-transform:uppercase;
+    margin-bottom:14px;
+  }
+  .featured-guest h3{
+    font-family:'Cormorant Garamond', serif;
+    font-size:32px;
+    font-weight:500;
+    color:var(--navy);
+    margin:0 0 12px;
+    line-height:1.2;
+  }
+  .featured-guest p{
+    margin:0;
+    font-size:17px;
+    line-height:1.7;
+  }
+
+  /* WINES */
+  .wines{
+    background:var(--ivory-warm);
+    padding:80px 40px;
+  }
+  .wines-inner{max-width:1080px; margin:0 auto}
+  .wines .head{text-align:center; margin-bottom:48px}
+  .wines .head .label{
+    font-family:'Cinzel', serif;
+    font-size:11px;
+    letter-spacing:0.3em;
+    color:var(--ordine-gold);
+    text-transform:uppercase;
+    margin-bottom:16px;
+  }
+  .wines .head h2{
+    font-family:'Cormorant Garamond', serif;
+    font-size:clamp(36px, 5vw, 52px);
+    font-weight:500;
+    color:var(--navy);
+    margin:0 0 16px;
+    letter-spacing:-0.01em;
+  }
+  .wines .head .producer{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:20px;
+    color:var(--muted);
+  }
+  .wine-list{
+    display:flex;
+    flex-direction:column;
+    margin:48px 0 0;
+    border-top:1px solid var(--line);
+  }
+  .wine{
+    display:grid;
+    grid-template-columns:90px 1fr auto;
+    gap:32px;
+    align-items:baseline;
+    padding:22px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .wine .vintage{
+    font-family:'Cormorant Garamond', serif;
+    font-size:32px;
+    font-weight:500;
+    color:var(--ordine-gold);
+    line-height:1;
+  }
+  .wine .name{
+    font-family:'Cormorant Garamond', serif;
+    font-size:24px;
+    font-weight:600;
+    color:var(--navy);
+    letter-spacing:-0.005em;
+  }
+  .wine .producer{
+    font-size:13px;
+    letter-spacing:0.08em;
+    color:var(--muted);
+    text-transform:uppercase;
+    text-align:right;
+  }
+
+  /* DRINK FEATURE */
+  .drink-feature{
+    background:var(--navy);
+    color:var(--ivory);
+    padding:80px 40px;
+  }
+  .drink-feature-inner{
+    max-width:1080px; margin:0 auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+  }
+  .drink-feature-text .label{
+    font-family:'Cinzel', serif;
+    font-size:11px;
+    letter-spacing:0.3em;
+    color:var(--ordine-gold-light);
+    text-transform:uppercase;
+    margin-bottom:18px;
+  }
+  .drink-feature-text h2{
+    font-family:'Cormorant Garamond', serif;
+    font-size:clamp(36px, 5vw, 54px);
+    font-weight:500;
+    color:var(--ivory);
+    margin:0 0 16px;
+    line-height:1.05;
+    letter-spacing:-0.01em;
+  }
+  .drink-feature-text .tagline{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:20px;
+    color:var(--ordine-gold-pale);
+    margin-bottom:32px;
+  }
+  .drink-feature-text .ingredients{margin:0 0 32px}
+  .drink-feature-text .ing{
+    padding:10px 0;
+    border-bottom:1px solid rgba(201, 165, 56, 0.25);
+    font-size:15px;
+    color:var(--ivory-warm);
+  }
+  .drink-feature-text .ing strong{
+    color:var(--ordine-gold-light);
+    font-weight:600;
+    display:inline-block;
+    min-width:120px;
+  }
+  .drink-feature-text .note{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:17px;
+    color:var(--ordine-gold-pale);
+  }
+  .drink-feature-image img{
+    width:100%;
+    max-width:480px;
+    height:auto;
+    display:block;
+    margin:0 auto;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,0.5);
+  }
+
+  /* MENU */
+  .menu{
+    padding:80px 40px;
+    background:var(--ivory);
+  }
+  .menu-inner{max-width:840px; margin:0 auto}
+  .menu .head{text-align:center; margin-bottom:48px}
+  .menu .head .label{
+    font-family:'Cinzel', serif;
+    font-size:11px;
+    letter-spacing:0.3em;
+    color:var(--ordine-gold);
+    text-transform:uppercase;
+    margin-bottom:16px;
+  }
+  .menu .head h2{
+    font-family:'Cormorant Garamond', serif;
+    font-size:clamp(36px, 5vw, 52px);
+    font-weight:500;
+    color:var(--navy);
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  .menu .head .sub{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:18px;
+    color:var(--muted);
+    margin:10px 0 0;
+  }
+  .menu-list{
+    columns:2;
+    column-gap:48px;
+    margin-top:32px;
+  }
+  .menu-item{
+    padding:14px 0;
+    border-bottom:1px dotted var(--line);
+    font-family:'Cormorant Garamond', serif;
+    font-size:19px;
+    color:var(--ink);
+    break-inside:avoid;
+  }
+
+  /* GALLERY */
+  .gallery{
+    padding:80px 40px;
+    background:var(--ivory-warm);
+  }
+  .gallery-inner{max-width:1280px; margin:0 auto}
+  .gallery .head{text-align:center; margin-bottom:48px}
+  .gallery .head .label{
+    font-family:'Cinzel', serif;
+    font-size:11px;
+    letter-spacing:0.3em;
+    color:var(--ordine-gold);
+    text-transform:uppercase;
+    margin-bottom:16px;
+  }
+  .gallery .head h2{
+    font-family:'Cormorant Garamond', serif;
+    font-size:clamp(36px, 5vw, 52px);
+    font-weight:500;
+    color:var(--navy);
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(12, 1fr);
+    gap:16px;
+  }
+  .gallery-item{
+    position:relative;
+    overflow:hidden;
+    background:var(--navy);
+    cursor:zoom-in;
+  }
+  .gallery-item img{
+    width:100%; height:100%; object-fit:cover;
+    display:block;
+    transition:transform 0.5s ease;
+  }
+  .gallery-item:hover img{transform:scale(1.04)}
+  .g-1{grid-column:span 8; aspect-ratio:16/10}
+  .g-2{grid-column:span 4; aspect-ratio:4/5}
+  .g-3{grid-column:span 4; aspect-ratio:4/5}
+  .g-4{grid-column:span 8; aspect-ratio:16/10}
+  .g-5{grid-column:span 5; aspect-ratio:4/3}
+  .g-6{grid-column:span 7; aspect-ratio:16/10}
+
+  /* LIGHTBOX */
+  .lightbox{
+    position:fixed; inset:0;
+    background:rgba(11,22,40,0.95);
+    display:none;
+    align-items:center; justify-content:center;
+    z-index:1000;
+    padding:40px;
+    cursor:zoom-out;
+  }
+  .lightbox.open{display:flex}
+  .lightbox img{
+    max-width:100%; max-height:100%;
+    object-fit:contain;
+    box-shadow:0 20px 60px rgba(0,0,0,0.6);
+  }
+  .lightbox-close{
+    position:absolute; top:24px; right:32px;
+    background:transparent; border:1px solid var(--ordine-gold-light);
+    color:var(--ordine-gold-light);
+    width:40px; height:40px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:18px;
+    transition:all 0.2s ease;
+  }
+  .lightbox-close:hover{background:var(--ordine-gold); color:var(--ivory)}
+
+  /* DOWNLOADS */
+  .downloads{
+    padding:80px 40px;
+    background:var(--ivory);
+  }
+  .downloads-inner{
+    max-width:1080px; margin:0 auto;
+    text-align:center;
+  }
+  .downloads .head{margin-bottom:40px}
+  .downloads .head .label{
+    font-family:'Cinzel', serif;
+    font-size:11px;
+    letter-spacing:0.3em;
+    color:var(--ordine-gold);
+    text-transform:uppercase;
+    margin-bottom:14px;
+  }
+  .downloads .head h2{
+    font-family:'Cormorant Garamond', serif;
+    font-size:clamp(32px, 4vw, 44px);
+    font-weight:500;
+    color:var(--navy);
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  .download-cards{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:24px;
+    margin-top:40px;
+  }
+  .download-card{
+    background:var(--ivory-warm);
+    border:1px solid var(--line);
+    padding:36px;
+    text-align:left;
+    text-decoration:none;
+    color:inherit;
+    transition:transform 0.3s ease, box-shadow 0.3s ease;
+    display:flex;
+    align-items:center;
+    gap:24px;
+  }
+  .download-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 16px 32px -12px rgba(11,22,40,0.2);
+  }
+  .download-card .icon{
+    flex-shrink:0;
+    width:48px; height:48px;
+    border:1px solid var(--ordine-gold);
+    color:var(--ordine-gold);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .download-card .meta .label{
+    font-family:'Cinzel', serif;
+    font-size:10px;
+    letter-spacing:0.22em;
+    color:var(--ordine-gold);
+    text-transform:uppercase;
+    margin-bottom:4px;
+  }
+  .download-card .meta h4{
+    font-family:'Cormorant Garamond', serif;
+    font-size:22px;
+    font-weight:600;
+    color:var(--navy);
+    margin:0 0 4px;
+  }
+  .download-card .meta .filemeta{
+    font-size:13px;
+    color:var(--muted);
+  }
+
+  /* CLOSING */
+  .closing{
+    padding:80px 40px;
+    text-align:center;
+    background:var(--ivory-warm);
+    border-top:1px solid var(--line);
+  }
+  .closing blockquote{
+    font-family:'Cormorant Garamond', serif;
+    font-size:clamp(22px, 3vw, 30px);
+    font-style:italic;
+    color:var(--navy);
+    line-height:1.45;
+    max-width:760px;
+    margin:0 auto 36px;
+  }
+  .closing .back{
+    font-family:'Cinzel', serif;
+    font-size:11px;
+    letter-spacing:0.22em;
+    color:var(--navy);
+    text-transform:uppercase;
+    font-weight:600;
+    text-decoration:none;
+    border:1px solid var(--navy);
+    padding:14px 32px;
+    display:inline-block;
+    transition:all 0.2s ease;
+  }
+  .closing .back:hover{background:var(--navy); color:var(--ivory)}
+
+  /* FOOTER */
+  footer{
+    background:var(--navy-deep);
+    color:var(--ivory-warm);
+    padding:60px 40px 30px;
+    text-align:center;
+  }
+  footer img{height:48px; margin-bottom:18px}
+  footer p{font-size:13px; opacity:0.7; margin:0 0 14px}
+  footer .motto{
+    font-family:'Cinzel', serif;
+    font-size:10px;
+    letter-spacing:0.3em;
+    color:var(--ordine-gold-light);
+    margin-top:24px;
+    padding-top:24px;
+    border-top:1px solid rgba(201, 165, 56, 0.15);
+  }
+
+  /* DEMO BANNER */
+  .demo-banner{
+    position:fixed;
+    bottom:20px; right:20px;
+    background:var(--navy);
+    color:var(--ivory);
+    padding:14px 20px;
+    font-size:11px;
+    letter-spacing:0.15em;
+    text-transform:uppercase;
+    border:1px solid var(--ordine-gold);
+    z-index:900;
+    max-width:280px;
+    line-height:1.5;
+  }
+  .demo-banner strong{color:var(--ordine-gold-light); display:block; margin-bottom:4px; font-family:'Cinzel', serif}
+
+  /* RESPONSIVE */
+  @media (max-width:980px){
+    nav.primary{display:none}
+    .drink-feature-inner{grid-template-columns:1fr; gap:40px}
+    .download-cards{grid-template-columns:1fr}
+    .menu-list{columns:1}
+    .gallery-grid > *{grid-column:span 12 !important; aspect-ratio:16/10 !important}
+    .wine{grid-template-columns:1fr; gap:4px; padding:18px 0}
+    .wine .vintage{font-size:24px}
+    .wine .name{font-size:20px}
+    .wine .producer{text-align:left}
+    .content{padding:60px 24px}
+    .topstrip-inner{padding:0 16px}
+    .topstrip-text{font-size:10px}
+    .topstrip-spacer{display:none}
+    .header-inner{padding:14px 20px}
+    .brand-text .city{font-size:18px}
+    .breadcrumb{padding:18px 24px 0; font-size:10px}
+    .event-hero{padding:30px 24px 40px}
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP STRIP -->
+<div class="topstrip">
+  <div class="topstrip-inner">
+    <div class="topstrip-spacer"></div>
+    <div class="topstrip-text">
+      <span data-i18n="topstrip.line">Ordine dei Cavalieri del Tartufo e dei Vini d'Alba · Founded 1967</span> · 
+      <a href="https://www.cavalierideltartufo.it/en/" target="_blank" data-i18n="topstrip.link">Visit the Order →</a>
+    </div>
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button class="lang-btn active" data-lang="en" aria-label="English" title="English">
+        <svg viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg">
+          <clipPath id="us-c"><rect width="60" height="30"/></clipPath>
+          <g clip-path="url(#us-c)">
+            <rect width="60" height="30" fill="#B22234"/>
+            <path d="M0,3.46h60M0,10.38h60M0,17.31h60M0,24.23h60" stroke="#FFF" stroke-width="2.31"/>
+            <rect width="24" height="16.15" fill="#3C3B6E"/>
+          </g>
+        </svg>
+      </button>
+      <button class="lang-btn" data-lang="it" aria-label="Italiano" title="Italiano">
+        <svg viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg">
+          <rect width="20" height="30" fill="#009246"/>
+          <rect x="20" width="20" height="30" fill="#FFF"/>
+          <rect x="40" width="20" height="30" fill="#CE2B37"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a class="brand" href="../../index.html">
+      <img src="../../assets/brand/logo-cavalieri-tartufo.png" alt="Ordine dei Cavalieri del Tartufo e dei Vini d'Alba">
+      <div class="brand-text">
+        <span class="order" data-i18n="brand.order">Ordine dei Cavalieri</span>
+        <span class="city" data-i18n="brand.city">Chicago Delegation</span>
+      </div>
+    </a>
+    <nav class="primary">
+      <a href="../../index.html" data-i18n="nav.home">Home</a>
+      <a href="../../index.html#chapters" class="active" data-i18n="nav.events">Events</a>
+      <a href="../../index.html#past" data-i18n="nav.gallery">Gallery</a>
+      <a href="../../index.html#knight" data-i18n="nav.knight">Become a Knight</a>
+      <a href="../../index.html#roster" data-i18n="nav.knights">The Knights</a>
+      <a href="../../index.html#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="../../index.html" data-i18n="crumb.home">Home</a>
+  <span class="sep">/</span>
+  <a href="../../index.html#chapters" data-i18n="crumb.events">Events</a>
+  <span class="sep">/</span>
+  <span data-i18n="crumb.this">Notte del Solstizio d'Estate</span>
+</div>
+
+<!-- EVENT HERO -->
+<section class="event-hero">
+  <div class="date" data-i18n="hero.date">Sunday, 21 June 2026</div>
+  <div class="ornament"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+  <h1>Notte del Solstizio d'Estate</h1>
+  <div class="subtitle" data-i18n="hero.subtitle">Night of the Summer Solstice</div>
+  <div class="venue" data-i18n="hero.venue">Castello 1757 · Des Plaines, Illinois</div>
+  <div class="address" data-i18n="hero.address">At the home of Maestro Georgia Marsh</div>
+</section>
+
+<!-- HERO IMAGE -->
+<div class="hero-image">
+  <img src="photos/05-the-gathering.jpeg" alt="The gathering at the Summer Solstice Chapter">
+  <div class="caption" data-i18n="hero.caption">The Knights gather for the longest evening of the year.</div>
+</div>
+
+<!-- CONTENT -->
+<article class="content">
+  <p class="lede" data-i18n="rec.lede">The Knights of Alba-Chicago gathered at the home of Maestro Georgia Marsh for a warm and festive celebration of <em>Notte del Solstizio d'Estate</em> — Night of the Summer Solstice — on June 21, 2026.</p>
+
+  <p data-i18n-html="rec.p1">The evening honored the Italian tradition of welcoming summer with food, wine, friendship, and the long twilight of the season. Guests were greeted with a special cocktail created for the occasion: <strong>A Royal Summer Knight</strong>, a sparkling summer aperitivo made with Vermouth di Torino Bianco, Alta Langa Extra Brut, fresh summer mint, and a generous amount of ice.</p>
+
+  <div class="featured-guest">
+    <div class="label" data-i18n="rec.guest.label">Honored Guest</div>
+    <h3>Chiara Boschis · E. Pira &amp; Figli</h3>
+    <p data-i18n="rec.guest.body">The Chapter was especially honored to welcome Chiara Boschis of E. Pira &amp; Figli, whose wines were featured throughout the evening. Chiara — one of the great female producers of Barolo and the first female winemaker in the Langhe — joined the gathering as guests enjoyed a progression of her wines from Dolcetto to two great Barolos.</p>
+  </div>
+
+  <p data-i18n="rec.p2">The wines were paired with an abundant Italian menu, including cheeses selected for the wines, personalized small pizzas, burrata and prosciutto, caprese, salumi, grilled spiedini with herbs and marinades, porchetta, rosemary roasted potatoes, grilled vegetables, fruit, bread, gelato, and assorted desserts.</p>
+
+  <p data-i18n="rec.p3">It was an evening of Italian elegance, generous hospitality, and summer celebration — a fitting tribute to the wines of Chiara Boschis, the spirit of the Chapter, and the friendship shared around the table.</p>
+</article>
+
+<!-- WINES -->
+<section class="wines">
+  <div class="wines-inner">
+    <div class="head">
+      <div class="label" data-i18n="wines.label">I Vini · The Wines</div>
+      <h2 data-i18n="wines.title">A progression by Chiara Boschis</h2>
+      <div class="producer" data-i18n="wines.producer">All wines: E. Pira &amp; Figli — Chiara Boschis</div>
+    </div>
+    <div class="wine-list">
+      <div class="wine">
+        <div class="vintage">2023</div>
+        <div class="name">Dolcetto d'Alba</div>
+        <div class="producer">E. Pira &amp; Figli</div>
+      </div>
+      <div class="wine">
+        <div class="vintage">2022</div>
+        <div class="name">Barbera d'Alba Superiore</div>
+        <div class="producer">E. Pira &amp; Figli</div>
+      </div>
+      <div class="wine">
+        <div class="vintage">2022</div>
+        <div class="name">Langhe Nebbiolo</div>
+        <div class="producer">E. Pira &amp; Figli</div>
+      </div>
+      <div class="wine">
+        <div class="vintage">2021</div>
+        <div class="name">Via Nuova Barolo</div>
+        <div class="producer">E. Pira &amp; Figli</div>
+      </div>
+      <div class="wine">
+        <div class="vintage">2021</div>
+        <div class="name">Mosconi Barolo</div>
+        <div class="producer">E. Pira &amp; Figli</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DRINK FEATURE -->
+<section class="drink-feature">
+  <div class="drink-feature-inner">
+    <div class="drink-feature-text">
+      <div class="label" data-i18n="drink.label">Drink of the Night</div>
+      <h2>A Royal Summer Knight</h2>
+      <div class="tagline" data-i18n="drink.tagline">L'eleganza italiana. Il gusto di un'estate regia.</div>
+      <div class="ingredients">
+        <div class="ing"><strong data-i18n="drink.ing1.label">1 oz / 30 ml</strong> <span data-i18n="drink.ing1.body">Vermouth di Torino Bianco</span></div>
+        <div class="ing"><strong data-i18n="drink.ing2.label">2 oz / 60 ml</strong> <span data-i18n="drink.ing2.body">Alta Langa Extra Brut</span></div>
+        <div class="ing"><strong data-i18n="drink.ing3.label" style="color:var(--ordine-gold-light)">Garnish</strong> <span data-i18n="drink.ing3.body">Fresh summer mint</span></div>
+        <div class="ing"><strong data-i18n="drink.ing4.label" style="color:var(--ordine-gold-light)">Serve</strong> <span data-i18n="drink.ing4.body">Over a generous amount of ice</span></div>
+      </div>
+      <div class="note" data-i18n="drink.note">Sparkling · Herbal · Refreshing — created for the Knights of Alba-Chicago</div>
+    </div>
+    <div class="drink-feature-image">
+      <img src="royal-summer-knight-poster-thumb.jpeg" alt="A Royal Summer Knight cocktail poster">
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="menu">
+  <div class="menu-inner">
+    <div class="head">
+      <div class="label" data-i18n="menu.label">La Cena · The Menu</div>
+      <h2 data-i18n="menu.title">An abundant Italian table</h2>
+      <p class="sub" data-i18n="menu.sub">Selected to honor the wines of Chiara Boschis</p>
+    </div>
+    <div class="menu-list">
+      <div class="menu-item" data-i18n="menu.1">Cheeses paired to the wines</div>
+      <div class="menu-item" data-i18n="menu.2">Small personalized pizzas at our pizza bar</div>
+      <div class="menu-item" data-i18n="menu.3">Burrata and prosciutto</div>
+      <div class="menu-item" data-i18n="menu.4">Caprese</div>
+      <div class="menu-item" data-i18n="menu.5">Salumi with the finest Italian cured meats, olives, dried fruits, jams, and accompaniments</div>
+      <div class="menu-item" data-i18n="menu.6">Grilled spiedini with herbs and marinades</div>
+      <div class="menu-item" data-i18n="menu.7">Porchetta</div>
+      <div class="menu-item" data-i18n="menu.8">Rosemary roasted potatoes</div>
+      <div class="menu-item" data-i18n="menu.9">Grilled vegetables</div>
+      <div class="menu-item" data-i18n="menu.10">Fresh fruit</div>
+      <div class="menu-item" data-i18n="menu.11">Bread</div>
+      <div class="menu-item" data-i18n="menu.12">Gelato with toppings</div>
+      <div class="menu-item" data-i18n="menu.13">Assorted desserts</div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery">
+  <div class="gallery-inner">
+    <div class="head">
+      <div class="label" data-i18n="gallery.label">The Evening in Pictures</div>
+      <h2 data-i18n="gallery.title">Notte del Solstizio</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item g-1" data-img="photos/01-antipasto-table.jpeg">
+        <img src="photos/01-antipasto-table.jpeg" alt="The antipasto table">
+      </div>
+      <div class="gallery-item g-2" data-img="photos/02-chiara-with-wines.jpeg">
+        <img src="photos/02-chiara-with-wines.jpeg" alt="Chiara Boschis with her wines">
+      </div>
+      <div class="gallery-item g-3" data-img="photos/03-david-planter-flags.jpeg">
+        <img src="photos/03-david-planter-flags.jpeg" alt="David planter with American and Italian flags">
+      </div>
+      <div class="gallery-item g-4" data-img="photos/04-maestro-with-knight-porchetta.jpeg">
+        <img src="photos/04-maestro-with-knight-porchetta.jpeg" alt="Maestro Georgia Marsh and a Knight with the porchetta">
+      </div>
+      <div class="gallery-item g-5" data-img="photos/06-chiara-and-maestro.jpeg">
+        <img src="photos/06-chiara-and-maestro.jpeg" alt="Chiara Boschis and Maestro Georgia Marsh">
+      </div>
+      <div class="gallery-item g-6" data-img="photos/05-the-gathering.jpeg">
+        <img src="photos/05-the-gathering.jpeg" alt="The gathering at the table">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" aria-label="Close">✕</button>
+  <img src="" alt="">
+</div>
+
+<!-- DOWNLOADS -->
+<section class="downloads">
+  <div class="downloads-inner">
+    <div class="head">
+      <div class="label" data-i18n="dl.label">Keep the Evening</div>
+      <h2 data-i18n="dl.title">Souvenirs of the Chapter</h2>
+    </div>
+    <div class="download-cards">
+      <a class="download-card" href="notte-del-solstizio-flyer.pdf" target="_blank" download>
+        <div class="icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+          </svg>
+        </div>
+        <div class="meta">
+          <div class="label" data-i18n="dl.flyer.label">PDF · Bifold Flyer</div>
+          <h4 data-i18n="dl.flyer.title">The Event Programme</h4>
+          <div class="filemeta" data-i18n="dl.flyer.meta">About Chiara · The Wines · The Menu</div>
+        </div>
+      </a>
+      <a class="download-card" href="royal-summer-knight-poster.png" target="_blank" download>
+        <div class="icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="1"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+        </div>
+        <div class="meta">
+          <div class="label" data-i18n="dl.poster.label">PNG · Cocktail Poster</div>
+          <h4 data-i18n="dl.poster.title">A Royal Summer Knight</h4>
+          <div class="filemeta" data-i18n="dl.poster.meta">The recipe, beautifully presented</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing">
+  <blockquote data-i18n="closing.quote">"An evening of Italian elegance, generous hospitality, and summer celebration — a fitting tribute to the wines of Chiara Boschis, the spirit of the Chapter, and the friendship shared around the table."</blockquote>
+  <a href="../../index.html#chapters" class="back" data-i18n="closing.back">← All Events</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img src="../../assets/brand/logo-cavalieri-tartufo.png" alt="Ordine dei Cavalieri del Tartufo e dei Vini d'Alba">
+  <p data-i18n="footer.copy">© Ordine dei Cavalieri del Tartufo e dei Vini d'Alba · Chicago Delegation</p>
+  <div class="motto" data-i18n="footer.motto">Tradition · Culture · Excellence</div>
+</footer>
+
+<!-- DEMO BANNER -->
+<div class="demo-banner">
+  <strong data-i18n="demo.title">Concept Prototype</strong>
+  <span data-i18n="demo.body">A demonstrative mockup of an enhanced web presence for the Chicago Delegation.</span>
+</div>
+
+<script>
+  // ============ I18N (Italian translations for this page) ============
+  const I18N = {
+    en: {},
+    it: {
+      // Shared
+      "topstrip.line": "Ordine dei Cavalieri del Tartufo e dei Vini d'Alba · Fondato nel 1967",
+      "topstrip.link": "Visita l'Ordine →",
+      "brand.order": "Ordine dei Cavalieri",
+      "brand.city": "Delegazione di Chicago",
+      "nav.home": "Home",
+      "nav.events": "Eventi",
+      "nav.gallery": "Galleria",
+      "nav.knight": "Diventa Cavaliere",
+      "nav.knights": "I Cavalieri",
+      "nav.contact": "Contatti",
+
+      // Breadcrumb
+      "crumb.home": "Home",
+      "crumb.events": "Eventi",
+      "crumb.this": "Notte del Solstizio d'Estate",
+
+      // Hero
+      "hero.date": "Domenica, 21 giugno 2026",
+      "hero.subtitle": "Night of the Summer Solstice",
+      "hero.venue": "Castello 1757 · Des Plaines, Illinois",
+      "hero.address": "A casa del Maestro Georgia Marsh",
+      "hero.caption": "I Cavalieri si riuniscono per la sera più lunga dell'anno.",
+
+      // Recap
+      "rec.lede": "I Cavalieri di Alba-Chicago si sono riuniti a casa del Maestro Georgia Marsh per una calda e festosa celebrazione della <em>Notte del Solstizio d'Estate</em> — il 21 giugno 2026.",
+      "rec.p1": "La serata ha onorato la tradizione italiana di accogliere l'estate con cibo, vino, amicizia e il lungo crepuscolo della stagione. Gli ospiti sono stati accolti con un cocktail speciale creato per l'occasione: <strong>A Royal Summer Knight</strong>, un aperitivo estivo frizzante a base di Vermouth di Torino Bianco, Alta Langa Extra Brut, menta fresca estiva e abbondante ghiaccio.",
+      "rec.guest.label": "Ospite d'Onore",
+      "rec.guest.body": "Il Capitolo è stato particolarmente onorato di accogliere Chiara Boschis di E. Pira & Figli, i cui vini hanno accompagnato l'intera serata. Chiara — una delle grandi produttrici di Barolo e la prima donna vinificatrice delle Langhe — si è unita al raduno mentre gli ospiti hanno apprezzato una progressione dei suoi vini, dal Dolcetto a due grandi Barolo.",
+      "rec.p2": "I vini sono stati abbinati a un abbondante menù italiano, comprendente formaggi selezionati per i vini, piccole pizze personalizzate, burrata e prosciutto, caprese, salumi, spiedini grigliati con erbe e marinate, porchetta, patate arrosto al rosmarino, verdure grigliate, frutta, pane, gelato e dolci assortiti.",
+      "rec.p3": "È stata una serata di eleganza italiana, generosa ospitalità e celebrazione estiva — un giusto tributo ai vini di Chiara Boschis, allo spirito del Capitolo e all'amicizia condivisa attorno alla tavola.",
+
+      // Wines
+      "wines.label": "I Vini",
+      "wines.title": "Una progressione di Chiara Boschis",
+      "wines.producer": "Tutti i vini: E. Pira & Figli — Chiara Boschis",
+
+      // Drink
+      "drink.label": "Drink della Serata",
+      "drink.tagline": "L'eleganza italiana. Il gusto di un'estate regia.",
+      "drink.ing1.label": "1 oz / 30 ml",
+      "drink.ing1.body": "Vermouth di Torino Bianco",
+      "drink.ing2.label": "2 oz / 60 ml",
+      "drink.ing2.body": "Alta Langa Extra Brut",
+      "drink.ing3.label": "Decorazione",
+      "drink.ing3.body": "Menta estiva fresca",
+      "drink.ing4.label": "Servire",
+      "drink.ing4.body": "Su abbondante ghiaccio",
+      "drink.note": "Frizzante · Erbaceo · Rinfrescante — creato per i Cavalieri di Alba-Chicago",
+
+      // Menu
+      "menu.label": "La Cena",
+      "menu.title": "Una tavola italiana abbondante",
+      "menu.sub": "Selezionata per onorare i vini di Chiara Boschis",
+      "menu.1": "Formaggi da abbinare ai vini",
+      "menu.2": "Piccole pizze personalizzate al nostro pizza bar",
+      "menu.3": "Burrata e prosciutto",
+      "menu.4": "Caprese",
+      "menu.5": "Salumi con i migliori tagli di carne italiani, olive, frutta secca, marmellate e accompagnamenti",
+      "menu.6": "Grigliata mista di spiedini con erbe e marinate",
+      "menu.7": "Porchetta",
+      "menu.8": "Patate arrosto con rosmarino",
+      "menu.9": "Verdure alla griglia",
+      "menu.10": "Frutta",
+      "menu.11": "Pane",
+      "menu.12": "Gelato con condimenti",
+      "menu.13": "Dolci assortiti",
+
+      // Gallery
+      "gallery.label": "La Serata in Immagini",
+      "gallery.title": "Notte del Solstizio",
+
+      // Downloads
+      "dl.label": "Conserva il Ricordo",
+      "dl.title": "Souvenir del Capitolo",
+      "dl.flyer.label": "PDF · Locandina",
+      "dl.flyer.title": "Il Programma della Serata",
+      "dl.flyer.meta": "Su Chiara · I Vini · Il Menù",
+      "dl.poster.label": "PNG · Locandina del Cocktail",
+      "dl.poster.title": "A Royal Summer Knight",
+      "dl.poster.meta": "La ricetta, splendidamente presentata",
+
+      // Closing
+      "closing.quote": "\"Una serata di eleganza italiana, generosa ospitalità e celebrazione estiva — un giusto tributo ai vini di Chiara Boschis, allo spirito del Capitolo e all'amicizia condivisa attorno alla tavola.\"",
+      "closing.back": "← Tutti gli Eventi",
+
+      // Footer
+      "footer.copy": "© Ordine dei Cavalieri del Tartufo e dei Vini d'Alba · Delegazione di Chicago",
+      "footer.motto": "Tradizione · Cultura · Eccellenza",
+
+      // Demo banner
+      "demo.title": "Prototipo Concettuale",
+      "demo.body": "Una bozza dimostrativa di un'eventuale presenza web ampliata per la Delegazione di Chicago.",
+    }
+  };
+
+  // ============ I18N ENGINE ============
+  const ORIGINAL_EN = {};
+  function captureOriginals() {
+    document.querySelectorAll('[data-i18n], [data-i18n-html]').forEach(el => {
+      const id = el.getAttribute('data-i18n') || el.getAttribute('data-i18n-html');
+      if (id && !(id in ORIGINAL_EN)) {
+        ORIGINAL_EN[id] = el.hasAttribute('data-i18n-html') ? el.innerHTML : el.textContent;
+      }
+    });
+  }
+
+  function applyLang(lang) {
+    const dict = I18N[lang] || {};
+    document.documentElement.lang = lang;
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      const translated = dict[key];
+      if (translated !== undefined) el.textContent = translated;
+      else if (ORIGINAL_EN[key] !== undefined) el.textContent = ORIGINAL_EN[key];
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      const key = el.getAttribute('data-i18n-html');
+      const translated = dict[key];
+      if (translated !== undefined) el.innerHTML = translated;
+      else if (ORIGINAL_EN[key] !== undefined) el.innerHTML = ORIGINAL_EN[key];
+    });
+
+    document.querySelectorAll('.lang-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
+  }
+
+  function initialLang() {
+    try {
+      const saved = localStorage.getItem('lang');
+      if (saved === 'en' || saved === 'it') return saved;
+    } catch (e) {}
+    const nav = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+    if (nav.startsWith('it')) return 'it';
+    return 'en';
+  }
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.lang;
+      applyLang(lang);
+      try { localStorage.setItem('lang', lang); } catch (e) {}
+    });
+  });
+
+  // Lightbox
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = lightbox.querySelector('img');
+  document.querySelectorAll('.gallery-item').forEach(item => {
+    item.addEventListener('click', () => {
+      lightboxImg.src = item.dataset.img;
+      lightboxImg.alt = item.querySelector('img').alt;
+      lightbox.classList.add('open');
+    });
+  });
+  lightbox.addEventListener('click', () => lightbox.classList.remove('open'));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.classList.contains('open')) {
+      lightbox.classList.remove('open');
+    }
+  });
+
+  // Bootstrap
+  captureOriginals();
+  applyLang(initialLang());
+</script>
+
+</body>
+</html>
