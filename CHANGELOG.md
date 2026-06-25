@@ -3,6 +3,27 @@
 All notable changes to the Chicago Delegation web presence are documented here.
 Format follows [keepachangelog.com](https://keepachangelog.com); newest entries at top.
 
+## 2026.06.25.2
+
+### Added
+- Multi-page architecture: each section is now a real URL
+  - `/events/` — Events list (Upcoming / Past)
+  - `/gallery/` — Gallery
+  - `/become-a-knight/` — Knight application
+  - `/the-knights/` — Roster
+  - `/contact/` — Contact form
+- Shared `assets/styles/main.css` (extracted from inline styles)
+- Shared `assets/scripts/i18n.js` (extracted i18n dictionary + engine, MPA nav active-state logic)
+- `build-pages.js` (Node generator; emits the six section pages from a shared chrome template)
+
+### Changed
+- Footer build-version line now legible: 13px white at 0.85 opacity (was 10px gold at 0.45 opacity)
+- Event detail page (`events/2026-06-21-notte-del-solstizio/`) nav links updated to MPA URLs
+- Internal nav now uses real `href` attributes instead of `data-page` SPA toggles
+
+### Removed
+- `index.html` monolith replaced by per-page files; old SPA `showPage()` logic retired
+
 ## 2026.06.25
 
 ### Added
