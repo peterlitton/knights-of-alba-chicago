@@ -667,6 +667,37 @@
     margin:24px 0;
   }
   .leader-body p{font-size:16px; line-height:1.7; color:var(--ink)}
+  .leader-vps{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:32px;
+    margin-top:32px;
+  }
+  .vp-card{
+    background:var(--ivory-warm);
+    border:1px solid var(--line);
+    padding:36px 40px;
+    text-align:center;
+  }
+  .vp-card .role{
+    font-family:'Cinzel', serif;
+    font-size:11px;
+    letter-spacing:0.25em;
+    color:var(--ordine-gold);
+    text-transform:uppercase;
+    margin-bottom:12px;
+  }
+  .vp-card h3{
+    font-family:'Cormorant Garamond', serif;
+    font-size:34px; font-weight:500;
+    color:var(--navy);
+    margin:0 0 6px;
+    line-height:1;
+  }
+  .vp-card .since{
+    font-style:italic; color:var(--muted);
+    font-family:'Cormorant Garamond', serif; font-size:17px;
+  }
 
   /* ROSTER */
   .roster{background:var(--ivory)}
@@ -885,27 +916,10 @@
     opacity:0.85;
   }
 
-  /* DEMO BANNER */
-  .demo-banner{
-    position:fixed;
-    bottom:20px; right:20px;
-    background:var(--navy);
-    color:var(--ivory);
-    padding:14px 20px;
-    font-size:11px;
-    letter-spacing:0.15em;
-    text-transform:uppercase;
-    border:1px solid var(--ordine-gold);
-    z-index:1000;
-    max-width:280px;
-    line-height:1.5;
-  }
-  .demo-banner strong{color:var(--ordine-gold-light); display:block; margin-bottom:4px; font-family:'Cinzel', serif}
-
   /* RESPONSIVE */
   @media (max-width:980px){
     nav.primary{display:none}
-    .mission-grid, .contact-block, .leader-card{grid-template-columns:1fr; gap:40px}
+    .mission-grid, .contact-block, .leader-card, .leader-vps{grid-template-columns:1fr; gap:40px}
     .leader-body{padding:40px}
     .pillars, .knight-steps, .journal-grid, .test-grid{grid-template-columns:1fr}
     .roster-stats{grid-template-columns:1fr}

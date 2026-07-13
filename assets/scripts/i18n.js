@@ -114,7 +114,7 @@
       // Gallery
       "gal.eyebrow": "Rivivi gli Eventi",
       "gal.title": "La Delegazione in immagini",
-      "gal.lede": "Un racconto visivo degli eventi recenti di Chicago — le cene, le investiture, le bottiglie, i legami.",
+      "gal.lede": "Gli eventi di Chicago — cerimonie ufficiali, grandi cene, momenti conviviali. Tutti celebrano e sostengono i valori dell'Ordine.",
       "gal.1.label": "Investitura · Chicago · 2024",
       "gal.1.title": "I nuovi Cavalieri della Delegazione di Chicago, con il Maestro Georgia Marsh",
       "gal.2.label": "Alba · 2024",
@@ -150,7 +150,10 @@
 
       // Leadership
       "leader.eyebrow": "Guida",
-      "leader.title": "Il Maestro della Delegazione di Chicago",
+      "leader.title": "La Guida della Delegazione di Chicago",
+      "leader.vp.role": "Vicepresidente · Delegazione di Chicago",
+      "leader.vp1.since": "Cavaliere dal 2025",
+      "leader.vp2.since": "Cavaliere dal 2023",
       "leader.portrait": "Ritratto del Maestro",
       "leader.role": "Maestro · Delegazione di Chicago",
       "leader.since": "Cavaliere dal 2019 · Maestro dal 2023",
@@ -160,7 +163,7 @@
       // Roster
       "roster.eyebrow": "Albo dei Cavalieri · Chicago",
       "roster.title": "I Cavalieri della Delegazione di Chicago",
-      "roster.lede": "Un sodalizio in crescita di professionisti del settore e appassionati, presentati all'Ordine e investiti in abito in una cerimonia ufficiale.",
+      "roster.lede": "Un sodalizio in crescita di appassionati e professionisti del settore, presentati all'Ordine in una cerimonia ufficiale.",
       "roster.stat.knights": "Cavalieri",
       "roster.stat.honorary": "Onorari",
       "roster.stat.est": "Istituita",
@@ -169,14 +172,16 @@
       "contact.eyebrow": "Iniziamo a Conoscerci",
       "contact.title": "Contatta la Delegazione di Chicago",
       "contact.h3": "Cominciamo da una conversazione.",
-      "contact.body": "Che siate Cavalieri di un'altra delegazione, aspiranti interessati a iscriversi, partner dell'ospitalità o semplici amici curiosi della tavola italiana — saremo lieti di sentirvi.",
-      "contact.maestro.label": "Il Maestro",
+      "contact.body": "Che siate Cavalieri di un'altra delegazione, aspiranti interessati a iscriversi o semplici amici curiosi della tavola italiana — saremo lieti di sentirvi.",
+      "contact.general.label": "Servizi Generali, Delegazione di Chicago",
+      "contact.general.body": "<a href=\"mailto:contact@knightsofalbachicago.org\">contact@knightsofalbachicago.org</a>",
+      "contact.maestro.label": "Il Maestro di Chicago",
       "contact.maestro.body": "Georgia Marsh · Maestro<br><a href=\"mailto:chicagomaster@cavalierdeltartufo.it\">chicagomaster@cavalierdeltartufo.it</a>",
       "contact.follow.label": "Segui la Delegazione",
       "contact.follow.body": "<a href=\"https://www.instagram.com/knightsofalba_chicago/\" target=\"_blank\">@knightsofalba_chicago</a> su Instagram",
       "contact.hq.label": "L'Ordine — Sede Centrale",
       "contact.hq.body": "Castello di Grinzane Cavour · Via Castello 5 · 12060 Grinzane Cavour (CN) · Italia<br><a href=\"https://www.cavalierideltartufo.it/\" target=\"_blank\">cavalierideltartufo.it</a>",
-      "contact.thanks": "Grazie. Il Maestro vi risponderà a breve.",
+      "contact.thanks": "Grazie. Il vostro programma di posta si aprirà con il messaggio indirizzato all'Ordine.",
       "contact.form.title": "Manifesta il tuo interesse",
       "contact.form.sub": "Qualche dato per cominciare. Trattiamo il vostro messaggio in via riservata.",
       "contact.form.name": "Nome",
@@ -190,7 +195,7 @@
       "contact.form.opt5": "Altro",
       "contact.form.msg": "Qualche parola",
       "contact.form.msgPh": "Racconta brevemente il tuo interesse per l'Ordine.",
-      "contact.form.submit": "Invia al Maestro",
+      "contact.form.submit": "Invia all'Ordine",
 
       // Footer
       "footer.brand": "La Delegazione di Chicago dell'Ordine dei Cavalieri del Tartufo e dei Vini d'Alba — sodalizio enogastronomico fondato in Piemonte nel 1967, portato a Chicago nel 2023.",
@@ -206,10 +211,6 @@
       "footer.form": "Modulo di Contatto",
       "footer.copy": "© Ordine dei Cavalieri del Tartufo e dei Vini d'Alba · Delegazione di Chicago",
       "footer.motto": "Tradizione · Cultura · Eccellenza",
-
-      // Demo banner
-      "demo.title": "Prototipo Concettuale",
-      "demo.body": "Una bozza dimostrativa di un'eventuale presenza web ampliata per la Delegazione di Chicago. Fotografie ed eventi mostrati sono illustrativi.",
     }
   };
 

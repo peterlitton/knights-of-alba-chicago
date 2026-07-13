@@ -3,6 +3,28 @@
 All notable changes to the Chicago Delegation web presence are documented here.
 Format follows [keepachangelog.com](https://keepachangelog.com); newest entries at top.
 
+## 2026.07.13
+
+### Added
+- Site icons: `favicon.ico`, `apple-touch-icon.png` (shield on ivory with even vertical inset), and 192/512 PWA icons + `site.webmanifest` so the shield appears when saving the site to a phone home screen
+- Brand assets: `assets/brand/shield-clear.png` (crest on transparent, tight-cropped) and `assets/brand/flag-us.svg` (accurate 50-star US flag)
+- Canonical link tags on every page pointing to knightsofalbachicago.org
+- Contact page: General Services block (contact@knightsofalbachicago.org) above the Maestro
+- Leadership: Vicepresidente cards for Peter Litton (Knight since 2025) and Norris Liu (Knight since 2023)
+- Roster: Vicepresidente titles on Litton and Liu entries
+- Italian translations for all new and changed copy
+
+### Changed
+- Leadership section moved from Become a Knight page to The Knights page, below the roster; retitled "The Leadership of the Chicago Delegation"
+- Contact intro copy: "hospitality partner" removed from audience list
+- Contact: "The Maestro" label → "The Chicago Maestro"
+- Contact form: submit button now "Send to the Order"; submission composes an email to contact@knightsofalbachicago.org
+- Roster lede and Gallery lede copy revised
+- Roster: comma now sits inside the surname span, closing the kerning gap after the name
+
+### Removed
+- Concept Prototype banner from all pages (markup, styles, and i18n keys)
+
 ## 2026.06.25.2
 
 ### Added
