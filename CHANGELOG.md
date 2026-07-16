@@ -3,6 +3,11 @@
 All notable changes to the Chicago Delegation web presence are documented here.
 Format follows [keepachangelog.com](https://keepachangelog.com); newest entries at top.
 
+## 2026.07.16
+
+### Added
+- New event recap: "Knights at Sea — A Summer Celebration Aboard Siberian Dream" (12 July 2026) at `/events/2026-07-12-knights-at-sea/`, with three optimized photos, full Italian translation, and a listing card on the Events page (newest first)
+
 ## 2026.07.13
 
 ### Added

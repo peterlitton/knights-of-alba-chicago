@@ -74,6 +74,10 @@
       "evpage.read": "Leggi la cronaca →",
 
       // Notte del Solstizio event
+      "evpage.sea.date": "Domenica, 12 luglio 2026",
+      "evpage.sea.subtitle": "Una celebrazione estiva a bordo di Siberian Dream",
+      "evpage.sea.venue": "A bordo dello yacht del Cavaliere Quintin Marx · Lago Michigan",
+      "evpage.sea.body": "I Cavalieri di Alba-Chicago hanno navigato sul Lago Michigan a bordo di Siberian Dream, lo yacht di 74 piedi di proprietà e al comando del Cavaliere Quintin Marx — Prosecco, Champagne millesimato, tartufi e un generoso pranzo sotto un cielo estivo sereno.",
       "evpage.solstizio.date": "Domenica, 21 giugno 2026",
       "evpage.solstizio.subtitle": "Notte del Solstizio d'Estate",
       "evpage.solstizio.venue": "Con i vini di Chiara Boschis · E. Pira & Figli",

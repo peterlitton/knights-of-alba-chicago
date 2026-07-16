@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="build-version" content="2026.07.16">
+<title>Knights at Sea · 12 July 2026 — Chicago Delegation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://knightsofalbachicago.org/events/2026-07-12-knights-at-sea/">
+<link rel="icon" href="../../favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<style>
+  :root{
+    --ordine-gold: #AD8400;
+    --ordine-gold-light: #C9A538;
+    --ordine-gold-pale: #E8D89A;
+    --navy: #14213D;
+    --navy-deep: #0B1628;
+    --ivory: #FAF6EE;
+    --ivory-warm: #F2EADA;
+    --crimson: #7A1F26;
+    --ink: #1A1A1A;
+    --muted: #6B6357;
+    --line: rgba(173, 132, 0, 0.25);
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:'Inter', sans-serif;
+    background:var(--ivory);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* TOP STRIP */
+  .topstrip{
+    background:var(--navy-deep);
+    color:var(--ivory-warm);
+    font-size:11px;
+    letter-spacing:0.15em;
+    text-transform:uppercase;
+    padding:8px 0;
+    font-weight:300;
+  }
+  .topstrip-inner{
+    max-width:1280px; margin:0 auto;
+    padding:0 40px;
+    display:flex; align-items:center; justify-content:space-between; gap:24px;
+  }
+  .topstrip-text{flex:1; text-align:center}
+  .topstrip-spacer{width:64px; flex-shrink:0}
+  .topstrip a{color:var(--ordine-gold-light); text-decoration:none; margin-left:6px}
+
+  /* LANGUAGE SWITCHER */
+  .lang-switch{display:flex; align-items:center; gap:4px; flex-shrink:0}
+  .lang-btn{
+    background:transparent; border:1px solid transparent;
+    padding:3px 6px; cursor:pointer; border-radius:2px;
+    transition:all 0.2s ease; line-height:0; opacity:0.55;
+    font-family:inherit;
+  }
+  .lang-btn:hover{opacity:0.9}
+  .lang-btn.active{opacity:1; border-color:var(--ordine-gold)}
+  .lang-btn svg{display:block; width:22px; height:14px; border-radius:1px}
+
+  /* HEADER */
+  header{
+    background:var(--ivory);
+    border-bottom:1px solid var(--line);
+    position:sticky; top:0; z-index:100;
+    background:rgba(250, 246, 238, 0.95);
+    backdrop-filter: blur(8px);
+  }
+  .header-inner{
+    max-width:1280px; margin:0 auto;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 40px;
+  }
+  .brand{display:flex; align-items:center; text-decoration:none; color:var(--ink)}
+  .brand img{height:56px; width:auto; margin-right:18px}
+  .brand-text{display:flex; flex-direction:column; line-height:1.15}
+  .brand-text .order{
+    font-family:'Cinzel', serif;
+    font-size:11px; letter-spacing:0.22em;
+    color:var(--muted); text-transform:uppercase;
+  }
+  .brand-text .city{
+    font-family:'Cormorant Garamond', serif;
+    font-size:24px; font-weight:600;
+    color:var(--navy); letter-spacing:0.02em;
+  }
+  nav.primary{display:flex}
+  nav.primary a{
+    margin-left:34px;
+    text-decoration:none; color:var(--navy);
+    font-size:13px; font-weight:500;
+    letter-spacing:0.08em; text-transform:uppercase;
+    padding:6px 0;
+    border-bottom:1.5px solid transparent;
+    transition:all 0.2s ease;
+    cursor:pointer;
+  }
+  nav.primary a:first-child{margin-left:0}
+  nav.primary a:hover,nav.primary a.active{
+    color:var(--ordine-gold);
+    border-bottom-color:var(--ordine-gold);
+  }
+
+  /* BREADCRUMB */
+  .breadcrumb{
+    max-width:1280px; margin:0 auto;
+    padding:24px 40px 0;
+    font-family:'Cinzel', serif;
+    font-size:11px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+  .breadcrumb a{
+    color:var(--muted);
+    text-decoration:none;
+    border-bottom:1px solid transparent;
+    transition:all 0.2s ease;
+  }
+  .breadcrumb a:hover{color:var(--ordine-gold); border-bottom-color:var(--ordine-gold)}
+  .breadcrumb .sep{margin:0 12px; color:var(--ordine-gold)}
+
+  /* EVENT HERO */
+  .event-hero{
+    max-width:1280px; margin:0 auto;
+    padding:40px 40px 60px;
+    text-align:center;
+  }
+  .event-hero .date{
+    font-family:'Cinzel', serif;
+    font-size:12px;
+    letter-spacing:0.3em;
+    color:var(--ordine-gold);
+    text-transform:uppercase;
+    margin-bottom:24px;
+  }
+  .ornament{
+    display:flex; align-items:center; justify-content:center;
+    gap:18px; margin:0 0 28px;
+  }
+  .ornament .line{height:1px; width:80px; background:var(--ordine-gold)}
+  .ornament .diamond{
+    width:8px; height:8px; transform:rotate(45deg);
+    border:1px solid var(--ordine-gold);
+  }
+  .event-hero h1{
+    font-family:'Cormorant Garamond', serif;
+    font-size:clamp(48px, 7vw, 88px);
+    font-weight:500;
+    line-height:1.05;
+    margin:0 0 16px;
+    color:var(--navy);
+    letter-spacing:-0.01em;
+  }
+  .event-hero .subtitle{
+    font-family:'Cormorant Garamond', serif;
+    font-size:clamp(22px, 3vw, 28px);
+    font-style:italic;
+    color:var(--ordine-gold);
+    margin:0 0 28px;
+    font-weight:400;
+  }
+  .event-hero .venue{
+    font-family:'Cinzel', serif;
+    font-size:13px;
+    letter-spacing:0.22em;
+    color:var(--navy);
+    text-transform:uppercase;
+    margin-bottom:8px;
+  }
+  .event-hero .address{
+    font-family:'Cormorant Garamond', serif;
+    font-size:18px;
+    font-style:italic;
+    color:var(--muted);
+  }
+
+  /* HERO IMAGE BAND */
+  .hero-image{
+    width:100%;
+    height:clamp(420px, 74vh, 780px);
+    background:var(--navy);
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-image img{
+    width:100%; height:100%; object-fit:cover;
+    object-position:50% 24%;
+    display:block;
+  }
+  .hero-image .caption{
+    position:absolute;
+    bottom:24px;
+    left:50%;
+    transform:translateX(-50%);
+    background:rgba(11,22,40,0.7);
+    backdrop-filter:blur(8px);
+    color:var(--ivory);
+    padding:10px 24px;
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:15px;
+    letter-spacing:0.02em;
+    text-align:center;
+    max-width:90%;
+  }
+
+  /* CONTENT */
+  .content{
+    max-width:840px;
+    margin:0 auto;
+    padding:80px 40px;
+  }
+  .content .lede{
+    font-family:'Cormorant Garamond', serif;
+    font-size:26px;
+    font-style:italic;
+    color:var(--navy);
+    line-height:1.5;
+    margin:0 0 40px;
+    text-align:center;
+  }
+  .content p{
+    font-size:18px;
+    line-height:1.75;
+    color:var(--ink);
+    margin:0 0 24px;
+  }
+  .content p strong{color:var(--navy); font-weight:600}
+
+  .featured-guest{
+    background:var(--ivory-warm);
+    border-left:3px solid var(--ordine-gold);
+    padding:32px 36px;
+    margin:48px 0;
+  }
+  .featured-guest .label{
+    font-family:'Cinzel', serif;
+    font-size:11px;
+    letter-spacing:0.22em;
+    color:var(--ordine-gold);
+    text-transform:uppercase;
+    margin-bottom:14px;
+  }
+  .featured-guest h3{
+    font-family:'Cormorant Garamond', serif;
+    font-size:32px;
+    font-weight:500;
+    color:var(--navy);
+    margin:0 0 12px;
+    line-height:1.2;
+  }
+  .featured-guest p{
+    margin:0;
+    font-size:17px;
+    line-height:1.7;
+  }
+
+
+
+
+  /* GALLERY */
+  .gallery{
+    padding:80px 40px;
+    background:var(--ivory-warm);
+  }
+  .gallery-inner{max-width:1280px; margin:0 auto}
+  .gallery .head{text-align:center; margin-bottom:48px}
+  .gallery .head .label{
+    font-family:'Cinzel', serif;
+    font-size:11px;
+    letter-spacing:0.3em;
+    color:var(--ordine-gold);
+    text-transform:uppercase;
+    margin-bottom:16px;
+  }
+  .gallery .head h2{
+    font-family:'Cormorant Garamond', serif;
+    font-size:clamp(36px, 5vw, 52px);
+    font-weight:500;
+    color:var(--navy);
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(12, 1fr);
+    gap:16px;
+  }
+  .gallery-item{
+    position:relative;
+    overflow:hidden;
+    background:var(--navy);
+    cursor:zoom-in;
+  }
+  .gallery-item img{
+    width:100%; height:100%; object-fit:cover;
+    display:block;
+    transition:transform 0.5s ease;
+  }
+  .gallery-item:hover img{transform:scale(1.04)}
+  .g-1{grid-column:span 8; aspect-ratio:16/10}
+  .g-2{grid-column:span 4; aspect-ratio:4/5}
+  .g-2 img{object-position:50% 20%}
+  .g-3{grid-column:span 12; aspect-ratio:2/1}
+  .g-4{grid-column:span 8; aspect-ratio:16/10}
+  .g-5{grid-column:span 5; aspect-ratio:4/3}
+  .g-6{grid-column:span 7; aspect-ratio:16/10}
+
+  /* LIGHTBOX */
+  .lightbox{
+    position:fixed; inset:0;
+    background:rgba(11,22,40,0.95);
+    display:none;
+    align-items:center; justify-content:center;
+    z-index:1000;
+    padding:40px;
+    cursor:zoom-out;
+  }
+  .lightbox.open{display:flex}
+  .lightbox img{
+    max-width:100%; max-height:100%;
+    object-fit:contain;
+    box-shadow:0 20px 60px rgba(0,0,0,0.6);
+  }
+  .lightbox-close{
+    position:absolute; top:24px; right:32px;
+    background:transparent; border:1px solid var(--ordine-gold-light);
+    color:var(--ordine-gold-light);
+    width:40px; height:40px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:18px;
+    transition:all 0.2s ease;
+  }
+  .lightbox-close:hover{background:var(--ordine-gold); color:var(--ivory)}
+
+
+  /* CLOSING */
+  .closing{
+    padding:80px 40px;
+    text-align:center;
+    background:var(--ivory-warm);
+    border-top:1px solid var(--line);
+  }
+  .closing blockquote{
+    font-family:'Cormorant Garamond', serif;
+    font-size:clamp(22px, 3vw, 30px);
+    font-style:italic;
+    color:var(--navy);
+    line-height:1.45;
+    max-width:760px;
+    margin:0 auto 36px;
+  }
+  .closing .back{
+    font-family:'Cinzel', serif;
+    font-size:11px;
+    letter-spacing:0.22em;
+    color:var(--navy);
+    text-transform:uppercase;
+    font-weight:600;
+    text-decoration:none;
+    border:1px solid var(--navy);
+    padding:14px 32px;
+    display:inline-block;
+    transition:all 0.2s ease;
+  }
+  .closing .back:hover{background:var(--navy); color:var(--ivory)}
+
+  /* FOOTER */
+  footer{
+    background:var(--navy-deep);
+    color:var(--ivory-warm);
+    padding:60px 40px 30px;
+    text-align:center;
+  }
+  footer img{height:48px; margin-bottom:18px}
+  footer p{font-size:13px; opacity:0.7; margin:0 0 14px}
+  footer .motto{
+    font-family:'Cinzel', serif;
+    font-size:10px;
+    letter-spacing:0.3em;
+    color:var(--ordine-gold-light);
+    margin-top:24px;
+    padding-top:24px;
+    border-top:1px solid rgba(201, 165, 56, 0.15);
+  }
+  footer .version{
+    font-family:'Cinzel', serif;
+    font-size:13px;
+    letter-spacing:0.28em;
+    color:#FFFFFF;
+    opacity:0.85;
+    margin-top:20px;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width:980px){
+    nav.primary{display:none}
+    .hero-image{height:auto; aspect-ratio:3/2}
+    .hero-image img{object-position:50% 30%}
+    .hero-image .caption{
+      font-size:10px; line-height:1.5;
+      padding:5px 12px; bottom:8px;
+      width:max-content; max-width:78%;
+    }
+    .gallery-grid > *{grid-column:span 12 !important; aspect-ratio:16/10 !important}
+    .gallery-grid > .g-2{aspect-ratio:4/5 !important}
+    .content{padding:60px 24px}
+    .topstrip-inner{padding:0 16px}
+    .topstrip-text{font-size:10px}
+    .topstrip-spacer{display:none}
+    .header-inner{padding:14px 20px}
+    .brand-text .city{font-size:18px}
+    .breadcrumb{padding:18px 24px 0; font-size:10px}
+    .event-hero{padding:30px 24px 40px}
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP STRIP -->
+<div class="topstrip">
+  <div class="topstrip-inner">
+    <div class="topstrip-spacer"></div>
+    <div class="topstrip-text">
+      <span data-i18n="topstrip.line">Ordine dei Cavalieri del Tartufo e dei Vini d'Alba · Founded 1967</span> · 
+      <a href="https://www.cavalierideltartufo.it/en/" target="_blank" data-i18n="topstrip.link">Visit the Order →</a>
+    </div>
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button class="lang-btn active" data-lang="en" aria-label="English" title="English">
+        <svg viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg">
+          <clipPath id="us-c"><rect width="60" height="30"/></clipPath>
+          <g clip-path="url(#us-c)">
+            <rect width="60" height="30" fill="#B22234"/>
+            <path d="M0,3.46h60M0,10.38h60M0,17.31h60M0,24.23h60" stroke="#FFF" stroke-width="2.31"/>
+            <rect width="24" height="16.15" fill="#3C3B6E"/>
+          </g>
+        </svg>
+      </button>
+      <button class="lang-btn" data-lang="it" aria-label="Italiano" title="Italiano">
+        <svg viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg">
+          <rect width="20" height="30" fill="#009246"/>
+          <rect x="20" width="20" height="30" fill="#FFF"/>
+          <rect x="40" width="20" height="30" fill="#CE2B37"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a class="brand" href="../../index.html">
+      <img src="../../assets/brand/logo-cavalieri-tartufo.png" alt="Ordine dei Cavalieri del Tartufo e dei Vini d'Alba">
+      <div class="brand-text">
+        <span class="order" data-i18n="brand.order">Ordine dei Cavalieri</span>
+        <span class="city" data-i18n="brand.city">Chicago Delegation</span>
+      </div>
+    </a>
+    <nav class="primary">
+      <a href="../../index.html" data-i18n="nav.home">Home</a>
+      <a href="../../events/" class="active" data-i18n="nav.events">Events</a>
+      <a href="../../gallery/" data-i18n="nav.gallery">Gallery</a>
+      <a href="../../become-a-knight/" data-i18n="nav.knight">Become a Knight</a>
+      <a href="../../the-knights/" data-i18n="nav.knights">The Knights</a>
+      <a href="../../contact/" data-i18n="nav.contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="../../index.html" data-i18n="crumb.home">Home</a>
+  <span class="sep">/</span>
+  <a href="../../events/" data-i18n="crumb.events">Events</a>
+  <span class="sep">/</span>
+  <span data-i18n="crumb.this">Knights at Sea</span>
+</div>
+
+<!-- EVENT HERO -->
+<section class="event-hero">
+  <div class="date" data-i18n="hero.date">Sunday, 12 July 2026</div>
+  <div class="ornament"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+  <h1>Knights at Sea</h1>
+  <div class="subtitle" data-i18n="hero.subtitle">A Summer Celebration Aboard Siberian Dream</div>
+  <div class="venue" data-i18n="hero.venue">Siberian Dream · Lake Michigan</div>
+  <div class="address" data-i18n="hero.address">Owned and skippered by Knight Quintin Marx</div>
+</section>
+
+<!-- HERO IMAGE -->
+<div class="hero-image">
+  <img src="photos/01-on-the-bridge.jpeg" alt="Knights and guests on the bridge of Siberian Dream">
+  <div class="caption" data-i18n="hero.caption">Clear skies and calm waters along Chicago's lakefront.</div>
+</div>
+
+<!-- CONTENT -->
+<article class="content">
+  <p class="lede" data-i18n-html="rec.lede">The Knights of Alba-Chicago gathered for another memorable summer celebration aboard <em>Siberian Dream</em>, the magnificent 74-foot yacht owned and skippered by Chicago Knight Quintin Marx, on Sunday, July 12, 2026.</p>
+
+  <p data-i18n="rec.p1">Joining Captain Marx were Maestro Georgia Marsh, Vicepresidenti Peter Litton and Norris Liu, and several fellow Knights and their spouses. The group cruised Lake Michigan under clear skies on a pristine summer day, with calm waters providing the perfect setting for friendship and fellowship.</p>
+
+  <p data-i18n="rec.p2">Guests were welcomed aboard with Prosecco, followed by a magnum of vintage Champagne. And, of course, no gathering of the Knights would be complete without truffles. A bounty of appetizers and a generous lunch were served as the yacht made its way along Chicago's lakefront.</p>
+
+  <p data-i18n="rec.p3">It was another joyful celebration of summer, shared traditions and the friendships that unite the Knights of Alba-Chicago — a truly blessed group.</p>
+</article>
+
+
+
+
+
+
+
+<!-- GALLERY -->
+<section class="gallery">
+  <div class="gallery-inner">
+    <div class="head">
+      <div class="label" data-i18n="gallery.label">The Day in Pictures</div>
+      <h2 data-i18n="gallery.title">Knights at Sea</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item g-1" data-img="photos/01-on-the-bridge.jpeg">
+        <img src="photos/01-on-the-bridge.jpeg" alt="Knights and guests on the bridge of Siberian Dream">
+      </div>
+      <div class="gallery-item g-2" data-img="photos/02-aboard-siberian-dream.jpeg">
+        <img src="photos/02-aboard-siberian-dream.jpeg" alt="Vicepresidente Norris Liu and guest aboard Siberian Dream">
+      </div>
+      <div class="gallery-item g-3" data-img="photos/03-with-the-captain.jpeg">
+        <img src="photos/03-with-the-captain.jpeg" alt="Knights with Captain Quintin Marx on the bridge">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" aria-label="Close">✕</button>
+  <img src="" alt="">
+</div>
+
+
+
+<!-- CLOSING -->
+<section class="closing">
+  <blockquote data-i18n="closing.quote">"Another joyful celebration of summer, shared traditions and the friendships that unite the Knights of Alba-Chicago — a truly blessed group."</blockquote>
+  <a href="../../events/" class="back" data-i18n="closing.back">← All Events</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img src="../../assets/brand/logo-cavalieri-tartufo.png" alt="Ordine dei Cavalieri del Tartufo e dei Vini d'Alba">
+  <p data-i18n="footer.copy">© Ordine dei Cavalieri del Tartufo e dei Vini d'Alba · Chicago Delegation</p>
+  <div class="motto" data-i18n="footer.motto">Tradition · Culture · Excellence</div>
+  <div class="version">v2026.07.16</div>
+</footer>
+
+
+<script>
+  // ============ I18N (Italian translations for this page) ============
+  const I18N = {
+    en: {},
+    it: {
+      // Shared
+      "topstrip.line": "Ordine dei Cavalieri del Tartufo e dei Vini d'Alba · Fondato nel 1967",
+      "topstrip.link": "Visita l'Ordine →",
+      "brand.order": "Ordine dei Cavalieri",
+      "brand.city": "Delegazione di Chicago",
+      "nav.home": "Home",
+      "nav.events": "Eventi",
+      "nav.gallery": "Galleria",
+      "nav.knight": "Diventa Cavaliere",
+      "nav.knights": "I Cavalieri",
+      "nav.contact": "Contatti",
+
+      // Breadcrumb
+      "crumb.home": "Home",
+      "crumb.events": "Eventi",
+      "crumb.this": "Knights at Sea",
+
+      // Hero
+      "hero.date": "Domenica, 12 luglio 2026",
+      "hero.subtitle": "Una celebrazione estiva a bordo di Siberian Dream",
+      "hero.venue": "Siberian Dream · Lago Michigan",
+      "hero.address": "Di proprietà e al comando del Cavaliere Quintin Marx",
+      "hero.caption": "Cielo sereno e acque calme lungo il lungolago di Chicago.",
+
+      // Recap
+      "rec.lede": "I Cavalieri di Alba-Chicago si sono riuniti per un'altra memorabile celebrazione estiva a bordo di <em>Siberian Dream</em>, il magnifico yacht di 74 piedi di proprietà e al comando del Cavaliere di Chicago Quintin Marx, domenica 12 luglio 2026.",
+      "rec.p1": "Insieme al Capitano Marx c'erano il Maestro Georgia Marsh, i Vicepresidenti Peter Litton e Norris Liu, e diversi altri Cavalieri con i loro coniugi. Il gruppo ha navigato sul Lago Michigan sotto un cielo sereno, in una splendida giornata estiva, con acque calme a fare da cornice perfetta ad amicizia e sodalizio.",
+      "rec.p2": "Gli ospiti sono stati accolti a bordo con Prosecco, seguito da un magnum di Champagne millesimato. E, naturalmente, nessun raduno dei Cavalieri sarebbe completo senza i tartufi. Un'abbondanza di antipasti e un generoso pranzo sono stati serviti mentre lo yacht percorreva il lungolago di Chicago.",
+      "rec.p3": "È stata un'altra gioiosa celebrazione dell'estate, delle tradizioni condivise e delle amicizie che uniscono i Cavalieri di Alba-Chicago — un gruppo davvero benedetto.",
+
+      // Gallery
+      "gallery.label": "La Giornata in Immagini",
+      "gallery.title": "Knights at Sea",
+
+      // Closing
+      "closing.quote": "\"Un'altra gioiosa celebrazione dell'estate, delle tradizioni condivise e delle amicizie che uniscono i Cavalieri di Alba-Chicago — un gruppo davvero benedetto.\"",
+      "closing.back": "← Tutti gli Eventi",
+
+      // Footer
+      "footer.copy": "© Ordine dei Cavalieri del Tartufo e dei Vini d'Alba · Delegazione di Chicago",
+      "footer.motto": "Tradizione · Cultura · Eccellenza",
+
+      // Demo banner
+    }
+  };
+
+  // ============ I18N ENGINE ============
+  const ORIGINAL_EN = {};
+  function captureOriginals() {
+    document.querySelectorAll('[data-i18n], [data-i18n-html]').forEach(el => {
+      const id = el.getAttribute('data-i18n') || el.getAttribute('data-i18n-html');
+      if (id && !(id in ORIGINAL_EN)) {
+        ORIGINAL_EN[id] = el.hasAttribute('data-i18n-html') ? el.innerHTML : el.textContent;
+      }
+    });
+  }
+
+  function applyLang(lang) {
+    const dict = I18N[lang] || {};
+    document.documentElement.lang = lang;
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      const translated = dict[key];
+      if (translated !== undefined) el.textContent = translated;
+      else if (ORIGINAL_EN[key] !== undefined) el.textContent = ORIGINAL_EN[key];
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      const key = el.getAttribute('data-i18n-html');
+      const translated = dict[key];
+      if (translated !== undefined) el.innerHTML = translated;
+      else if (ORIGINAL_EN[key] !== undefined) el.innerHTML = ORIGINAL_EN[key];
+    });
+
+    document.querySelectorAll('.lang-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
+  }
+
+  function initialLang() {
+    try {
+      const saved = localStorage.getItem('lang');
+      if (saved === 'en' || saved === 'it') return saved;
+    } catch (e) {}
+    const nav = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+    if (nav.startsWith('it')) return 'it';
+    return 'en';
+  }
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.lang;
+      applyLang(lang);
+      try { localStorage.setItem('lang', lang); } catch (e) {}
+    });
+  });
+
+  // Lightbox
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = lightbox.querySelector('img');
+  document.querySelectorAll('.gallery-item').forEach(item => {
+    item.addEventListener('click', () => {
+      lightboxImg.src = item.dataset.img;
+      lightboxImg.alt = item.querySelector('img').alt;
+      lightbox.classList.add('open');
+    });
+  });
+  lightbox.addEventListener('click', () => lightbox.classList.remove('open'));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.classList.contains('open')) {
+      lightbox.classList.remove('open');
+    }
+  });
+
+  // Bootstrap
+  captureOriginals();
+  applyLang(initialLang());
+</script>
+
+</body>
+</html>
