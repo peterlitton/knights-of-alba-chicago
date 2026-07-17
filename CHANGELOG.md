@@ -3,6 +3,11 @@
 All notable changes to the Chicago Delegation web presence are documented here.
 Format follows [keepachangelog.com](https://keepachangelog.com); newest entries at top.
 
+## 2026.07.17
+
+### Changed
+- Title correction throughout: "Vicepresidente/Vicepresidenti" → "Vice/Vices" (roster titles, leadership cards, and the Knights at Sea recap, EN and IT)
+
 ## 2026.07.16
 
 ### Added
