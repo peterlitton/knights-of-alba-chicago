@@ -3,6 +3,17 @@
 All notable changes to the Chicago Delegation web presence are documented here.
 Format follows [keepachangelog.com](https://keepachangelog.com); newest entries at top.
 
+## 2026.08.31
+
+### Added
+- Eight historical Chapter entries (May 2023–May 2026), including the October 2024 Extraordinary Chapter, in the existing Events page’s newest-first sequence; supplied guest and induction details are retained within each event
+- Planned Eighth Chapter — White Truffle Dinner in Upcoming, anticipated for November/December 2026, with the working theme “Diplomacy & Italian Cuisine”
+- Italian translations for all new event content
+
+### Changed
+- Upcoming planning placeholder now describes the Eighth Chapter; existing recaps and shared styles and behavior remain unchanged
+- Build version and footer metadata synchronized to 2026.08.31
+
 ## 2026.07.17
 
 ### Changed
