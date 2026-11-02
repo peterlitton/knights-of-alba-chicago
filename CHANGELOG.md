@@ -3,6 +3,14 @@
 All notable changes to the Chicago Delegation web presence are documented here.
 Format follows [keepachangelog.com](https://keepachangelog.com); newest entries at top.
 
+## 2026.11.01.2
+
+### Changed
+- Event detail page (Mauro Molino): gallery title changed to "A Wine and Food Celebration with the Molino Winemakers"
+
+### Removed
+- Event detail page (Mauro Molino): "From the kitchen of Macello" menu section removed in full (course list)
+
 ## 2026.11.01
 
 ### Added
