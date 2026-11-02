@@ -3,6 +3,15 @@
 All notable changes to the Chicago Delegation web presence are documented here.
 Format follows [keepachangelog.com](https://keepachangelog.com); newest entries at top.
 
+## 2026.11.01.3
+
+### Added
+- Event detail page (Mauro Molino): 14 additional photographs including the evening's printed program, the Mauro Molino bottle lineup with the truffle cloche, color portraits of Knights and the Molinos, and a B&W set from the pour, open, taste and candid moments
+
+### Changed
+- Event detail page (Mauro Molino): gallery expanded from 6 to 20 panels; grid resequenced so the program card sits near the top, and the truffle-shaving photo moved to the finale (far from the "cheer" photo which features the same Knight)
+- Event detail page (Mauro Molino): #02 truffle-shaving-risotto photo replaced with a higher-resolution master
+
 ## 2026.11.01.2
 
 ### Changed
