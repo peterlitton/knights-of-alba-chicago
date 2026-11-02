@@ -3,6 +3,12 @@
 All notable changes to the Chicago Delegation web presence are documented here.
 Format follows [keepachangelog.com](https://keepachangelog.com); newest entries at top.
 
+## 2026.11.01.4
+
+### Changed
+- Home page: "Recent gatherings" section moved up to sit directly below the hero (previously below Mission + Three Pillars)
+- Event detail page (Mauro Molino): hero image #01 replaced with a cleaner portrait of Maestro Georgia Marsh with Mauro and Martina Molino
+
 ## 2026.11.01.3
 
 ### Added
