@@ -3,6 +3,11 @@
 All notable changes to the Chicago Delegation web presence are documented here.
 Format follows [keepachangelog.com](https://keepachangelog.com); newest entries at top.
 
+## 2026.11.01.5
+
+### Changed
+- Event detail page (Mauro Molino): gallery resorted — pamphlet + bottles + group portrait up top; the B&W wine-service sequence (setup → open → pour → sip) grouped together; closing with risotto, lamb and the white-truffle bowl
+
 ## 2026.11.01.4
 
 ### Changed
