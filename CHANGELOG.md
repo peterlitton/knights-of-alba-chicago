@@ -3,6 +3,17 @@
 All notable changes to the Chicago Delegation web presence are documented here.
 Format follows [keepachangelog.com](https://keepachangelog.com); newest entries at top.
 
+## 2026.11.01
+
+### Added
+- Event detail page: An Intimate Wine Dinner with Mauro and Martina Molino (`events/2026-10-29-wine-dinner-mauro-molino/`) — Thursday, October 29, 2026 at Macello Ristorante, Chicago
+- Seven web-optimized photos (hero + 6 gallery)
+- Full Italian translations for the new event (hero, recap, wines, menu, gallery, closing)
+
+### Changed
+- Home page featured card: swapped from Notte del Solstizio (June 21) to the Mauro Molino dinner (October 29)
+- Events page: new Mauro Molino card inserted at the top of Past Events, above Knights at Sea
+
 ## 2026.08.31
 
 ### Added
