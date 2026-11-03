@@ -3,6 +3,14 @@
 All notable changes to the Chicago Delegation web presence are documented here.
 Format follows [keepachangelog.com](https://keepachangelog.com); newest entries at top.
 
+## 2026.11.03
+
+### Added
+- Event detail page (Mauro Molino): two new photos — a Knight presenting a white truffle at the table, and a couple sharing a cheers (positions 16 and 17 of the gallery)
+
+### Removed
+- Event detail page (Mauro Molino): two photos deleted — "three women laughing" and "blonde Knight reading the menu" (previously positions 16 and 17)
+
 ## 2026.11.01.5
 
 ### Changed
