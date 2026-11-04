@@ -3,6 +3,11 @@
 All notable changes to the Chicago Delegation web presence are documented here.
 Format follows [keepachangelog.com](https://keepachangelog.com); newest entries at top.
 
+## 2026.11.04
+
+### Changed
+- Mauro Molino event subtitle updated from "The wines of Mauro Molino · La Morra, Piedmont" to "The wines of Azienda Agricola Mauro Molino" (3 EN touchpoints + 2 IT translations)
+
 ## 2026.11.03
 
 ### Added

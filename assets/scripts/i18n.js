@@ -75,7 +75,7 @@
 
       // Notte del Solstizio event
       "evpage.molino.date": "Giovedì, 29 ottobre 2026",
-      "evpage.molino.subtitle": "I vini di Mauro Molino · La Morra, Piemonte",
+      "evpage.molino.subtitle": "I vini di Azienda Agricola Mauro Molino",
       "evpage.molino.venue": "Macello Ristorante · Chicago",
       "evpage.molino.body": "Un'intima serata autunnale di Barolo e di tartufo bianco d'Alba, onorata dalla presenza del vignaiolo Mauro Molino e della figlia Martina — la seconda generazione dell'azienda di famiglia ad Annunziata di La Morra.",
       "home.molino.body": "Un'intima serata autunnale di Barolo e di tartufo bianco d'Alba, onorata dalla presenza del vignaiolo Mauro Molino e della figlia Martina — la seconda generazione dell'azienda di famiglia ad Annunziata di La Morra.",
