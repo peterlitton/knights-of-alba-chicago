@@ -3,6 +3,12 @@
 All notable changes to the Chicago Delegation web presence are documented here.
 Format follows [keepachangelog.com](https://keepachangelog.com); newest entries at top.
 
+## 2026.11.05
+
+### Changed
+- Mauro Molino event: h1 split into a compact headline ("The Knights of Alba-Chicago 10th Capitolo Barolo & Truffle Dinner") with the descriptor moved to the subtitle ("Featuring the wines of Azienda Agricola Mauro Molino, with guest producers Mauro and Martina Molino")
+- Home featured card and events-list card: headline updated to the same compact title
+
 ## 2026.11.04.2
 
 ### Changed
