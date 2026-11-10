@@ -3,6 +3,14 @@
 All notable changes to the Chicago Delegation web presence are documented here.
 Format follows [keepachangelog.com](https://keepachangelog.com); newest entries at top.
 
+## 2026.11.09
+
+### Added
+- `assets/downloads/application-form-and-cv.pdf` — the Order's application form + CV, now hosted on knightsofalbachicago.org instead of hotlinked to cavalierideltartufo.it
+
+### Changed
+- Become a Knight page: "Download Application" button now serves the local PDF (`../assets/downloads/application-form-and-cv.pdf`) rather than the external .doc on the parent Order's site
+
 ## 2026.11.05
 
 ### Changed
