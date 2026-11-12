@@ -3,6 +3,11 @@
 All notable changes to the Chicago Delegation web presence are documented here.
 Format follows [keepachangelog.com](https://keepachangelog.com); newest entries at top.
 
+## 2026.11.12
+
+### Changed
+- `assets/downloads/application-form-and-cv.pdf` — replaced with 2026 revised/edited version
+
 ## 2026.11.09.2
 
 ### Changed
