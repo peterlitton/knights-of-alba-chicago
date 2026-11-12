@@ -3,6 +3,14 @@
 All notable changes to the Chicago Delegation web presence are documented here.
 Format follows [keepachangelog.com](https://keepachangelog.com); newest entries at top.
 
+## 2026.11.12.2
+
+### Removed
+- Events page / Upcoming: "Eighth Chapter — White Truffle Dinner" proposed event (cancelled)
+- Orphan `evpage.chapter8.*` Italian translation keys cleaned out of `assets/scripts/i18n.js`
+
+### Added
+- Events page / Upcoming: "Announcements Forthcoming." placeholder (EN + IT) in the empty-state block
 ## 2026.11.12
 
 ### Changed

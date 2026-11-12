@@ -68,6 +68,7 @@
       "evpage.upcoming.title": "Prossimi Eventi",
       "evpage.upcoming.sub": "I prossimi appuntamenti della Delegazione.",
       "evpage.upcoming.empty": "Il prossimo evento è in fase di pianificazione. I Cavalieri saranno avvisati dal Maestro; aspiranti e amici della Delegazione possono inviare una richiesta.",
+      "evpage.upcoming.forthcoming": "Annunci in arrivo.",
       "evpage.upcoming.contact": "Per annunci e richieste, contattare <a href=\"mailto:chicagomaster@cavalierdeltartufo.it\">il Maestro</a>.",
       "evpage.past.title": "Eventi Passati",
       "evpage.past.sub": "Un archivio delle recenti riunioni della Delegazione di Chicago.",
@@ -88,8 +89,6 @@
       "evpage.solstizio.venue": "Con i vini di Chiara Boschis · E. Pira & Figli",
       "evpage.solstizio.body": "I Cavalieri di Alba-Chicago si sono riuniti a casa del Maestro Georgia Marsh per una calorosa e festosa celebrazione del solstizio d'estate, onorata dalla presenza di Chiara Boschis — una delle grandi produttrici di Barolo — e da una progressione dei suoi vini dal Dolcetto al Barolo Mosconi.",
       "home.solstizio.body": "Una calorosa e festosa celebrazione del solstizio d'estate a casa del Maestro Georgia Marsh, onorata dalla presenza di Chiara Boschis — una delle grandi produttrici di Barolo — e da una progressione dei suoi vini nel corso della serata.",
-
-      // Historical Chapters and planned Eighth Chapter
       "evpage.chapter1.title": "Capitolo Inaugurale",
       "evpage.chapter1.date": "9 maggio 2023",
       "evpage.chapter1.p1": "Il Capitolo di Chicago ha tenuto il suo incontro inaugurale il 9 maggio 2023 presso l’Exmoor Country Club, dando formalmente inizio alle attività del Capitolo a Chicago.",
@@ -131,12 +130,6 @@
       "evpage.chapter7.p1": "Il Capitolo di Chicago si è riunito per il suo settimo Capitolo il 7 maggio 2026 presso lo University Club of Chicago.",
       "evpage.chapter7.p2": "Tra i presenti figuravano <strong>Paola Di Favori, Italian Trade Commissioner a Chicago</strong>, e <strong>Robert Allegrini, Presidente e Amministratore Delegato della National Italian American Foundation</strong>.",
       "evpage.chapter7.p3": "La loro partecipazione ha proseguito una tradizione, nata fin dai primi incontri del Capitolo, di accoglienza dei rappresentanti di istituzioni strettamente legate all’Italia e alla comunità italoamericana.",
-      "evpage.chapter8.title": "Ottavo Capitolo — Cena al Tartufo Bianco",
-      "evpage.chapter8.date": "Novembre/dicembre 2026",
-      "evpage.chapter8.venue": "In fase di pianificazione",
-      "evpage.chapter8.p1": "Sono in corso i preparativi per l’ottavo Capitolo e la Cena al Tartufo Bianco del Capitolo di Chicago, previsti per novembre o dicembre 2026.",
-      "evpage.chapter8.p2": "Il Capitolo sta lavorando con il <strong>Console Generale</strong> a un’iniziativa collegata alla <strong>Settimana della Cucina Italiana nel Mondo</strong>, con il tema provvisorio <strong>«Diplomazia e Cucina Italiana»</strong>.",
-      "evpage.chapter8.p3": "Ulteriori dettagli sul programma, sugli ospiti, sulla sede, sui vini e sulla cena saranno aggiunti con il progredire dei preparativi.",
 
       // Event CTAs
       "cta.reserve": "Prenota",
