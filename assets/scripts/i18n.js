@@ -202,7 +202,7 @@
       // Leadership
       "leader.eyebrow": "Guida",
       "leader.title": "La Guida della Delegazione di Chicago",
-      "leader.vp.role": "Vice · Delegazione di Chicago",
+      "leader.vp.role": "Vice Maestro · Delegazione di Chicago",
       "leader.vp1.since": "Cavaliere dal 2025",
       "leader.vp2.since": "Cavaliere dal 2023",
       "leader.portrait": "Ritratto del Maestro",

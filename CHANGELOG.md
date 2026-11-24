@@ -3,6 +3,13 @@
 All notable changes to the Chicago Delegation web presence are documented here.
 Format follows [keepachangelog.com](https://keepachangelog.com); newest entries at top.
 
+## 2026.11.24
+
+### Changed
+- Brand refresh: header logo on every page is now the US-flag Ordine crest (`assets/brand/ordine-us-square.png`); footer keeps the original Ordine crest, upgraded to a high-resolution transparent version
+- `favicon.ico`, `apple-touch-icon.png`, and 192/512 PWA icons regenerated from the square US-flag logo
+- Title correction: "Vice/Vices" → "Vice Maestro/Vice Maestri" (roster, leadership cards, Knights at Sea recap, EN and IT)
+
 ## 2026.11.12.2
 
 ### Removed
